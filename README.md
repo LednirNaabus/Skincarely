@@ -1,1 +1,2 @@
-# Test
+# IT120P Term Project
+
