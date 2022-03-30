@@ -18,7 +18,7 @@
               <div class="card-body p-4 p-lg-5 text-black">
                 <form action="#" method="post">
                   <div class="d-flex align-items-center mb-3 pb-1">
-                    <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i>
+                  <i class="fas fa-crow fa-2x me-3" style="color: #AC7672;"></i>
                     <span class="h1 fw-bold mb-0">Skincarely</span>
                   </div>
 
