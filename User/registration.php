@@ -75,13 +75,6 @@
                               Please enter your password.
                           </span>
                       </div>
-                      <div class="form-outline mb-4">
-                          <label for="confirm_password" class="form-label">Confirm Password</label>
-                          <input type="password" name="confirm_password" class="form-control" required/>
-                          <span class="invalid-feedback">
-                              Please confirm your password.
-                          </span>
-                      </div>
                   </div>
 
                   <div class="pt-1 mb-4">
