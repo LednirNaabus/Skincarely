@@ -16,7 +16,7 @@
             </div>
             <div class="col-md-6 col-lg-7 d-flex align-items-center">
               <div class="card-body p-4 p-lg-5 text-black">
-                <form action="#" method="post" class="needs-validation" novalidate>
+                <form action="" method="post" class="needs-validation" novalidate>
                   <div class="d-flex align-items-center mb-3 pb-1">
                   <i class="fas fa-crow fa-2x me-3" style="color: #AC7672;"></i>
                     <span class="h1 fw-bold mb-0">Skincarely</span>
