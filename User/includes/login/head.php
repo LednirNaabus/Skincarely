@@ -10,5 +10,7 @@
     <!-- Google Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Calistoga' rel='stylesheet'>
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" >
+    <!-- Font awesome icons -->
+    <script src="https://kit.fontawesome.com/d9fb1896a3.js" crossorigin="anonymous"></script>
 </head>
 <body>
