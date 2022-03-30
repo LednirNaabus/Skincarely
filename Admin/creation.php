@@ -14,7 +14,7 @@ include('connection.php');
 
             $firstname = $_POST['firstname']; 
             $lastname = $_POST['lastname']; 
-            $username = $_POST['username']; 
+            $username = $_POST['user']; 
             $email = $_POST['email'];  
             $password = $_POST['pass'];  
             $name = $firstname . " " . $lastname;

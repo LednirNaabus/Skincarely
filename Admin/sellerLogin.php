@@ -5,120 +5,88 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Skincarely | Login</title>
-
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- Google Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Calistoga' rel='stylesheet'>
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" >
-
-    <style>
-        html{
-            box-sizing: border-box;
-            font-size: 100%;
-        }
-        *:before,
-        *:after{
-        box-sizing:inherit;
-        }
-        body{
-            background-color: #F3F2F0;
-            margin: 0;
-            padding: 0;
-        }
-        .wrapper{
-            display:flex;
-            flex-direction: column;
-            height: 100vh;
-        }
-        .header{
-            background-color: #F3F2F0 ;
-            height: 90px;
-            color: #6F645E;
-            font-family: Calistoga;
-        }
-        .app{
-            display: flex;
-            height: 100%;
-            align-items: center;
-            justify-content: center;
-        }
-        form{
-            border-radius: 10px;
-            background-color: white;
-            text-align: center;
-            width: 360px;
-            border: 1px solid #dadce0;
-            display: flex;
-            flex-direction: column;
-			padding: 30px;
-            font-family: Poppins;
-
-        }
-        .login-title{
-            font-size: 24px;
-            margin-bottom: 32px;
-            font-family: Poppins;
-        }
-        input, button{
-            padding: 13px 15px;
-			border: 1px solid #dadce0;
-			border-radius: 4px;
-			font-size: 16px;
-			margin-bottom: 24px;
-            font-family: Poppins;
-        }
-        button{
-            background-color: #8C5652;
-            color: white;
-        }
-        a{
-            text-decoration: none;
-        }
-        
-    </style>
+    <!-- Font awesome icons -->
+    <script src="https://kit.fontawesome.com/d9fb1896a3.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
+<section class="vh-100" style="background-color: #f7f3f2;">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-xl-10">
+        <div class="card" style="border-radius: 1rem;">
+          <div class="row g-0">
+            <div class="col-md-6 col-lg-5 d-none d-md-block">
+              <img src="img/placeholder.png" alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;"/>
+            </div>
+            <div class="col-md-6 col-lg-7 d-flex align-items-center">
+              <div class="card-body p-4 p-lg-5 text-black">
 
-    <div class="wrapper">
-        <div class="header" style="text-align: center;">
-            <h1>SKINCARELY</h1>
-    </div>
+                <form name = "vendorlogin" action="authentication.php" method="post">
+                  <div class="d-flex align-items-center mb-3 pb-1">
+                  <i class="fas fa-crow fa-2x me-3" style="color: #AC7672;"></i>
+                    <span class="h1 fw-bold mb-0">Skincarely</span>
+                  </div>
 
-        <div class="app">
+                  <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign into seller centre</h5>
 
-            <form name="vendorlogin" action = "authentication.php" onsubmit = "return validation()" method = "POST">
-                <div class="login-title">Login to Seller Centre</div>
-                <input type="text" placeholder="Username" id ="user" name  = "user">
-                <input type="password" placeholder="Password" style="margin-bottom: 2%;" id ="pass" name  = "pass">
-                <label style="text-align: right; margin-bottom:5%; font-size:small"><a href="resetPassword.php" style="color: #4B4B4B;"><u>Forgot Password?</u></a></label>
-                <button type="submit" id = "btn">Log In</button>
-                <div>New to Skincarely? <a href="sellerSignUp.php" style="text-decoration: none; color:#4B4B4B"><u>Create an account!</u></a></div>
-            </form>
+                  <div class="form-outline mb-4">
+                    <input type="text" id="user" name = "user" class="form-control form-control-lg" required />
+                    <label class="form-label" for="user">Username</label>
+                  </div>
 
+                  <div class="form-outline mb-4">
+                    <input type="password" id="pass" name = "pass" class="form-control form-control-lg" required/>
+                    <label class="form-label" for="pass">Password</label>
+                  </div>
+
+                  <div class="pt-1 mb-4">
+                    <button class="btn btn-lg btn-block" type="submit" style="background-color: #AC7672; color: #fff;">Login</button>
+                  </div>
+
+                  <a class="small text-muted" href="#!">Forgot password?</a>
+                  <p class="mb-5 pb-lg-2" style="color: #393f81;">Don't have an account? <a href="sellerSignUp.php" style="color: #393f81;">Register here</a></p>
+                  <a href="#!" class="small text-muted">Terms of use.</a>
+                  <a href="#!" class="small text-muted">Privacy policy</a>
+                </form>
+
+              </div>
+            </div>
+          </div>
         </div>
-
-        <script>  
-            function validation()  
-            {  
-                var id=document.vendorlogin.user.value;  
-                var ps=document.vendorlogin.pass.value;  
-                if(id.length=="" && ps.length=="") {  
-                    alert("User Name and Password fields are empty");  
-                    return false;  
-                }  
-                else  
-                {  
-                    if(id.length=="") {  
-                        alert("User Name is empty");  
-                        return false;  
-                    }   
-                    if (ps.length=="") {  
-                    alert("Password field is empty");  
-                    return false;  
-                    }  
-                }                             
-            }  
-        </script>  
-
+      </div>
     </div>
+  </div>
+</section>
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script>
+      // Example starter JavaScript for disabling form submissions if there are invalid fields
+      (function() {
+        'use strict';
+
+        window.addEventListener('load', function() {
+          // Fetch all the forms we want to apply custom Bootstrap validation styles to
+          var forms = document.getElementsByClassName('needs-validation');
+
+          // Loop over them and prevent submission
+          var validation = Array.prototype.filter.call(forms, function(form) {
+            form.addEventListener('submit', function(event) {
+              if (form.checkValidity() === false) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+              form.classList.add('was-validated');
+            }, false);
+          });
+        }, false);
+      })();
+    </script>
 </body>
 </html>
