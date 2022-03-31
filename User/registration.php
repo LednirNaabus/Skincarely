@@ -1,10 +1,39 @@
 <?php
   require_once "db_connection.php";
 
-  $username = $password = $confirm_password = $first_name = $last_name = $email = "";
+  $username = $password = $confirm_password = $first_name = $last_name = $email = $full_name = "";
   $username_err = $password_err = $confirm_password_err = $first_name_err = $last_name_err = $email_err = "";
+  $date_created = date("Y-m-d");
 
   if($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+    //check if input field for first name and last name is empty
+    if(empty(trim($_POST['fn']))) {
+      $first_name_err = "Please enter your first name.";
+    } else {
+      $first_name = trim($_POST['fn']);
+    }
+
+    if(empty(trim($_POST['ln']))) {
+      $last_name_err = "Please enter your last name.";
+    } else {
+      $last_name = trim($_POST['ln']);
+    }
+
+    //validate name
+    if(empty($first_name_err) && empty($last_name_err)) {
+      $full_name = $first_name . " " . $last_name;
+      $sql = "SELECT customer_id FROM customers where customer_name = ?";
+      if($stmt = mysqli_prepare($link, $sql)) {
+        mysqli_stmt_bind_param($stmt, "s", $param_fullname);
+        $param_fullname = $full_name;
+        if(mysqli_stmt_execute($stmt)) {
+          mysqli_stmt_store_result($stmt);
+          $full_name = $param_fullname;
+        }
+        mysqli_stmt_close($stmt);
+      }
+    }
 
     //validate username
     if(empty(trim($_POST['username']))) {
@@ -73,6 +102,30 @@
       }
     }
 
+    // check the input errors beofre inserting into database
+    if(empty($username_err) && empty($email_err) && empty($first_name_err) && empty($last_name_err) && empty($password_err) && empty($confirm_password_err)) {
+      //prepare insert statement 
+      $sql = "INSERT INTO customers (customer_username, customer_password, customer_name, customer_email, customer_created) VALUES (?,?,?,?,?)";
+
+      if($stmt = mysqli_prepare($link, $sql)) {
+        mysqli_stmt_bind_param($stmt, "sssss", $param_username, $param_password, $param_fullname, $param_email, $param_date_created);
+        //set parameters
+        $param_username = $username;
+        $param_password = $password;
+        $param_fullname = $full_name;
+        $param_email = $email;
+        $param_date_created = $date_created;
+
+        if(mysqli_stmt_execute($stmt)) {
+          //redirect to login page
+          header("Location: login_page.php");
+        } else {
+          echo "Error.";
+        }
+        mysqli_stmt_close($stmt);
+      }
+    }
+    mysqli_close($link);
   } //end if
 ?>
 <section class="vh-100" style="background-color: #f7f3f2;">
@@ -102,18 +155,18 @@
                       <div class="col-md-6 mb-4">
                           <div class="form-outline">
                             <label for="fn" class="form-label">First Name</label>
-                            <input type="text" name="fn" class="form-control"/>
+                            <input type="text" name="fn" class="form-control  <?php echo(!empty($first_name_err)) ? 'is-invalid' : '';?>" value="<?php echo $first_name; ?>"/>
                             <span class="invalid-feedback">
-                                Please enter your first name.
+                                <?php echo $first_name_err; ?>
                             </span>
                           </div>
                       </div>
                       <div class="col-md-6 mb-4">
                           <div class="form-outline">
                             <label for="ln" class="form-label">Last Name</label>
-                            <input type="text" name="ln" class="form-control"/>
+                            <input type="text" name="ln" class="form-control <?php echo(!empty($last_name_err)) ? 'is-invalid' : '';?>" value="<?php echo $last_name; ?>"/>
                             <span class="invalid-feedback">
-                                Please enter your last name.
+                                <?php echo $last_name_err; ?>
                             </span>
                           </div>
                       </div>
@@ -123,7 +176,7 @@
                       <div class="col-md-6 mb-4">
                           <div class="form-outline">
                               <label for="username" class="form-label">Username</label>
-                              <input type="text" name="username" class="form-control <?php echo(!empty($username_err)) ? 'is-invalid' : ''; ?>"/>
+                              <input type="text" name="username" class="form-control <?php echo(!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>"/>
                               <span class="invalid-feedback">
                                   <?php echo $username_err; ?>
                               </span>
@@ -131,8 +184,8 @@
                       </div>
                       <div class="col-md-6 mb-4">
                           <div class="form-outline">
-                              <label for="email" class="form-label <?php echo(!empty($email_err)) ? 'is-invalid' : '';?>">Email</label>
-                              <input type="email" name="email" class="form-control"/>
+                              <label for="email" class="form-label">Email</label>
+                              <input type="email" name="email" class="form-control <?php echo(!empty($email_err)) ? 'is-invalid' : '';?>" value="<?php echo $email; ?>"/>
                               <span class="invalid-feedback">
                                   <?php echo $email_err; ?>
                               </span>
@@ -143,10 +196,17 @@
                   <div class="row">
                       <div class="form-outline mb-4">
                           <label for="password" class="form-label">Password</label>
-                          <input type="password" name="password" class="form-control <?php echo(!empty($password_err)) ? 'is-invalid' : ''; ?>"/>
+                          <input type="password" name="password" class="form-control <?php echo(!empty($password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $password; ?>"/>
                           <span class="invalid-feedback">
                               <?php echo $password_err; ?>
                           </span>
+                      </div>
+                      <div class="form-outline mb-4">
+                        <label for="confirm_password" class="form-label">Confirm Password</label>
+                        <input type="password" name="confirm_password" class="form-control <?php echo(!empty($confirm_password_err)) ? 'is-invalid' : '';?>" value="<?php echo $confirm_password; ?>" />
+                        <span class="invalid-feedback">
+                          <?php echo $confirm_password_err; ?>
+                        </span>
                       </div>
                   </div>
 
