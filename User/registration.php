@@ -111,7 +111,8 @@
         mysqli_stmt_bind_param($stmt, "sssss", $param_username, $param_password, $param_fullname, $param_email, $param_date_created);
         //set parameters
         $param_username = $username;
-        $param_password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+        //$param_password = password_hash($_POST['password'], PASSWORD_DEFAULT);// pang-encrypt
+        $param_password = $password;
         $param_fullname = $full_name;
         $param_email = $email;
         $param_date_created = $date_created;
