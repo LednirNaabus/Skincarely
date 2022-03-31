@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 30, 2022 at 06:06 AM
+-- Generation Time: Mar 30, 2022 at 09:39 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `skincarely`
 --
+CREATE DATABASE IF NOT EXISTS `skincarely` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `skincarely`;
 
 -- --------------------------------------------------------
 
@@ -63,7 +65,6 @@ CREATE TABLE `shops` (
   `shop_id` int(11) NOT NULL,
   `vendor_id` int(11) NOT NULL,
   `shop_name` varchar(50) NOT NULL,
-  `shop_category` varchar(50) NOT NULL,
   `shop_logo` mediumblob NOT NULL,
   `shop_description` varchar(50) NOT NULL,
   `shop_location` varchar(50) NOT NULL,
