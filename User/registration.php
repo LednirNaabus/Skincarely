@@ -117,8 +117,8 @@
         $param_date_created = $date_created;
 
         if(mysqli_stmt_execute($stmt)) {
-          //redirect to login page
-          header("Location: login_page.php");
+          //redirect to login auth
+          header("Location: login.php");
         } else {
           echo "Error.";
         }
