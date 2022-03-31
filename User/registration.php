@@ -111,13 +111,13 @@
         mysqli_stmt_bind_param($stmt, "sssss", $param_username, $param_password, $param_fullname, $param_email, $param_date_created);
         //set parameters
         $param_username = $username;
-        $param_password = $password;
+        $param_password = password_hash($password, PASSWORD_DEFAULT);
         $param_fullname = $full_name;
         $param_email = $email;
         $param_date_created = $date_created;
 
         if(mysqli_stmt_execute($stmt)) {
-          //redirect to login auth
+          //redirect to registration success
           header("Location: login.php");
         } else {
           echo "Error.";
@@ -214,7 +214,7 @@
                     <button class="btn btn-block" type="submit" style="background-color: #AC7672; color: #fff;">Register</button>
                   </div>
 
-                  <p class="mb-5 pb-lg-2" style="color: #393f81;">Already have an account? <a href="login_page.php" style="color: #393f81;">Login here</a></p>
+                  <p class="mb-5 pb-lg-2" style="color: #393f81;">Already have an account? <a href="login.php" style="color: #393f81;">Login here</a></p>
                 </form>
 
               </div>
