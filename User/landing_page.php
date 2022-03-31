@@ -14,6 +14,7 @@
 <?php
 echo "Hi " . htmlspecialchars($_SESSION["user"]);
 ?>
+<a href="logout.php" class="link">Logout</a>
 <?php
     include 'includes/landing/footer.php';
 ?>
