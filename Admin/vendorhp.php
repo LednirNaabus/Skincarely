@@ -49,7 +49,7 @@
 
 <div class="main">
     <br><br>
-  <h2>Vendor Dashboard</h2>
+  <h2>Merchant Dashboard</h2>
 </div>  
   
 

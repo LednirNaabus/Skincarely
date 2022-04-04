@@ -49,25 +49,37 @@
                     </div>
                 </div>
 
-                  <div class="form-outline mb-4">
-                    <input type="text" id="email" name = "email" class="form-control form-control-lg" required />
-                    <label class="form-label" for="email">Email Address</label>
-                  </div>
-
                 <div class="row mb-4">
                     <div class="col">
                     <div class="form-outline">
-                        <input type="text" id="user" name = "user" class="form-control form-control-lg" required />
+                      <input type="text" id="email" name = "email" class="form-control form-control-lg" required />
+                      <label class="form-label" for="email">Email Address</label>
+                    </div>
+                    </div>
+                    <div class="col">
+                    <div class="form-outline">
+                      <input type="text" id="user" name = "user" class="form-control form-control-lg" required />
                         <label class="form-label" for="user">Username</label>
                     </div>
                     </div>
+                </div>
+
+                <div class="row mb-4">
                     <div class="col">
                     <div class="form-outline">
                         <input type="password" id="pass" name = "pass" class="form-control form-control-lg" required/>
                         <label class="form-label" for="pass">Password</label>
                     </div>
                     </div>
+                    <div class="col">
+                    <div class="form-outline">
+                        <input type="confirmpass" id="confirmpass" name = "confirmpass" class="form-control form-control-lg" required/>
+                        <label class="form-label" for="confirmpass">Confirm Password</label>
+                    </div>
+                    </div>
                 </div>
+
+        
 
                   <div class="pt-1 mb-4">
                     <button class="btn btn-lg btn-block" type="submit" style="background-color: #AC7672; color: #fff;">Register</button>
@@ -87,6 +99,7 @@
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script>
+
       // Example starter JavaScript for disabling form submissions if there are invalid fields
       (function() {
         'use strict';
