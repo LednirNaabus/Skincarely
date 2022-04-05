@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ 
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -17,7 +17,7 @@
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"> 
   <!-- Main style -->
-  <link rel="stylesheet" href="dist/css/main.css"> 
+  <link rel="stylesheet" type="text/css"href="dist/css/main.css?version=1"> 
   <!-- overlayScrollbars -->
   <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css"> 
 </head>  
@@ -26,36 +26,22 @@
   <!-- Navbar -->
   <nav class="main-header navbar navbar-expand navbar-white navbar-light"> 
   <ul class="navbar-nav"> 
-    <li class="nav-item d-none d-sm-inline-block">
-      <a href="index3.html" class="nav-link">Skincarely</a>
+    <li class="nav-item d-none d-sm-inline-block"> 
+    <div class="d-flex align-items-center ">
+    <i class="fas fa-crow fa-2x me-3" style="color: #AC7672; padding: 0 1rem 0;" aria-hidden="true"></i>
+      <span class="h2 mb-0">Skincarely</span>
+    </div> 
     </li> 
   </ul> 
-  <ul class="navbar-nav ml-auto"> 
-  <li class="nav-item"> 
-  <div class="navbar-search-block">
-    <form class="form-inline">
-      <div class="input-group input-group-sm">
-        <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
-        <div class="input-group-append">
-          <button class="btn btn-navbar" type="submit">
-            <i class="fas fa-search"></i>
-          </button>
-          <button class="btn btn-navbar" type="button" data-widget="navbar-search">
-            <i class="fas fa-times"></i>
-          </button>
-        </div>
-      </div>
-    </form>
-  </div>
-  </li>  
+  <ul class="navbar-nav ml-auto">  
   <li class="nav-item">
     <a class="nav-link" data-widget="fullscreen" href="#" role="button">
-      <i class="fas fa-expand-arrows-alt"></i>
+      <i class="fas fa-expand-arrows-alt" style="color: #AC7672;" aria-hidden="true"></i>
     </a>
   </li>
   <li class="nav-item">
     <a class="nav-link" data-widget="control-sidebar" data-controlsidebar-slide="true" href="#" role="button">
-      <i class="fa-solid fa-user"></i>
+      <i class="fa-solid fa-user" style="color: #AC7672;" aria-hidden="true"></i>
     </a>
   </li>
   </ul>
