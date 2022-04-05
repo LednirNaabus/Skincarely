@@ -1,6 +1,6 @@
 <?php
 $pageName = "My Account";
-include "includes/header.php";
+include "includes/myaccount/header.php";
 include "db_connection.php";
 
 //CHANGE CUSTOMER ID
@@ -122,7 +122,7 @@ $userInfo = mysqli_fetch_row($result);
     </div>
     </div> 
 </div> 
-<?php include "includes/footer.php"; ?>    
+<?php include "includes/myaccount/footer.php"; ?>    
 <?php  
 if($_SERVER['REQUEST_METHOD'] == 'POST'){ 
     $username = $_POST['CustomerUsername'];
