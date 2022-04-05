@@ -1,6 +1,7 @@
 <?php
 $pageName = "My Account";
 include "includes/myaccount/header.php";
+include "includes/myaccount/navbar.php";
 include "db_connection.php";
 
 //CHANGE CUSTOMER ID
