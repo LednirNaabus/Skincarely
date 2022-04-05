@@ -5,8 +5,9 @@
         header("location: login_page.php");
         exit;
     }
+    //TO DO:
+    // LANDING PAGE
 ?>
-
 
 <?php
     include 'includes/landing/head.php';

@@ -122,7 +122,6 @@ $userInfo = mysqli_fetch_row($result);
     </div>
     </div> 
 </div> 
-  
 <?php include "includes/footer.php"; ?>    
 <?php  
 if($_SERVER['REQUEST_METHOD'] == 'POST'){ 
@@ -157,3 +156,15 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         }
     }
 ?>
+<script>
+$(document).ready(function () {
+  $('body').on('click', '#selectAll', function () {
+    if ($(this).hasClass('allChecked')) {
+        $('input[type="checkbox"]', '#inbox').prop('checked', false);
+    } else {
+        $('input[type="checkbox"]', '#inbox').prop('checked', true);
+    }
+    $(this).toggleClass('allChecked');
+  })
+});
+</script>
