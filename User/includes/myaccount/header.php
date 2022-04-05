@@ -9,7 +9,8 @@
   <link rel = "icon" href = 
   "https://i.ibb.co/mJrCGQW/wrench.png" 
   type = "image/x-icon">    
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <link href='https://fonts.googleapis.com/css?family=Calistoga' rel='stylesheet'>
   <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" >
   <!-- Font Awesome --> 
@@ -20,30 +21,8 @@
   <link rel="stylesheet" type="text/css"href="dist/css/main.css?version=1"> 
   <!-- overlayScrollbars -->
   <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css"> 
+  <!-- Font awesome icons -->
+  <script src="https://kit.fontawesome.com/d9fb1896a3.js" crossorigin="anonymous"></script>  
 </head>  
 <body>
-<div class="wrapper">  
-  <!-- Navbar -->
-  <nav class="main-header navbar navbar-expand navbar-white navbar-light"> 
-  <ul class="navbar-nav"> 
-    <li class="nav-item d-none d-sm-inline-block"> 
-    <div class="d-flex align-items-center ">
-    <i class="fas fa-crow fa-2x me-3" style="color: #AC7672; padding: 0 1rem 0;" aria-hidden="true"></i>
-      <span class="h2 mb-0">Skincarely</span>
-    </div> 
-    </li> 
-  </ul> 
-  <ul class="navbar-nav ml-auto">  
-  <li class="nav-item">
-    <a class="nav-link" data-widget="fullscreen" href="#" role="button">
-      <i class="fas fa-expand-arrows-alt" style="color: #AC7672;" aria-hidden="true"></i>
-    </a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" data-widget="control-sidebar" data-controlsidebar-slide="true" href="#" role="button">
-      <i class="fa-solid fa-user" style="color: #AC7672;" aria-hidden="true"></i>
-    </a>
-  </li>
-  </ul>
-  </nav>
-    <!-- /.navbar -->   
+<div class="wrapper">
