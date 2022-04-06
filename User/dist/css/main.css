@@ -327,8 +327,8 @@ h6 {
 }
 .btn-primary:focus {
   color: #fff;
-  background-color: #0069d9;
-  border-color: #0062cc;
+  background-color: #ab6a66;
+  border-color: #ab6a66;
   box-shadow: 0 0 0 0 rgba(38, 143, 255, 0.5);
 }
 .btn-primary:disabled {
