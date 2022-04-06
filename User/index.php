@@ -35,6 +35,18 @@
         </div>
         <hr>
         <!-- main content here -->
+        <div class="row">
+            <div class="container">
+                <div class="col-md-20">
+                    <h2>Popular near you</h2>
+                    <div class="row">
+                        <div class="col-md-4">test</div>
+                        <div class="col-md-4">test</div>
+                        <div class="col-md-4">test</div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 </main>

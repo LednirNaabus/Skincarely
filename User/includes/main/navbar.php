@@ -12,12 +12,12 @@
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
                 <a href="MyAccount.php" class="nav-link">
-                    <i class="fa-solid fa-user" aria-hidden="true"></i>
+                    <i class="fa-solid fa-user" aria-hidden="true" style="padding: 10px;"></i>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-widget="fullscreen" href="#" role="button">
-                    <i class="fa-solid fa-expand" style="color: #AC7672;" aria-hidden="true"></i>
+                <a class="nav-link" data-widget="fullscreen" role="button">
+                    <i class="fa-solid fa-arrows-maximize" aria-hidden="true" style="padding: 10px"></i>
                 </a>
             </li>
         </ul>
