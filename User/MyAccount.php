@@ -22,7 +22,7 @@ $userInfo = mysqli_fetch_row($result);
                         ?> 
                     </div>
                     <div class="info">
-                    <a href="#"><b>Kobe Sergio</b></a> 
+                    <a href="#"><strong><?php echo $userInfo[3]; ?></strong></a> 
                     <a href="#" class="nav-link" style="padding-top: 0px; padding-left: 0px;"> <i class="fa-solid fa-pen-to-square"></i> Edit Profile</a> 
                     </div>
                 </div>  
