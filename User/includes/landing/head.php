@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Skincarely | Home</title>
     <!-- Font awesome icons -->
     <script src="https://kit.fontawesome.com/d9fb1896a3.js" crossorigin="anonymous"></script>  
@@ -20,11 +20,13 @@
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
+            z-index: -1;
         }
 
         .bg-img .jumbotron {
             background: linear-gradient(0deg, #00000088 30%, #FFFFFF44 100%);
             color: #fff;
+            z-index: 0;
         }
     </style>
 </head>
