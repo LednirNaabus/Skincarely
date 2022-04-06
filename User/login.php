@@ -57,7 +57,7 @@
   //   }
   //   mysqli_close($link);
   // }
-  include 'db_connection.php';
+  include 'includes/connection/db_connection.php';
   session_start();
 
   $username = ($_POST['user']);
@@ -70,16 +70,19 @@
 
   $table_users = "";
   $table_passwd = "";
+  $user_id = "";
 
   if($results != "") {
     while($row = mysqli_fetch_assoc($results)) {
       $table_users = $row["customer_username"];
       $table_passwd = $row["customer_password"];
+      $user_id = $row["customer_id"];
     }
     if(($username == $table_users) && ($password == $table_passwd)) {
       $_SESSION['loggedin'] = true;
       $_SESSION['user'] = $username;
-      header("location: landing_page.php");
+      $_SESSION['userID'] = $user_id;
+      header("location: index.php");
     } else {
       Print '<script>alert("Incorrect Password!");</script>';
       '<script>window.location.assign("login_page.php");</script>';

@@ -1,18 +1,6 @@
-<?php 
-    session_start();
-
-    if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
-        header("location: login_page.php");
-        exit;
-    }
-?>
-
 <?php
-    include 'includes/landing/head.php';
-?>
-<header>
-    <?php include 'includes/landing/navbar.php'; ?>
-</header>
+    include 'includes/main/header.php';
+?> 
 <main role="main" style="background-color: #F7F3F2;">
     <div class="jumbotron">
         <div class="bg-img"></div>
@@ -48,5 +36,5 @@
 </div>
 </main>
 <?php
-    include 'includes/landing/footer.php';
+    include 'includes/main/footer.php';
 ?>

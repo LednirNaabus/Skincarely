@@ -1,0 +1,22 @@
+<!-- Navbar -->
+<nav class="navbar navbar-expand-md fixed-top navbar-light" style="background-color: #AC7672;">
+    <div class="d-flex align-items-center">
+        <i class="fas fa-crow fa-2x me-3" style="padding: 0 1rem 0;"></i>
+        <a href="index.php" class="navbar-brand" style="color: #fff;">Skincarely</a>
+    </div> 
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a href="MyAccount.php" class="nav-link">
+                    <i class="fa-solid fa-user" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+                    <i class="fa-solid fa-expand" style="color: #AC7672;" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<!-- /Navbar -->
