@@ -10,7 +10,7 @@
               <img
                 src="dist/img/form-pic.jpg"
                 alt="login form"
-                class="img-fluid" style="border-radius: 1rem 0 0 1rem;"
+                class="img-fluid" style="border-radius: 1rem 0 0 1rem; height: 800px; object-fit: cover;"
               />
             </div>
             <div class="col-md-6 col-lg-7 d-flex align-items-center">

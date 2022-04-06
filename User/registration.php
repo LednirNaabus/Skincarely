@@ -139,7 +139,7 @@
               <img
                 src="dist/img/img1.webp"
                 alt="login form"
-                class="img-fluid" style="border-radius: 1rem 0 0 1rem;"
+                class="img-fluid" style="border-radius: 1rem 0 0 1rem; height: 800px;"
               />
             </div>
             <div class="col-md-6 col-lg-7 d-flex align-items-center">
@@ -157,18 +157,12 @@
                           <div class="form-outline">
                             <label for="fn" class="form-label">First Name</label>
                             <input type="text" name="fn" class="form-control  <?php echo(!empty($first_name_err)) ? 'is-invalid' : '';?>" value="<?php echo $first_name; ?>"/>
-                            <span class="invalid-feedback">
-                                <?php echo $first_name_err; ?>
-                            </span>
                           </div>
                       </div>
                       <div class="col-md-6 mb-4">
                           <div class="form-outline">
                             <label for="ln" class="form-label">Last Name</label>
                             <input type="text" name="ln" class="form-control <?php echo(!empty($last_name_err)) ? 'is-invalid' : '';?>" value="<?php echo $last_name; ?>"/>
-                            <span class="invalid-feedback">
-                                <?php echo $last_name_err; ?>
-                            </span>
                           </div>
                       </div>
                   </div>
@@ -178,18 +172,12 @@
                           <div class="form-outline">
                               <label for="username" class="form-label">Username</label>
                               <input type="text" name="username" class="form-control <?php echo(!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>"/>
-                              <span class="invalid-feedback">
-                                  <?php echo $username_err; ?>
-                              </span>
                           </div>
                       </div>
                       <div class="col-md-6 mb-4">
                           <div class="form-outline">
                               <label for="email" class="form-label">Email</label>
                               <input type="email" name="email" class="form-control <?php echo(!empty($email_err)) ? 'is-invalid' : '';?>" value="<?php echo $email; ?>"/>
-                              <span class="invalid-feedback">
-                                  <?php echo $email_err; ?>
-                              </span>
                           </div>
                       </div>
                   </div>
@@ -198,16 +186,10 @@
                       <div class="form-outline mb-4">
                           <label for="password" class="form-label">Password</label>
                           <input type="password" name="password" class="form-control <?php echo(!empty($password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $password; ?>"/>
-                          <span class="invalid-feedback">
-                              <?php echo $password_err; ?>
-                          </span>
                       </div>
                       <div class="form-outline mb-4">
                         <label for="confirm_password" class="form-label">Confirm Password</label>
                         <input type="password" name="confirm_password" class="form-control <?php echo(!empty($confirm_password_err)) ? 'is-invalid' : '';?>" value="<?php echo $confirm_password; ?>" />
-                        <span class="invalid-feedback">
-                          <?php echo $confirm_password_err; ?>
-                        </span>
                       </div>
                   </div>
 
