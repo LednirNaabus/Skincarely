@@ -14,6 +14,7 @@
         </div>
     </div>
     <!-- /.main -->
+    <!-- featured vendors/items/shops here -->
     <div class="container">
         <div class="row">
             <div class="col-md-4">
@@ -33,6 +34,7 @@
             </div>
         </div>
         <hr>
+        <!-- main content here -->
     </div>
 </div>
 </main>
