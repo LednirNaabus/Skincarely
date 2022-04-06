@@ -202,7 +202,7 @@
                   <div class="row">
                       <div class="form-outline mb-4">
                           <label for="password" class="form-label">Password</label>
-                          <input type="password" name="password" class="form-control <?php echo(!empty($password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $password; ?>"/>
+                          <input required type="password" name="password" class="form-control <?php echo(!empty($password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $password; ?>"/>
                       </div>
                       <div class="form-outline mb-4">
                         <label for="confirm_password" class="form-label">Confirm Password</label>
@@ -215,8 +215,7 @@
                   </div>
 
                   <p class="mb-5 pb-lg-2" style="color: #393f81;">Already have an account? <a href="login_page.php" style="color: #393f81;">Login here</a></p>
-                </form>
-
+                </form> 
               </div>
             </div>
           </div>
