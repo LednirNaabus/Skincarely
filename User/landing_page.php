@@ -13,8 +13,9 @@
 <header>
     <?php include 'includes/landing/navbar.php'; ?>
 </header>
-<main role="main">
+<main role="main" style="background-color: #F7F3F2;">
     <div class="jumbotron">
+        <div class="bg-img"></div>
         <div class="container">
             <?php
                 echo '<h1 class="display-3"> Welcome, <strong>' . htmlspecialchars($_SESSION["user"]) .  '</strong></h1>';
