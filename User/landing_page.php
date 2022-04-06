@@ -14,14 +14,15 @@
     <?php include 'includes/landing/navbar.php'; ?>
 </header>
 <main role="main" style="background-color: #F7F3F2;">
-    <div class="jumbotron">
-        <div class="bg-img"></div>
-        <div class="container">
-            <?php
-                echo '<h1 class="display-3"> Welcome, <strong>' . htmlspecialchars($_SESSION["user"]) .  '</strong></h1>';
-            ?>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde tenetur sunt est odit fuga officia, voluptate consectetur, voluptas et hic odio laudantium maiores eum accusantium nesciunt ipsa aliquid animi repellat.</p>
-            <p><a href="#" class="btn btn-primary btn-lg" role="button">Learn more &raquo;</a></p>
+    <div class="bg-img">
+        <div class="jumbotron">
+            <div class="container">
+                <?php
+                    echo '<h1 class="display-3"> Welcome, <strong>' . htmlspecialchars($_SESSION["user"]) .  '</strong></h1>';
+                ?>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde tenetur sunt est odit fuga officia, voluptate consectetur, voluptas et hic odio laudantium maiores eum accusantium nesciunt ipsa aliquid animi repellat.</p>
+                <p><a href="#" class="btn btn-primary btn-lg" role="button">Learn more &raquo;</a></p>
+            </div>
         </div>
     </div>
     <!-- /.main -->

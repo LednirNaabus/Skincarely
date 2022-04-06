@@ -13,22 +13,18 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <style>
+        /* Hours wasted on styling the jumbotron: 2139218312 hours
+        I hate CSS */
         .bg-img {
             background-image: url('dist/img/landing-cover.jpg');
-            /* background: linear-gradient(0deg, #00000088 30%, #FFFFFF44 100%); */
-
-            height: 100%;
-
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
+        }
 
-            filter: blur(8px);
-            -webkit-filter: blur(8px);
-            /*
-            Hours wasted trying to make the background appear sa jumbotron: 3
-            If someone knows how to CSS, paggawa ng part na to ty
-            */
+        .bg-img .jumbotron {
+            background: linear-gradient(0deg, #00000088 30%, #FFFFFF44 100%);
+            color: #fff;
         }
     </style>
 </head>
