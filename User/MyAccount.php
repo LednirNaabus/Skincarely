@@ -1,11 +1,8 @@
-<?php
-$pageName = "My Account";
-include "includes/myaccount/header.php";
-include "includes/myaccount/navbar.php";
-include "db_connection.php";
+<?php 
+include "includes/main/header.php"; 
+include 'includes/connection/db_connection.php';
 
-//CHANGE CUSTOMER ID
-$result= mysqli_query($link, "SELECT * FROM customers WHERE customer_id = 2");
+$result= mysqli_query($link, "SELECT * FROM customers WHERE customer_id = ".$_SESSION['userID']);
 $userInfo = mysqli_fetch_row($result);  
 ?>    
 <div class="content-wrapper">
@@ -41,7 +38,8 @@ $userInfo = mysqli_fetch_row($result);
                     </li>  
                     <li class="nav-item">
                         <a href="#" class="nav-link"><p>Saved</p></a>
-                    </li>  
+                    </li>
+                    <li class="nav-header"><a href="logout.php" style="color: red"><b><i class="nav-icon fa-solid fa-arrow-right-from-bracket"></i>Logout</i></b></a></li>  
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->
@@ -123,7 +121,7 @@ $userInfo = mysqli_fetch_row($result);
     </div>
     </div> 
 </div> 
-<?php include "includes/myaccount/footer.php"; ?>    
+<?php include "includes/main/footer.php"; ?>    
 <?php  
 if($_SERVER['REQUEST_METHOD'] == 'POST'){ 
     $username = $_POST['CustomerUsername'];
