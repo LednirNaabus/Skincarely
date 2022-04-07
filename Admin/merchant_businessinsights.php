@@ -15,42 +15,67 @@
 
     <link href="css/style.css" rel="stylesheet" >
 
-<style>
-    
-    </style>
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
 </head>
 <body style="background-color: #f7f3f2;">
 
-<div class="sidenav">
-    <img src="img/SKINCARELY.png" style="width: 100%;">
-    <br><hr style="width: 50%; margin:auto; color: #FBF7EA"><br>
-    <a href="vendorhp.php">Dashboard</a>
-    <button class="dropdown-btn">Business Insights 
-    <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-container">
-        <a href="#">Ratings</a>
-        <a href="#">Followers</a>
-        <a href="#">Page Engagement</a>
-        <a href="#">Product Engagement</a>
-    </div>
-    <button class="dropdown-btn">My Products 
-    <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-container">
-        <a href="#">Product List</a>
-        <a href="#">Reviews</a>
-    </div>
-    <a href="#services">Shop Profile</a>
-    <a href="skincarely.php">Temp Logout</a>
-</div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
 
-<div class="main">
-    <br><br>
-  <h2>Merchant Dashboard</h2>
-</div>  
+  <div class="container-fluid">
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-mdb-toggle="collapse"
+      data-mdb-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+      <a class="navbar-brand mt-2 mt-lg-0" href="#">
+      <i class="fas fa-crow fa-1x me-3" style="padding: 0 1rem 0;"></i>
+      Skincarely
+      </a>
+
+      <ul class="nav navbar-nav">
+      <li><a href="merchant_dashboard.php">Dashboard</a></li>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="merchant_businessinsights.php" class="active"> Business Insights <span></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="merchant_businessinsights.php#ratings">Ratings</a></li>
+          <li><a href="merchant_businessinsights.php#followers">Followers</a></li>
+          <li><a href="merchant_businessinsights.php#pageengagement">Page Engagement</a></li>
+          <li><a href="merchant_businessinsights.php#productengagement">Product Engagement</a></li>
+        </ul>
+      </li>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="merchant_myproducts.php"> My Products <span></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="merchant_myproducts.php#productlist">Product List</a></li>
+          <li><a href="merchant_myproducts.php#reviews">Reviews</a></li>
+        </ul>
+      </li>
+      <li><a href="merchant_shopprofile.php">Shop Profile</a></li>
+    </ul>
+      
+    </div>
+
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="skincarely.php"><span class="glyphicon glyphicon-log-out" style="padding: 0 1rem 0;"></span> Logout </a></li>
+    </ul>
+
+  </div>
+
+</nav>
+
+<!--------- CONTENT -------------------->
+
   
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

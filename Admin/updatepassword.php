@@ -17,7 +17,7 @@ session_start();
 
         if (mysqli_query($con, $sql)) {
             ob_start();
-            header("Location: sellerLogin.php");
+            header("Location: singin.php");
             ob_end_flush();
           } else {
             ob_start();

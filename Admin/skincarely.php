@@ -159,8 +159,8 @@ session_destroy();
             <h1 style="font-family: Poppins; text-align:left; font-size:100px; margin-bottom:0%; margin-left:50px;">SKINCARELY</h1>
             <h4 style="font-family: Poppins; text-align:left; font-size:40px; margin-top:0%; margin-left:55px">Skin and Beauty</h4>
             <hr style="width:90%; margin-left:60px;"> <br> <br>
-            <button class="startbutton"><a href="sellerSignUp.php" style="text-decoration: none; color:white">Get Started</a></button>
-            <button class="startbutton"><a href="sellerLogin.php" style="text-decoration: none; color:white">Sign In</a></button>
+            <button class="startbutton"><a href="signup.php" style="text-decoration: none; color:white">Get Started</a></button>
+            <button class="startbutton"><a href="signin.php" style="text-decoration: none; color:white">Sign In</a></button>
         </div>
 
         
