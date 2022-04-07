@@ -76,6 +76,86 @@
 
 <!--------- CONTENT -------------------->
 
+<div class="container" style="font-family: Poppins;">
+  <h1 class class="display-1">Shop Profile</h1>
+    <br>
+    <p> Create and manage your shop profile. </p>          
+    <br>  
+    <p><button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">Create Shop</button></p>
+</div>
+
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Accomplish Shop Details</h4>
+      </div>
+      <div class="modal-body">
+
+      <form>
+        <div class="form-group">
+          <label for="shopname">Shop Name</label>
+          <input type="email" class="form-control" id="shopname" placeholder="Enter email">
+        </div>
+        <div class="form-group">
+          <label for="shopdescription">Shop Description</label>
+          <textarea class="form-control" id="shopdescription" rows="3"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="shoplogo">Shop Logo</label>
+          <input type="file" class="form-control-file" id="shoplogo">
+        </div>
+        <div class="form-group">
+          <label for="mainbranch">Main Branch</label>
+          <input type="text" class="form-control" id="mainbranch">
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="openinghours">Opening Hours</label><br>
+            <input type="time" id="openinghours" openinghours="appt" style="width: 100%; text-align:center" class="form-control">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="closinghours">Closing Hours</label><br>
+            <input type="time" id="closinghours" name="closinghours" style="width: 100%; text-align:center;" class="form-control">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="landline">Landline No.</label>
+            <input type="text" class="form-control" id="landline">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="mobile">Mobile No.</label>
+            <input type="text" class="form-control" id="mobile">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="socials">Social Media Link</label>
+          <input type="text" class="form-control" id="socials">
+        </div>
+      </form>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        <button type="submit" class="btn btn-primary">Create</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<br>
+
+<hr class="my-4">
+
+<br>
+
+<!-- dito lalabas how the shop looks like -->
+<!-- also, verif if there is a shop created for the vendor already or wala pa - change create shop button accordingly -->
+
   
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

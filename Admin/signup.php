@@ -74,7 +74,7 @@
                     </div>
                     <div class="col">
                     <div class="form-outline">
-                        <input type="confirmpass" id="confirmpass" name = "confirmpass" class="form-control form-control-lg" required/>
+                        <input type="password" id="confirmpass" name = "confirmpass" class="form-control form-control-lg" required/>
                         <label class="form-label" for="confirmpass">Confirm Password</label>
                     </div>
                     </div>
