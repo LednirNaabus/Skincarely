@@ -80,8 +80,6 @@ session_start();
 
 <!--------- CONTENT -------------------->
 
-
-
             <div class="container" style="font-family: Poppins;">
                 <?php
                 echo '<h1 class="display-1">Hey there, <strong>' . $_SESSION["welcomename"] . '</strong>.</h1>';

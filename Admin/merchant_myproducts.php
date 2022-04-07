@@ -76,6 +76,78 @@
 
 <!--------- CONTENT -------------------->
 
+<div class="container">
+  <div class="row row-cols-1 row-cols-md-3 gx-3 gy-4">
+    <div class="col ">
+      <div class="card card-business shadow text-center">
+        <div class="card-header">
+          Ratings
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Special title treatment</h5>
+          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+        <div class="card-footer text-muted">
+          2 days ago
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card card-business shadow text-center">
+        <div class="card-header">
+          Ratings
+        </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item border list-group-item-action list-group-item-success">An item</li>
+            <li class="list-group-item border list-group-item-action list-group-item-success">A second item</li>
+            <li class="list-group-item border list-group-item-action list-group-item-danger">A third item</li>
+          </ul>
+
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card card-business shadow">
+        <div class="card-body">
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="col ">
+      <div class="card card-business shadow text-center">
+        <div class="card-header">
+          Followers
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Special title treatment</h5>
+          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+        <div class="card-footer text-muted">
+          2 days ago
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card card-business shadow">
+        <div class="card-body">
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card card-business shadow">
+        <div class="card-body">
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
   
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
