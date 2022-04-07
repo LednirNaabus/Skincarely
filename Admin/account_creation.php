@@ -36,7 +36,7 @@ include('connection.php');
   
               if($count == 1){  //how 2 create an error message that uesrname already exists
                   ob_start();
-                  header("Location: sellerSignUp.php");
+                  header("Location: signup.php");
                   ob_end_flush(); 
               }  
               else{  
@@ -44,7 +44,7 @@ include('connection.php');
               
               if (mysqli_query($con, $sql)) {
                   ob_start();
-                  header("Location: sellerLogin.php");
+                  header("Location: signin.php");
                   ob_end_flush(); 
               } else {
                 echo "Error: " . $sql . "<br>" . mysqli_error($con);
@@ -52,7 +52,7 @@ include('connection.php');
               
               mysqli_close($con);
                   ob_start();
-                  header("Location: vendorhp.php");
+                  header("Location: merchant_dashboard.php");
                   ob_end_flush(); 
               }     
             }

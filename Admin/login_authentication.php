@@ -15,12 +15,12 @@ session_start();
 
         if($count == 1){  
             ob_start();
-            header("Location: vendorhp.php");
+            header("Location: merchant_dashboard.php");
             ob_end_flush(); 
         }  
         else{  
             ob_start();
-            header("Location: sellerLogin.php");
+            header("Location: signin.php");
             ob_end_flush(); 
         }     
 
