@@ -21,19 +21,16 @@ include('connection.php');
 
             $shoplogo = addslashes(file_get_contents($_FILES['shoplogo']['tmp_name']));
 
-            $mainbranch = $_POST['mainbranch']; 
-            $_SESSION["shophours"] = $_POST['openinghours'] . " - " . $_POST['closinghours'];  
+            $mainbranch = $_POST['mainbranch'];   
             $contact = $_POST['landline'] . " / " . $_POST['mobile'];  
             $socials = $_POST['socials'];
 
-            
-
+            $_SESSION["shophours"] = $_POST['openinghours'] . " - " . $_POST['closinghours'];
+            $_SESSION["shop"] = $shopname;
             $linkvs = $_SESSION["id"];
 
-                $sql = "INSERT INTO shops (vendor_id, shop_name, shop_description, shop_logo, shop_location, shop_socials, shop_contact) VALUES ('$linkvs', '$shopname', '$shopdescription', '$shoplogo', '$mainbranch', '$socials', '$contact')";
-                $_SESSION["shop"] = $shopname;
+            $sql = "INSERT INTO shops (vendor_id, shop_name, shop_description, shop_logo, shop_location, shop_socials, shop_contact) VALUES ('$linkvs', '$shopname', '$shopdescription', '$shoplogo', '$mainbranch', '$socials', '$contact')";
 
-              
               if (mysqli_query($con, $sql)) {
                   ob_start();
                   header("Location: merchant_shopprofile.php");
