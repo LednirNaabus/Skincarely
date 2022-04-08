@@ -65,7 +65,7 @@ session_start();
           <li><a href="merchant_myproducts.php#reviews">Reviews</a></li>
         </ul>
       </li>
-      <li><a href="merchant_shopprofile.php">Shop Profile</a></li>
+      <li><a href="shop_verification.php">Shop Profile</a></li>
     </ul>
       
     </div>
@@ -88,7 +88,7 @@ session_start();
                 <p>Welcome to your dashboard. You can access your business insights here and view your shop's ratings, followers, and engagements, or
                    view your list of products and corresponding reviews. You could also manage your shop profile. </p>
                 <br>
-                <p><a href="merchant_dashboard.php" class="btn btn-primary btn-sm" role="button">View Shop Profile</a></p>
+                <p><a href="shop_verification.php" class="btn btn-primary btn-sm" role="button">View Shop Profile</a></p>
             </div>
 
             <br>
@@ -224,10 +224,11 @@ session_start();
             <br><br>
             <br><br>
 
-          <div class="container" style="font-family: Poppins;">
+          
+          <div class="container d-flex justify-content-center text-center" style="font-family: Poppins;">
             <div class="row">
                 <div class="col-md-4">
-                  <div class="card" style="width: 28rem;">
+                  <div class="card" style="width: 90%">
                     <img class="card-img-top" src="img/c1.jpg" alt="Card image cap">
                     <div class="card-body">
                       <br>
@@ -238,7 +239,7 @@ session_start();
                   </div>
                 </div>
                 <div class="col-md-4">
-                  <div class="card" style="width: 28rem;">
+                  <div class="card" style="width: 90%">
                     <img class="card-img-top" src="img/c2.jpg" alt="Card image cap">
                     <div class="card-body">
                       <br>
@@ -249,7 +250,7 @@ session_start();
                   </div>
                 </div>
                 <div class="col-md-4">
-                  <div class="card" style="width: 28rem;">
+                  <div class="card" style="width: 90%">
                     <img class="card-img-top" src="img/c3.jpg" alt="Card image cap">
                     <div class="card-body">
                       <br>

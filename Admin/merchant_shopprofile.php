@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -79,72 +83,9 @@
 <div class="container" style="font-family: Poppins;">
   <h1 class class="display-1">Shop Profile</h1>
     <br>
-    <p> Create and manage your shop profile. </p>          
+    <p> View and manage your shop profile. </p>          
     <br>  
-    <p><button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">Create Shop</button></p>
-</div>
-
-<div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-
-
-    <div class="modal-content">
-      <div class="modal-header">
-        <h4 class="modal-title">Accomplish Shop Details</h4>
-      </div>
-      <div class="modal-body">
-
-      <form>
-        <div class="form-group">
-          <label for="shopname">Shop Name</label>
-          <input type="email" class="form-control" id="shopname" placeholder="Enter email">
-        </div>
-        <div class="form-group">
-          <label for="shopdescription">Shop Description</label>
-          <textarea class="form-control" id="shopdescription" rows="3"></textarea>
-        </div>
-        <div class="form-group">
-          <label for="shoplogo">Shop Logo</label>
-          <input type="file" class="form-control-file" id="shoplogo">
-        </div>
-        <div class="form-group">
-          <label for="mainbranch">Main Branch</label>
-          <input type="text" class="form-control" id="mainbranch">
-        </div>
-        <div class="form-row">
-          <div class="form-group col-md-6">
-            <label for="openinghours">Opening Hours</label><br>
-            <input type="time" id="openinghours" openinghours="appt" style="width: 100%; text-align:center" class="form-control">
-          </div>
-          <div class="form-group col-md-6">
-            <label for="closinghours">Closing Hours</label><br>
-            <input type="time" id="closinghours" name="closinghours" style="width: 100%; text-align:center;" class="form-control">
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group col-md-6">
-            <label for="landline">Landline No.</label>
-            <input type="text" class="form-control" id="landline">
-          </div>
-          <div class="form-group col-md-6">
-            <label for="mobile">Mobile No.</label>
-            <input type="text" class="form-control" id="mobile">
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="socials">Social Media Link</label>
-          <input type="text" class="form-control" id="socials">
-        </div>
-      </form>
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-        <button type="submit" class="btn btn-primary">Create</button>
-      </div>
-    </div>
-
-  </div>
+    <p><button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">Edit Shop</button></p>
 </div>
 
 <br>
@@ -153,7 +94,71 @@
 
 <br>
 
+<!-- edit modal -->
+
 <!-- dito lalabas how the shop looks like -->
+    
+<div class="container p-5 my-3 border rounded" style="font-family: Poppins;">
+  <h1 class="text-center">
+    <?php
+    include('connection.php');      
+    $shopname = $_SESSION["shop"];
+        $sql = "SELECT * FROM shops WHERE shop_name = '$shopname';";
+        $result = mysqli_query($con, $sql);
+
+        if (mysqli_num_rows($result) > 0) {
+            // output data of each row
+            while($row = mysqli_fetch_assoc($result)) {
+
+              echo '<img src = "data:image/jpeg;base64,'.base64_encode($row['shop_logo']).'" height = "100" width = "100" class = "rounded"/>';
+              $_SESSION["shopdescription"] = $row['shop_description'];
+              $_SESSION["shoplocation"] = $row['shop_location'];
+              $_SESSION["shopsocials"] = $row['shop_socials'];
+              $_SESSION["shopcontact"] = $row['shop_contact'];
+
+            }
+        } else {
+            echo "No shop found.";
+        }
+    ?>
+  </h1>
+  <h1 class="text-center">
+  <u><?php echo $_SESSION["shop"]?></u>
+  </h1>
+</div>
+
+<div class="container p-5 my-3 border rounded" style="font-family: Poppins;">
+  <ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#about">About Shop</a></li>
+    <li><a data-toggle="tab" href="#products">Products</a></li>
+    <li><a data-toggle="tab" href="#photos">Photos</a></li>
+  </ul>
+
+  <div class="tab-content m-5">
+    <div id="about" class="tab-pane fade in active">
+      <h3>Shop Description</h3>
+      <p><?php echo $_SESSION["shopdescription"]; ?></p>
+      <h3>Shop Location</h3>
+      <p><?php echo $_SESSION["shoplocation"]; ?></p>
+      <h3>Shop Socials</h3>
+      <p><?php echo $_SESSION["shopsocials"]; ?></p>
+      <h3>Shop Contact</h3>
+      <p><?php echo $_SESSION["shopcontact"]; ?></p>
+      <h3>Shop Hours</h3>
+      <p><?php echo $_SESSION["shophours"]; ?></p>
+    </div>
+    <div id="products" class="tab-pane fade">
+      <h3>Products</h3>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+    <div id="photos" class="tab-pane fade">
+      <h3>Featured Photos</h3>
+      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+    </div>
+  </div>
+</div>
+
+
 <!-- also, verif if there is a shop created for the vendor already or wala pa - change create shop button accordingly -->
 
   
