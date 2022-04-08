@@ -1,6 +1,3 @@
-if vendor_id has an entry in the shop table, then go to merchant shop profile,
-if there is not, then proceed to create
-
 <?php
 session_start();
 $vendorverif = $_SESSION["id"];

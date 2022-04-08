@@ -1,5 +1,6 @@
 <?php
 session_start();
+$shopname = $_SESSION["shop"];
 ?>
 
 <!DOCTYPE html>
@@ -100,30 +101,29 @@ session_start();
     
 <div class="container p-5 my-3 border rounded" style="font-family: Poppins;">
   <h1 class="text-center">
-    <?php
-    include('connection.php');      
-    $shopname = $_SESSION["shop"];
-        $sql = "SELECT * FROM shops WHERE shop_name = '$shopname';";
-        $result = mysqli_query($con, $sql);
+      <?php
+          include('connection.php');      
+          
+          $sql = "SELECT * FROM shops WHERE shop_name = '$shopname';";
+          $result = mysqli_query($con, $sql);
 
-        if (mysqli_num_rows($result) > 0) {
-            // output data of each row
-            while($row = mysqli_fetch_assoc($result)) {
+          if (mysqli_num_rows($result) > 0) 
+          {
 
-              echo '<img src = "data:image/jpeg;base64,'.base64_encode($row['shop_logo']).'" height = "100" width = "100" class = "rounded"/>';
-              $_SESSION["shopdescription"] = $row['shop_description'];
-              $_SESSION["shoplocation"] = $row['shop_location'];
-              $_SESSION["shopsocials"] = $row['shop_socials'];
-              $_SESSION["shopcontact"] = $row['shop_contact'];
-
-            }
-        } else {
-            echo "No shop found.";
-        }
-    ?>
+              while($row = mysqli_fetch_assoc($result)) 
+              {
+                echo '<img src = "data:image/jpeg;base64,'.base64_encode($row['shop_logo']).'" height = "100" width = "100" class = "rounded"/>';
+              }
+          } 
+          
+          else 
+          {
+              echo "No shop found.";
+          }
+      ?>
   </h1>
   <h1 class="text-center">
-  <u><?php echo $_SESSION["shop"]?></u>
+  <u><?php echo $shopname;?></u>
   </h1>
 </div>
 
@@ -137,15 +137,103 @@ session_start();
   <div class="tab-content m-5">
     <div id="about" class="tab-pane fade in active">
       <h3>Shop Description</h3>
-      <p><?php echo $_SESSION["shopdescription"]; ?></p>
+      <p>
+      <?php
+          include('connection.php');      
+          
+          $sql = "SELECT * FROM shops WHERE shop_name = '$shopname';";
+          $result = mysqli_query($con, $sql);
+
+          if (mysqli_num_rows($result) > 0) 
+          {
+
+              while($row = mysqli_fetch_assoc($result)) 
+              {
+                echo $row['shop_description'];
+              }
+          } 
+          
+          else 
+          {
+              echo "No description found.";
+          }
+      ?>
+      </p>
       <h3>Shop Location</h3>
-      <p><?php echo $_SESSION["shoplocation"]; ?></p>
+      <p>
+      <?php
+          include('connection.php');      
+          
+          $sql = "SELECT * FROM shops WHERE shop_name = '$shopname';";
+          $result = mysqli_query($con, $sql);
+
+          if (mysqli_num_rows($result) > 0) 
+          {
+
+              while($row = mysqli_fetch_assoc($result)) 
+              {
+                echo $row['shop_location'];
+              }
+          } 
+          
+          else 
+          {
+              echo "No location found.";
+          }
+      ?>
+      </p>
       <h3>Shop Socials</h3>
-      <p><?php echo $_SESSION["shopsocials"]; ?></p>
+      <p>
+      <?php
+          include('connection.php');      
+          
+          $sql = "SELECT * FROM shops WHERE shop_name = '$shopname';";
+          $result = mysqli_query($con, $sql);
+
+          if (mysqli_num_rows($result) > 0) 
+          {
+
+              while($row = mysqli_fetch_assoc($result)) 
+              {
+                echo $row['shop_socials'];
+              }
+          } 
+          
+          else 
+          {
+              echo "No socials found.";
+          }
+      ?>
+      </p>
       <h3>Shop Contact</h3>
-      <p><?php echo $_SESSION["shopcontact"]; ?></p>
+      <p>
+      <?php
+          include('connection.php');      
+          
+          $sql = "SELECT * FROM shops WHERE shop_name = '$shopname';";
+          $result = mysqli_query($con, $sql);
+
+          if (mysqli_num_rows($result) > 0) 
+          {
+
+              while($row = mysqli_fetch_assoc($result)) 
+              {
+                echo $row['shop_contact'];
+              }
+          } 
+          
+          else 
+          {
+              echo "No contact found.";
+          }
+      ?>
+      </p>
       <h3>Shop Hours</h3>
-      <p><?php echo $_SESSION["shophours"]; ?></p>
+      <p>
+        <?php
+          echo $_SESSION["shophours"];
+        ?>
+      </p>
     </div>
     <div id="products" class="tab-pane fade">
       <h3>Products</h3>

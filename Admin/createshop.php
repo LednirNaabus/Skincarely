@@ -61,7 +61,7 @@
           <li><a href="merchant_myproducts.php#reviews">Reviews</a></li>
         </ul>
       </li>
-      <li class="active"><a href="merchant_shopprofile.php">Shop Profile</a></li>
+      <li class="active"><a href="shop_verification.php">Shop Profile</a></li>
     </ul>
       
     </div>
