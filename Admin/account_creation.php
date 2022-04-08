@@ -45,6 +45,19 @@ include('connection.php');
               else{  
                 $sql = "INSERT INTO vendors (vendor_username, vendor_password, vendor_name, vendor_email, vendor_created) VALUES ('$username', '$password', '$name', '$email', '$created')";
                 $_SESSION["welcomename"] = $name;
+
+                $sqlname = "SELECT * FROM vendors WHERE vendor_username = '$username';";
+                $resultname = mysqli_query($con, $sqlname);
+
+                if (mysqli_num_rows($resultname) > 0) {
+                    // output data of each row
+                    while($row = mysqli_fetch_assoc($resultname)) {
+                        $_SESSION["id"] = $row["vendor_id"];
+                    }
+                } else {
+                    echo "0 results";
+                }
+
               
               if (mysqli_query($con, $sql)) {
                   ob_start();

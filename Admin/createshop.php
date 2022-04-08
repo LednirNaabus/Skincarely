@@ -47,7 +47,7 @@
 
       <ul class="nav navbar-nav">
       <li><a href="merchant_dashboard.php">Dashboard</a></li>
-      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="merchant_businessinsights.php" class="active"> Business Insights <span></span></a>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="merchant_businessinsights.php"> Business Insights <span></span></a>
         <ul class="dropdown-menu">
           <li><a href="merchant_businessinsights.php#ratings">Ratings</a></li>
           <li><a href="merchant_businessinsights.php#followers">Followers</a></li>
@@ -61,7 +61,7 @@
           <li><a href="merchant_myproducts.php#reviews">Reviews</a></li>
         </ul>
       </li>
-      <li><a href="shop_verification.php">Shop Profile</a></li>
+      <li class="active"><a href="merchant_shopprofile.php">Shop Profile</a></li>
     </ul>
       
     </div>
@@ -77,10 +77,10 @@
 <!--------- CONTENT -------------------->
 
 <div class="container" style="font-family: Poppins;">
-  <h1 class class="display-1">Business Insights</h1>
+  <h1 class class="display-1">Create Shop Profile</h1>
     <br>
-    <p> View product ratings, shop followers, and other related engagements and analytics. </p>          
-    <br>  
+    <p> Create your shop profile first. </p>          
+    <br> 
 </div>
 
 <br>
@@ -90,103 +90,68 @@
 <br>
 
 <div class="container" style="font-family: Poppins;">
-  <h3 class class="display-3" id="ratings">Ratings</h3>
-    <br>
+    <form action="shop_creation.php" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+          <label for="shopname">Shop Name</label>
+          <input type="text" class="form-control" id="shopname" name="shopname">
+        </div>
+
+        <div class="form-group">
+          <label for="shopdescription">Shop Description</label>
+          <textarea class="form-control" id="shopdescription" rows="3" name="shopdescription"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="shoplogo">Shop Logo</label>
+          <input type="file" class="form-control-file" id="shoplogo" name="shoplogo">
+        </div>
+
+        <div class="form-group">
+          <label for="mainbranch">Main Branch</label>
+          <input type="text" class="form-control" id="mainbranch" name="mainbranch">
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="openinghours">Opening Hours</label><br>
+            <input type="time" id="openinghours" openinghours="appt" style="width: 100%; text-align:center" class="form-control" name="openinghours">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="closinghours">Closing Hours</label><br>
+            <input type="time" id="closinghours" name="closinghours" style="width: 100%; text-align:center;" class="form-control" name="closinghours">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="landline">Landline No.</label>
+            <input type="text" class="form-control" id="landline" name="landline">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="mobile">Mobile No.</label>
+            <input type="text" class="form-control" id="mobile" name="mobile">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="socials">Social Media Link</label>
+          <input type="text" class="form-control" id="socials" name="socials">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Create</button>
+
+    </form>
 </div>
 
-<div class="container">
-  <div class="row row-cols-1 row-cols-md-3 gx-3 gy-4">
-    <div class="col ">
-      <div class="card card-business shadow text-center">
-        <div class="card-header">Ratings</div>
-        <div class="card-body">
-          <h5 class="card-title">Special title treatment</h5>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-        <div class="card-footer text-muted">
-          2 days ago
-        </div>
-      </div>
-    </div>
 
-    <div class="col">
-      <div class="card card-business shadow text-center">
-        <div class="card-header">Popular Products</div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item border list-group-item-action list-group-item-success">An item</li>
-            <li class="list-group-item border list-group-item-action list-group-item-success">A second item</li>
-            <li class="list-group-item border list-group-item-action list-group-item-danger">A third item</li>
-          </ul>
-
-      </div>
-    </div>
-
-    <div class="col">
-      <div class="card card-business shadow">
-        <div class="card-body">
-        </div>
-      </div>
-    </div>
-
-    <br><br>
-
-<div class="container" style="font-family: Poppins;">
 <br>
-  <h3 class class="display-4" id="followers">Followers</h3>
-</div>
-    
 
-    <div class="col ">
-      <div class="card card-business shadow text-center">
-        <div class="card-header">
-          Followers
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">Special title treatment</h5>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-        <div class="card-footer text-muted">
-          2 days ago
-        </div>
-      </div>
-    </div>
 
-    <div class="col">
-      <div class="card card-business shadow">
-        <div class="card-body">
-        </div>
-      </div>
-    </div>
 
-    <div class="col">
-      <div class="card card-business shadow">
-        <div class="card-body">
-        </div>
-      </div>
-    </div>
+<!-- dito lalabas how the shop looks like -->
+<!-- also, verif if there is a shop created for the vendor already or wala pa - change create shop button accordingly -->
 
-  </div>
-</div>
-
-<br><br>
-
-<div class="container" style="font-family: Poppins;">
-<br>
-  <h3 class class="display-4" id="pageengagement">Page Engagement</h3>
-</div>
-
-<!-- how many followers -->
-
-<br><br>
-
-<div class="container" style="font-family: Poppins;">
-<br>
-  <h3 class class="display-4" id="productengagement">Product Engagement</h3>
-</div>
-
-<!-- how many product likes per category -->
+  
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script>

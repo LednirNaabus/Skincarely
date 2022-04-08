@@ -31,6 +31,7 @@ session_start();
             // output data of each row
             while($row = mysqli_fetch_assoc($resultname)) {
                 $_SESSION["welcomename"] = $row["vendor_name"];
+                $_SESSION["id"] = $row["vendor_id"];
             }
         } else {
             echo "0 results";
