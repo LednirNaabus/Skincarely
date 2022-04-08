@@ -76,13 +76,29 @@
 
 <!--------- CONTENT -------------------->
 
+<div class="container" style="font-family: Poppins;">
+  <h1 class class="display-1">Business Insights</h1>
+    <br>
+    <p> View product ratings, shop followers, and other related engagements and analytics. </p>          
+    <br>  
+</div>
+
+<br>
+
+<hr class="my-4">
+
+<br>
+
+<div class="container" style="font-family: Poppins;">
+  <h3 class class="display-3" id="ratings">Ratings</h3>
+    <br>
+</div>
+
 <div class="container">
   <div class="row row-cols-1 row-cols-md-3 gx-3 gy-4">
     <div class="col ">
       <div class="card card-business shadow text-center">
-        <div class="card-header">
-          Ratings
-        </div>
+        <div class="card-header">Ratings</div>
         <div class="card-body">
           <h5 class="card-title">Special title treatment</h5>
           <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
@@ -96,9 +112,7 @@
 
     <div class="col">
       <div class="card card-business shadow text-center">
-        <div class="card-header">
-          Ratings
-        </div>
+        <div class="card-header">Popular Products</div>
           <ul class="list-group list-group-flush">
             <li class="list-group-item border list-group-item-action list-group-item-success">An item</li>
             <li class="list-group-item border list-group-item-action list-group-item-success">A second item</li>
@@ -114,6 +128,13 @@
         </div>
       </div>
     </div>
+
+    <br><br>
+
+<div class="container" style="font-family: Poppins;">
+<br>
+  <h3 class class="display-4" id="followers">Followers</h3>
+</div>
     
 
     <div class="col ">
@@ -148,6 +169,24 @@
 
   </div>
 </div>
+
+<br><br>
+
+<div class="container" style="font-family: Poppins;">
+<br>
+  <h3 class class="display-4" id="pageengagement">Page Engagement</h3>
+</div>
+
+<!-- how many followers -->
+
+<br><br>
+
+<div class="container" style="font-family: Poppins;">
+<br>
+  <h3 class class="display-4" id="productengagement">Product Engagement</h3>
+</div>
+
+<!-- how many product likes per category -->
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script>

@@ -1,4 +1,7 @@
 <?php
+session_start();
+?>
+<?php
 
 include('connection.php'); 
 
@@ -18,7 +21,7 @@ include('connection.php');
             $username = $_POST['user']; 
             $email = $_POST['email'];  
             $password = $_POST['pass'];  
-            $confirm - $_POST['confirmpass'];
+            $confirm = $_POST['confirmpass'];
             $name = $firstname . " " . $lastname;
             $created = date("Y-m-d");
 
@@ -41,6 +44,7 @@ include('connection.php');
               }  
               else{  
                 $sql = "INSERT INTO vendors (vendor_username, vendor_password, vendor_name, vendor_email, vendor_created) VALUES ('$username', '$password', '$name', '$email', '$created')";
+                $_SESSION["welcomename"] = $name;
               
               if (mysqli_query($con, $sql)) {
                   ob_start();

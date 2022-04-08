@@ -1,11 +1,5 @@
 <?php
-// Starting session
-session_start();
- 
-// Removing session data
-//if(isset($_SESSION["welcomename"])){
-//    unset($_SESSION["welcomename"]);
-//}
+session_unset();
 
 session_destroy();
 ?>

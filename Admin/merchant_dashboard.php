@@ -140,10 +140,14 @@ session_start();
                     <div class="item active">
                               <div class="header-text hidden-xs">
                                   <div class="col-md-12 text-center">
-                                      <h1 class="display-4">Review</h1>
-                                      <br>
-                                      <h3>Product Name</h3>
-                                      <br>
+                                    <figure class="text-center">
+                                      <blockquote class="blockquote">
+                                        <p>Review Text</p>
+                                      </blockquote>
+                                      <figcaption class="blockquote-footer">
+                                        Product
+                                      </figcaption>
+                                    </figure>
                                   </div>
                               </div>
                     </div>
@@ -151,10 +155,14 @@ session_start();
                     <div class="item">
                               <div class="header-text hidden-xs">
                                   <div class="col-md-12 text-center">
-                                      <h1 class="display-4">Review</h1>
-                                      <br>
-                                      <h3>Product Name</h3>
-                                      <br>
+                                    <figure class="text-center">
+                                      <blockquote class="blockquote">
+                                        <p>Review Text</p>
+                                      </blockquote>
+                                      <figcaption class="blockquote-footer">
+                                        Product
+                                      </figcaption>
+                                    </figure>
                                   </div>
                               </div>
                     </div>
@@ -162,10 +170,14 @@ session_start();
                     <div class="item">
                               <div class="header-text hidden-xs">
                                   <div class="col-md-12 text-center">
-                                      <h1 class="display-4">Review</h1>
-                                      <br>
-                                      <h3>Product Name</h3>
-                                      <br>
+                                    <figure class="text-center">
+                                      <blockquote class="blockquote">
+                                        <p>Review Text</p>
+                                      </blockquote>
+                                      <figcaption class="blockquote-footer">
+                                        Product
+                                      </figcaption>
+                                    </figure>
                                   </div>
                               </div>
                     </div>
@@ -173,10 +185,14 @@ session_start();
                     <div class="item">
                               <div class="header-text hidden-xs">
                                   <div class="col-md-12 text-center">
-                                      <h1 class="display-4">Review</h1>
-                                      <br>
-                                      <h3>Product Name</h3>
-                                      <br>
+                                    <figure class="text-center">
+                                      <blockquote class="blockquote">
+                                        <p>Review Text</p>
+                                      </blockquote>
+                                      <figcaption class="blockquote-footer">
+                                        Product
+                                      </figcaption>
+                                    </figure>
                                   </div>
                               </div>
                     </div>
@@ -184,10 +200,14 @@ session_start();
                     <div class="item">
                               <div class="header-text hidden-xs">
                                   <div class="col-md-12 text-center">
-                                      <h1 class="display-4">Review</h1>
-                                      <br>
-                                      <h3>Product Name</h3>
-                                      <br>
+                                    <figure class="text-center">
+                                      <blockquote class="blockquote">
+                                        <p>Review Text</p>
+                                      </blockquote>
+                                      <figcaption class="blockquote-footer">
+                                        Product
+                                      </figcaption>
+                                    </figure>
                                   </div>
                               </div>
                     </div>
