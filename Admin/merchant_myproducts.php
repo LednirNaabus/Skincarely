@@ -1,3 +1,8 @@
+<?php
+session_start();
+$shopid = $_SESSION["shopid"];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -114,20 +119,135 @@
     <br>
     <p> Manage your shop's products and keep your customers updated of what you're offering. </p>          
     <br>  
+    <p><button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">Add Product</button></p>
 </div>
 
 <br>
 
 <hr class="my-4">
 
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Add Product</h4>
+        </div>
+        <div class="modal-body">
+
+            <form action="product_creation.php" method="post" enctype="multipart/form-data">
+
+              <div class="form-group">
+                <label for="productname">Product Name</label>
+                <input type="text" class="form-control" id="productname" name="productname">
+              </div>
+
+              <div class="form-group">
+                <label for="productdescription">Product Description</label>
+                <textarea class="form-control" id="productdescription" name="productdescription"></textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="productimage">Product Image</label>
+                <input type="file" class="form-control-file" id="productimage" name="productimage">
+              </div>
+
+              <label for="productprice">Product Price</label><br>
+              <div class="form-group input-group">
+                <span class="input-group-addon">PhP</span> 
+                <input type="text" class="form-control" id="productprice" name = "productprice">
+              </div>
+
+              <label for="category">Product Category</label><br>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="eyemakeup" name="productcategory">
+                <label class="form-check-label" for="eyemakeup">Eye Makeup</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="facemakeup" name="productcategory">
+                <label class="form-check-label" for="facemakeup">Face Makeup</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="lipmakeup" name="productcategory">
+                <label class="form-check-label" for="lipmakeup">Lip Makeup</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="skincare" name="productcategory">
+                <label class="form-check-label" for="skincare">Skincare</label>
+              </div>
+              <button type="submit" class="btn btn-primary">Create</button>
+            </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
 <br>
 
 <div class="container" style="font-family: Poppins;">
   <h3 class class="display-3" id="ratings">List of Products</h3>
     <br>
+    <form method="POST">
+    <select class="form-select" id="filter">
+      <option disabled selected>Filter Products by Category</option>
+      <option name="all">All Products</option>
+      <option name="eye">Eye Makeup</option>
+      <option name="face">Face Makeup</option>
+      <option name="lip">Lip Makeup</option>
+      <option name="skin">Skincare</option>
+    </select>
+</form>
 </div>
 
+<br>
 
+<div class="container">
+    <div class="row">
+<?php
+
+      include("connection.php");
+      $sql = "SELECT * FROM items WHERE shop_id = '$shopid'";
+      $result = mysqli_query($con,$sql);
+      while($row = $result->fetch_assoc()) { 
+?>
+    
+        <div class="col-md-3 col-sm-6">
+            <div class="product-grid">
+                <div class="product-image" style="height: 250px;">
+                    <a href="#"><?php echo '<img src = "data:image/jpeg;base64,'.base64_encode($row['item_image']).'"/>'; ?></a>  
+                  <ul class="social">
+                        <li><a href="" data-tip="View Product"><i class="fa fa-search"></i></a></li>
+                        <li><a href="" data-tip="Edit Product"><i class="glyphicon glyphicon-pencil"></i></a></li>
+                        <li><a href="" data-tip="Delete Product"><i class="glyphicon glyphicon-trash"></i></a></li>
+                    </ul>
+                </div>
+                <div class="product-content">
+                    <h3 class="title"><a href="#">
+                      <?php echo $row['item_name']; ?>
+                    </a></h3>
+                    <h4 class="title">
+                      <?php echo $row['item_description']; ?>
+                    </h4>
+                    <br>
+                </div>
+            </div>
+        </div>
+
+
+<?php 
+        }
+?>
+
+  </div>
+</div>
+
+<br><br>
 
 <div class="container" style="font-family: Poppins;">
   <h3 class class="display-3" id="ratings">Reviews</h3>
