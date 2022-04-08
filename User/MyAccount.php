@@ -35,10 +35,7 @@ $userInfo = mysqli_fetch_row($result);
                     </li>  
                     <li class="nav-item">
                         <a href="#" class="nav-link"><p>Bookmarks</p></a>
-                    </li>  
-                    <li class="nav-item">
-                        <a href="#" class="nav-link"><p>Saved</p></a>
-                    </li>
+                    </li>   
                     <li class="nav-header"><a href="logout.php" style="color: red"><b><i class="nav-icon fa-solid fa-arrow-right-from-bracket"></i>Logout</i></b></a></li>  
                     </ul>
                 </nav>
