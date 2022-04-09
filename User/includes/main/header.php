@@ -6,10 +6,10 @@
   Skincarely
   </title> 
   <!-- Bootstrap -->
-  <link rel="stylesheet" href="dist/css/bootstrap.min.css">     
+  <link rel="stylesheet" href="dist/css/bootstrap.min.css">
   <!-- Deleted JQuery JScript tag, already declared at footer -->
   <!-- Deleted Bootstrap JScript tag, no need unless used -->
-    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
   <!-- Font Family -->
   <link href='https://fonts.googleapis.com/css?family=Calistoga' rel='stylesheet'>
   <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" >

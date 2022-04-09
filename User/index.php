@@ -32,41 +32,84 @@
             </div>
         </div>
         <hr>
-        <!-- main content here -->
+        <div class="card ">
+            <div class="card-header"> 
+                <ul class="nav nav-tabs card-header-tabs pull-right"  id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="featured-tab" data-toggle="tab" href="#featured" role="tab" aria-controls="featured" aria-selected="true">Featured</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="promoted-tab" data-toggle="tab" href="#promoted" role="tab" aria-controls="promoted" aria-selected="false">Promoted</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="new-tab" data-toggle="tab" href="#new" role="tab" aria-controls="new" aria-selected="false">New</a>
+                    </li>
+                </ul>
+            </div>
+            <?php
+                $row = mysqli_fetch_row($result);
+            ?>
+            <div class="card-body">
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="featured" role="tabpanel" aria-labelledby="featured-tab">
+                        <!-- featured shop -->
+                        <div class="card">
+                            <img src="dist/img/skincare-1.png" alt="..." class="card-img-top">
+                            <div class="card-body">
+                                <p class="card-text"><?php echo $row[2]; ?></p>
+                                <p class="card-text"><small class="text-muted"><?php echo $row[6]; ?></small></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="promoted" role="tabpanel" aria-labelledby="promoted-tab">
+                        <!-- promoted -->
+                        <div class="card">
+                            <img src="dist/img/login-img.jpg" alt="..." class="card-img-top">
+                            <div class="card-body">
+                                <p class="card-text">Promoted shop name</p>
+                                <p class="card-text"><small class="text-muted">Updated 3 mins ago.</small></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="new" role="tabpanel" aria-labelledby="new-tab">
+                        <!-- new shop -->
+                        <div class="card">
+                            <img src="dist/img/img1.webp" alt="..." class="card-img-top">
+                            <div class="card-body">
+                                <p class="card-text">New Shop name</p>
+                                <p class="card-text"><small class="text-muted">Updated 3 mins ago.</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="row">
-            <div class="container">
-                <div class="col-md-20">
-                    <!-- for now, will list first few shops sa shops table -->
-                    <h2>Featured Shops</h2>
-                    <div class="row">
-                        <?php
-                            while($row = mysqli_fetch_array($result)) {
-                                if($row['shop_id'] < 6) {
-                                    echo '<div class="col-md-4">';
-                                    echo '<p class="lead">'.$row['shop_name'].'</p>';
-                                    echo '<p><a class="btn btn-primary" href="#" role="button">View</a></p>';
-                                    echo '</div>';
-                                }
-                            }
-                        ?>
+            <div class="col">
+                <h2>Recommended</h2>
+                <div class="card-group">
+                    <div class="card">
+                        <img src="dist/img/c1.jpg" alt="C1" class="card-img-top">
+                        <div class="card-body">
+                            <p class="card-text"><small class="text-muted">Location</small></p>
+                        </div>
                     </div>
-                    <h2>Promoted</h2>
-                    <div class="row">
-                        
+                    <div class="card">
+                        <img src="dist/img/c2.jpg" alt="C2" class="card-img-top">
+                        <div class="card-body">
+                            <p class="card-text"><small class="text-muted">Location</small></p>
+                        </div>
                     </div>
-                    <h2>Recommended</h2>
-                    <div class="row">
-                        
-                    </div>
-                    <h2>New Shops to check out!</h2>
-                    <div class="row">
-                        
+                    <div class="card">
+                        <img src="dist/img/c3.jpg" alt="C3" class="card-img-top">
+                        <div class="card-body">
+                            <p class="card-text"><small class="text-muted">Location</small></p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 </main>
 <?php
     include 'includes/main/footer.php';
