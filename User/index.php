@@ -56,8 +56,20 @@
                         <div class="card">
                             <img src="dist/img/skincare-1.png" alt="..." class="card-img-top">
                             <div class="card-body">
-                                <p class="card-text"><?php echo $row[2]; ?></p>
-                                <p class="card-text"><small class="text-muted"><?php echo $row[6]; ?></small></p>
+                                <p class="card-text"><?php 
+                                    if($row == null) {
+                                        echo 'nothing';
+                                    } else {
+                                        $row[3];
+                                    }
+                                ?></p>
+                                <p class="card-text"><small class="text-muted"><?php 
+                                    if($row == null) {
+                                        echo 'nothing';
+                                    } else {
+                                        $row[6];
+                                    }
+                                ?></small></p>
                             </div>
                         </div>
                     </div>
