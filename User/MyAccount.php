@@ -5,47 +5,43 @@ include 'includes/connection/db_connection.php';
 $result= mysqli_query($link, "SELECT * FROM customers WHERE customer_id = ".$_SESSION['userID']);
 $userInfo = mysqli_fetch_row($result);  
 ?>    
-<div class="content-wrapper">
-    <div class="row">
-        <div class="sidebar col-2"> 
-            <!-- Page Sidebar -->
-            <aside class="main-sidebar sidebar-dark-primary"> 
-                <div class="sidebar" >
-                <!-- Sidebar user panel (optional) -->
-                <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-                    <div class="image">
-                    <?php if($userInfo[8] == NULL){
-                            echo '<img src="dist/img/user.png" class="img-circle" alt="User Image">' ;
-                            }else{
-                            echo '<img src="data:image;base64,',base64_encode($userInfo[8]),'alt="" class="img-circle">';
-                            }  
-                        ?> 
-                    </div>
-                    <div class="info">
-                    <a href="#"><strong><?php echo $userInfo[3]; ?></strong></a> 
-                    <a href="#" class="nav-link" style="padding-top: 0px; padding-left: 0px;"> <i class="fa-solid fa-pen-to-square"></i> Edit Profile</a> 
-                    </div>
-                </div>  
-                <!-- Sidebar Menu -->
-                <nav class="mt-2">
-                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false"> 
-                    <li class="nav-header"><b><i class="nav-icon fa-solid fa-user"></i>My Account</b></li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link"><p>Profile</p></a>
-                    </li>  
-                    <li class="nav-item">
-                        <a href="#" class="nav-link"><p>Bookmarks</p></a>
-                    </li>   
-                    <li class="nav-header"><a href="logout.php" style="color: red"><b><i class="nav-icon fa-solid fa-arrow-right-from-bracket"></i>Logout</i></b></a></li>  
-                    </ul>
-                </nav>
-                <!-- /.sidebar-menu -->
+<div class="wrapper"> 
+    <div class="col-3">  
+            <div class="sidebar" >
+            <!-- Sidebar user panel (optional) -->
+            <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                <div class="image">
+                <?php if($userInfo[8] == NULL){
+                        echo '<img src="dist/img/user.png" class="img-circle" alt="User Image">' ;
+                        }else{
+                        echo '<img src="data:image;base64,',base64_encode($userInfo[8]),'alt="" class="img-circle">';
+                        }  
+                    ?> 
                 </div>
-            </aside>  
-            <!-- /.sidebar -->
-        </div> 
+                <div class="info">
+                <a href="#"><strong><?php echo $userInfo[3]; ?></strong></a> 
+                <a href="#" class="nav-link" style="padding-top: 0px; padding-left: 0px;"> <i class="fa-solid fa-pen-to-square"></i> Edit Profile</a> 
+                </div>
+            </div>  
+            <!-- Sidebar Menu -->
+            <nav class="mt-2">
+                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false"> 
+                <li class="nav-header"><b><i class="nav-icon fa-solid fa-user"></i>My Account</b></li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link"><p>Profile</p></a>
+                </li>  
+                <li class="nav-item">
+                    <a href="#" class="nav-link"><p>Bookmarks</p></a>
+                </li>   
+                <li class="nav-header"><a href="logout.php" style="color: red"><b><i class="nav-icon fa-solid fa-arrow-right-from-bracket"></i>Logout</i></b></a></li>  
+                </ul>
+            </nav>
+            <!-- /.sidebar-menu -->
+            </div> 
+        <!-- /.sidebar -->
+    </div> 
         <!-- Content Header (Page header) -->
-        <div class="col-10">
+    <div class="col-9">
         <div class="row">
         <section class="content-header" >
             <div class="container-fluid">
@@ -115,7 +111,6 @@ $userInfo = mysqli_fetch_row($result);
         </form>
         </section>
         <!-- /.content -->  
-    </div>
     </div> 
 </div> 
 <?php include "includes/main/footer.php"; ?>    
@@ -151,16 +146,4 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         echo "</script>";  
         }
     }
-?>
-<script>
-$(document).ready(function () {
-  $('body').on('click', '#selectAll', function () {
-    if ($(this).hasClass('allChecked')) {
-        $('input[type="checkbox"]', '#inbox').prop('checked', false);
-    } else {
-        $('input[type="checkbox"]', '#inbox').prop('checked', true);
-    }
-    $(this).toggleClass('allChecked');
-  })
-});
-</script>
+?> 
