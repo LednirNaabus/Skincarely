@@ -66,6 +66,8 @@
                             <?php
                                 if($featured != null) {
                                     echo '<a href="merchant_portal.php"><img src="data:image/jpeg;base64,'.base64_encode($featured[3]).'" class="card-img-top" /></a>';
+                                } else {
+                                    echo '<p class="card-text"> There is nothing yet. Why don\'t you create a <a href="../Admin/signup.php">vendor account</a> to host a shop?</p>';
                                 }
                             ?>
                             <div class="card-body">
@@ -74,9 +76,9 @@
                                         echo $featured[2];
                                     }
                                 ?></p>
-                                <p class="card-text"><small class="text-muted">From <?php 
+                                <p class="card-text"><small class="text-muted"><?php 
                                     if($featured != null) {
-                                        echo $featured[5];
+                                        echo 'From '. $featured[5];
                                     }
                                 ?></small></p>
                             </div>
@@ -105,7 +107,9 @@
                             <?php
                                 if($new != null) {
                                     echo '<a href="merchant_portal.php"><img src="data:image/jpeg;base64,'.base64_encode($new[3]).'" class="card-img-top" /></a>';
-                                } 
+                                } else {
+                                    echo '<p class="card-text"> There is nothing yet. Why don\'t you create a <a href="../Admin/signup.php">vendor account</a> to host a shop?</p>';
+                                }
                             ?>
                             <div class="card-body">
                                 <p class="card-text">
