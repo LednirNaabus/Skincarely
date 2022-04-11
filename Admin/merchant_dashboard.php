@@ -71,7 +71,7 @@ session_start();
     </div>
 
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="skincarely.php"><span class="glyphicon glyphicon-log-out" style="padding: 0 1rem 0;"></span> Logout </a></li>
+      <li><a href="index.php"><span class="glyphicon glyphicon-log-out" style="padding: 0 1rem 0;"></span> Logout </a></li>
     </ul>
 
   </div>

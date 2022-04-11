@@ -165,11 +165,14 @@ h6 {
   margin-right: auto;
   margin-left: auto;
 }
-.sidebar {
-  display: block;
-  height: auto;
-  overflow: hidden;
-  padding-left: 15px;
+.sidebar {  
+  width: 25%;
+  height: 25vh;  
+  min-height: 200px;
+  padding: 25px 15px 15px 15px; 
+  position: -webkit-sticky;
+  position: sticky;
+  top: 5%;
 }
 
 .nav-header {
@@ -547,7 +550,7 @@ h6 {
   border-radius: 0.25rem;
 }
 .navbar {
-  position: relative;
+  position: fixed;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -886,8 +889,9 @@ body,
 .wrapper {
   min-height: 100%;
 }
-.wrapper {
-  position: relative;
+.wrapper { 
+  display: flex;
+  justify-content: space-between;
 }
 .wrapper .content-wrapper {
   min-height: calc(100vh - calc(3.5rem + 1px) - calc(3.5rem + 1px));
@@ -902,6 +906,19 @@ body,
 .layout-fixed .brand-link {
   width: 250px;
 }
+
+.main-content{
+  padding-top: 55px;
+}
+
+.main{
+  width: 60%;
+  height: 200vh;
+  min-height: 1000px;
+  display: flex;
+  flex-direction: column;
+}
+
 .main-footer {
   background-color: #fff;
   border-top: 1px solid #dee2e6;
@@ -950,12 +967,11 @@ body,
   width: auto;
 }
 .user-panel {
-  position: relative;
+  position: relative; 
 }
 
 .user-panel,
-.user-panel .info {
-  overflow: hidden;
+.user-panel .info { 
   white-space: nowrap;
 }
 .user-panel .image {
