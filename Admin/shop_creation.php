@@ -33,7 +33,6 @@ include('connection.php');
             $resultvendorid = mysqli_query($con, $getvendorid);
 
             if (mysqli_num_rows($resultvendorid) > 0) {
-                // output data of each row
                 while($row = mysqli_fetch_assoc($resultvendorid)) {
                     $_SESSION["vendorid"] = $row["vendor_id"];
                 }
@@ -54,6 +53,23 @@ include('connection.php');
                 if (mysqli_num_rows($resultname) > 0) {
                     while($row = mysqli_fetch_assoc($resultname)) {
                         $_SESSION["shopid"] = $row["shop_id"];
+                    }
+
+                    $shoplink = $_SESSION["shopid"];
+
+                    
+
+                    $sqllinkshop = "UPDATE vendors SET shop_id='$shoplink' WHERE vendor_id='$linkvs'";;
+                    $resultlink = mysqli_query($con, $sqllinkshop);
+
+                    if (mysqli_query($con, $sql)) {
+                      ob_start();
+                      header("Location: signin.php");
+                      ob_end_flush();
+                    } else {
+                      ob_start();
+                      header("Location: resetpassword.php");
+                      ob_end_flush();
                     }
 
                   ob_start();
