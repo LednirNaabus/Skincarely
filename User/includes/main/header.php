@@ -20,15 +20,7 @@
   <link rel="stylesheet" type="text/css"href="dist/css/main.css?version=2"> 
   <!-- overlayScrollbars -->
   <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css"> 
-  <!-- Deleted fontawesome kit js, no need for js + Font awesome icons already declared --> 
-  <style>
-  /* Hours wasted on styling the jumbotron: 2139218312 hours
-  I hate CSS
-  
-  
-  Moved your code sa main.css, I advise na doon natin ilagay mga external css pre
-  */ 
-  </style>
+  <!-- Deleted fontawesome kit js, no need for js + Font awesome icons already declared -->  
 </head>  
 <body>
 <?php  
