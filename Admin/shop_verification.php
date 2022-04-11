@@ -1,12 +1,8 @@
 <?php
-session_start();
-$vendorverif = $_SESSION["vendorid"];
-?>
-
-<?php      
+    session_start();      
     include('connection.php');  
 
-            $sql = "select * from shops where vendor_id = '$vendorverif'";
+            $sql = "SELECT * FROM shops WHERE vendor_id=".$_SESSION["vendorid"];
             $result = mysqli_query($con, $sql);  
             $row = mysqli_fetch_array($result, MYSQLI_ASSOC);  
             $count = mysqli_num_rows($result);  
