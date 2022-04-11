@@ -138,12 +138,24 @@
                 <h2>New items from featured shop</h2>
                 <div class="row row-cols-1 row-cols-md-2 g-4">
                     <?php
-                        while($item = mysqli_fetch_array($items_featured)) {
-                            Print '<div class="col">
-                                        <div class="card">';
-                            echo '<a href="#"><img src="data:image/jpeg;base64,' .base64_encode($item[5]).'" class="card-img-top"></a>';
-                            Print '<div class="card-body">
-                                        <p class="card-text"><small class="text-muted">' .$item[2] . '</small></p></div></div></div>';
+
+                        $item = mysqli_fetch_array($items_featured);
+                        if($item != null) {
+                            while($item) {
+                                Print '<div class="col">
+                                            <div class="card">';
+                                echo '<a href="#"><img src="data:image/jpeg;base64,' .base64_encode($item[5]).'" class="card-img-top"></a>';
+                                Print '<div class="card-body">
+                                            <p class="card-text"><small class="text-muted">' .$item[2] . '</small></p></div></div></div>';
+                            }
+                        } else {
+                            echo '<div class="col">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <p class="card-text"> Nothing here yet. </p>
+                                        </div>
+                                    </div>
+                                  </div>';
                         }
                     ?>
                 </div>
