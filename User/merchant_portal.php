@@ -48,7 +48,7 @@ include 'includes/connection/db_connection.php';
             <div class="card-body w-100">
                 <b>About Us</b>
                 <br><br>
-                <p>Classy footwear that are proudly made in the Philippines.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla finibus efficitur tempor. Praesent condimentum quam ac viverra volutpat. Cras luctus ipsum urna, sit amet condimentum leo luctus at. Vestibulum interdum odio nec nisl sollicitudin ullamcorper. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce scelerisque arcu dolor, in vestibulum ante tincidunt non. Nam tincidunt est non arcu posuere dapibus. Integer tristique magna eu nibh accumsan bibendum. Suspendisse nec nibh felis.</p>
             </div>
         </div>
         <div class="card">
@@ -57,14 +57,14 @@ include 'includes/connection/db_connection.php';
                 <div class="row">
                     <div class="col-6">
                         <ul style="list-style-type:none;">
-                            <li class="mt-2"><span class="mr-20"><i class="fa-solid fa-phone"></i></span>(0927) 606-7569;(0999) 393-1866;(0917) 524-9592</li>
-                            <li class="mt-2"><span class="mr-20"><i class="fa-solid fa-money-bill"></i></span>GCash; Bank Transfer</li>
+                            <li class="mt-2"><span class="mr-20"><i class="fa-solid fa-phone"></i></span>(0927) 606-7569</li>
+                            <li class="mt-2"><span class="mr-20"><i class="fa-solid fa-money-bill"></i></span>Lorem ipsum dolor sit amet; Lorem ipsum dolor</li>
                         </ul>
                     </div>
                     <div class="col-6">
                         <ul style="list-style-type:none;">
-                            <li class="mt-2"><span class="mr-20"><i class="fa-solid fa-location-dot"></i></span>Mandaluyong</li>
-                            <li class="mt-2"><span class="mr-20"><i class="fa-solid fa-tag"></i></span>Shoes; Clothing; Online Store</li>
+                            <li class="mt-2"><span class="mr-20"><i class="fa-solid fa-location-dot"></i></span>Lorem ipsum</li>
+                            <li class="mt-2"><span class="mr-20"><i class="fa-solid fa-tag"></i></span>dolor sit amet</li>
                         </ul>
                     </div>
                 </div>
@@ -83,15 +83,15 @@ include 'includes/connection/db_connection.php';
                     <div class="col-6" style="padding-left:20px;">
                         Pickup Areas:
                         <ul>
-                            <li class="mt-2">(0927) 606-7569;(0999) 393-1866;(0917) 524-9592</li>
-                            <li class="mt-2">GCash; Bank Transfer</li>
+                            <li class="mt-2">Lorem ipsum </li>
+                            <li class="mt-2">dolor sit amet</li>
                         </ul>
                     </div>
                     <div class="col-6" style="padding-left:20px;">
                         Delivery Options:
                         <ul>
-                            <li class="mt-2">Mandaluyong</li>
-                            <li class="mt-2">Shoes; Clothing; Online Store</li>
+                            <li class="mt-2">Lorem ipsum dolor sit amet</li>
+                            <li class="mt-2">Lorem ipsum dolor sit amet</li>
                         </ul>
                     </div>
                 </div>
