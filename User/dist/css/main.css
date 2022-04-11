@@ -158,8 +158,9 @@ h5 {
 h6 {
   font-size: 1rem;
 }
+
 .bg-img {
-  background-image: url('dist/img/landing-cover.jpg');
+  background-image: url('../img/landing-cover.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -171,6 +172,7 @@ h6 {
   color: #fff;
   z-index: 0;
 }
+
 .mr-20{
   margin-right: 20px;
 }

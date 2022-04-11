@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
   <!-- No need for Ionicons --> 
   <!-- Main style --> 
-  <link rel="stylesheet" type="text/css"href="dist/css/main.css?version=1"> 
+  <link rel="stylesheet" type="text/css"href="dist/css/main.css?version=2"> 
   <!-- overlayScrollbars -->
   <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css"> 
   <!-- Deleted fontawesome kit js, no need for js + Font awesome icons already declared --> 
