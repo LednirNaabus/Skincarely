@@ -54,10 +54,9 @@
                     <div class="tab-pane fade show active" id="featured" role="tabpanel" aria-labelledby="featured-tab">
                         <!-- featured shop -->
                         <div class="card">
-                            <!-- <img src="dist/img/skincare-1.png" alt="..." class="card-img-top"> -->
                             <?php
                                 if($row != null) {
-                                    echo '<img src="data:image/jpeg;base64,'.base64_encode($row[3]).'" class="card-img-top" />';
+                                    echo '<a href="merchant_portal.php"><img src="data:image/jpeg;base64,'.base64_encode($row[3]).'" class="card-img-top" /></a>';
                                 }
                             ?>
                             <div class="card-body">
@@ -115,7 +114,7 @@
                         <div class="card">
                             <img src="dist/img/c1.jpg" alt="C1" class="card-img-top">
                             <div class="card-body">
-                                <p class="card-text"><small class="text-muted">Location:</small></p>
+                                <p class="card-text"><small class="text-muted">By:</small></p>
                             </div>
                         </div>
                     </div>
@@ -123,7 +122,7 @@
                     <div class="card">
                             <img src="dist/img/c2.jpg" alt="C2" class="card-img-top">
                             <div class="card-body">
-                                <p class="card-text"><small class="text-muted">Location:</small></p>
+                                <p class="card-text"><small class="text-muted">By:</small></p>
                             </div>
                         </div>
                     </div>
@@ -131,7 +130,7 @@
                     <div class="card">
                             <img src="dist/img/c3.jpg" alt="C3" class="card-img-top">
                             <div class="card-body">
-                                <p class="card-text"><small class="text-muted">Location:</small></p>
+                                <p class="card-text"><small class="text-muted">By:</small></p>
                             </div>
                         </div>
                     </div>
