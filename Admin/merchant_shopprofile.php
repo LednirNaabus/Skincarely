@@ -1,6 +1,5 @@
 <?php
 session_start();
-$shopname = $_SESSION["shop"];
 ?>
 
 <!DOCTYPE html>
@@ -72,7 +71,7 @@ $shopname = $_SESSION["shop"];
     </div>
 
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="skincarely.php"><span class="glyphicon glyphicon-log-out" style="padding: 0 1rem 0;"></span> Logout </a></li>
+      <li><a href="index.php"><span class="glyphicon glyphicon-log-out" style="padding: 0 1rem 0;"></span> Logout </a></li>
     </ul>
 
   </div>
@@ -102,7 +101,23 @@ $shopname = $_SESSION["shop"];
 <div class="container p-5 my-3 border rounded" style="font-family: Poppins;">
   <h1 class="text-center">
       <?php
-          include('connection.php');      
+          include('connection.php');  
+          
+          $linkpls = $_SESSION["id"];
+
+          $sqlshop = "SELECT * FROM shops WHERE vendor_id = '$linkpls';";
+                $resultshop = mysqli_query($con, $sqlshop);
+
+                if (mysqli_num_rows($resultshop) > 0) {
+                    while($row = mysqli_fetch_assoc($resultshop)) {
+                        $_SESSION["shop"] = $row["shop_name"];
+                    }
+
+                } else {
+                    echo "0 results";
+                }
+
+                $shopname = $_SESSION["shop"];
           
           $sql = "SELECT * FROM shops WHERE shop_name = '$shopname';";
           $result = mysqli_query($con, $sql);
@@ -231,7 +246,8 @@ $shopname = $_SESSION["shop"];
       <h3>Shop Hours</h3>
       <p>
         <?php
-          echo $_SESSION["shophours"];
+          //echo $_SESSION["shophours"];
+          //find a way to access this if its not in db?
         ?>
       </p>
     </div>

@@ -17,26 +17,17 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
   <!-- No need for Ionicons --> 
   <!-- Main style --> 
-  <link rel="stylesheet" type="text/css"href="dist/css/main.css?version=3"> 
+  <link rel="stylesheet" type="text/css"href="dist/css/main.css?version=2"> 
   <!-- overlayScrollbars -->
   <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css"> 
   <!-- Deleted fontawesome kit js, no need for js + Font awesome icons already declared --> 
   <style>
   /* Hours wasted on styling the jumbotron: 2139218312 hours
-  I hate CSS */
-  .bg-img {
-      background-image: url('dist/img/landing-cover.jpg');
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      z-index: -1;
-  }
-
-  .bg-img .jumbotron {
-      background: linear-gradient(0deg, #00000088 30%, #FFFFFF44 100%);
-      color: #fff;
-      z-index: 0;
-  }
+  I hate CSS
+  
+  
+  Moved your code sa main.css, I advise na doon natin ilagay mga external css pre
+  */ 
   </style>
 </head>  
 <body>

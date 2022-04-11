@@ -159,6 +159,20 @@ h6 {
   font-size: 1rem;
 }
 
+.bg-img {
+  background-image: url('../img/landing-cover.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
+}
+
+.bg-img .jumbotron {
+  background: linear-gradient(0deg, #00000088 30%, #FFFFFF44 100%);
+  color: #fff;
+  z-index: 0;
+}
+
 .mr-20{
   margin-right: 20px;
 }
@@ -352,9 +366,9 @@ h6 {
   box-shadow: 0 0 0 0 rgba(38, 143, 255, 0.5);
 }
 .btn-primary:disabled {
-  color: #fff;
-  background-color: #007bff;
-  border-color: #007bff;
+  color: rgb(0, 0, 0);
+  background-color: #ffffff;
+  border-color: #ffffff;
 }
 
 .btn-success {
