@@ -1,6 +1,6 @@
 <?php
 session_start();
-$vendorverif = $_SESSION["vendor_id"];
+$vendorverif = $_SESSION["vendorid"];
 ?>
 
 <?php      
