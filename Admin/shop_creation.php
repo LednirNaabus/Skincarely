@@ -5,16 +5,6 @@ session_start();
 
 include('connection.php'); 
 
-            $host = "localhost";  
-            $user = "root";  
-            $password = '';  
-            $db_name = "skincarely";  
-              
-            $con = mysqli_connect($host, $user, $password, $db_name);  
-            if(mysqli_connect_errno()) {  
-                die("Failed to connect with MySQL: ". mysqli_connect_error());  
-            }  
-
             $shopname = $_POST['shopname']; 
             $shopdescription = $_POST['shopdescription']; 
 
@@ -24,7 +14,6 @@ include('connection.php');
             $contact = $_POST['landline'] . " / " . $_POST['mobile'];  
             $socials = $_POST['socials'];
 
-            $_SESSION["shophours"] = $_POST['openinghours'] . " - " . $_POST['closinghours'];
             $_SESSION["shop"] = $shopname;
 
             $checkname = $_SESSION["welcomename"];
@@ -62,7 +51,7 @@ include('connection.php');
                     $sqllinkshop = "UPDATE vendors SET shop_id='$shoplink' WHERE vendor_id='$linkvs'";;
                     $resultlink = mysqli_query($con, $sqllinkshop);
 
-                    if (mysqli_query($con, $sql)) {
+                    if (mysqli_query($con, $sqllinkshop)) {
                       ob_start();
                       header("Location: signin.php");
                       ob_end_flush();
