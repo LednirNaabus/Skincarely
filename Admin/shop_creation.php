@@ -1,6 +1,5 @@
 <?php
 session_start();
-$linkvs = "";
 ?>
 <?php
 
@@ -16,7 +15,6 @@ include('connection.php');
                 die("Failed to connect with MySQL: ". mysqli_connect_error());  
             }  
 
-
             $shopname = $_POST['shopname']; 
             $shopdescription = $_POST['shopdescription']; 
 
@@ -28,7 +26,23 @@ include('connection.php');
 
             $_SESSION["shophours"] = $_POST['openinghours'] . " - " . $_POST['closinghours'];
             $_SESSION["shop"] = $shopname;
-            $linkvs = $_SESSION["id"];
+
+            $checkname = $_SESSION["welcomename"];
+
+            $getvendorid = "SELECT * FROM vendors WHERE vendor_name = '$checkname';";
+            $resultvendorid = mysqli_query($con, $getvendorid);
+
+            if (mysqli_num_rows($resultvendorid) > 0) {
+                // output data of each row
+                while($row = mysqli_fetch_assoc($resultvendorid)) {
+                    $_SESSION["vendorid"] = $row["vendor_id"];
+                }
+
+            } else {
+                echo "0 results";
+            }
+
+            $linkvs = $_SESSION["vendorid"];
 
             $sql = "INSERT INTO shops (vendor_id, shop_name, shop_description, shop_logo, shop_location, shop_socials, shop_contact) VALUES ('$linkvs', '$shopname', '$shopdescription', '$shoplogo', '$mainbranch', '$socials', '$contact')";
 

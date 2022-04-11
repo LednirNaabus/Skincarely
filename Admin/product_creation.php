@@ -19,7 +19,7 @@ session_start();
             $productimage = addslashes(file_get_contents($_FILES['productimage']['tmp_name']));
 
             $productprice = $_POST['productprice'];   
-            $productcategory = $_POST['productcategory'];  
+            $productcategory = $_POST['category'];  
 
             $linkitem = $_SESSION["shopid"];
 

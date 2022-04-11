@@ -33,7 +33,7 @@
                     <span class="h1 fw-bold mb-0">Skincarely</span>
                   </div>
 
-                  <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Verify Existing Account?</h5>
+                  <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Verify Existing Account</h5>
 
                 <div class="row mb-4">
                     <div class="col">
