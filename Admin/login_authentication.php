@@ -33,6 +33,7 @@ session_start();
                 $_SESSION["welcomename"] = $row["vendor_name"];
                 $_SESSION["id"] = $row["vendor_id"];
             }
+
         } else {
             echo "0 results";
         }
