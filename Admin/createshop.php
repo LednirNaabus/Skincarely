@@ -61,7 +61,6 @@ session_start();
 
         <div class="form-group">
           <label for="mainbranch">Main Branch</label>
-          <input type="text" class="form-control" id="mainbranch" name="mainbranch">
         </div>
 
         <div class="form-row">

@@ -1,5 +1,24 @@
 <?php
 session_start();
+
+include('connection.php'); 
+
+$linkpls = $_SESSION["vendorid"];
+
+$sqlprod = "SELECT * FROM shops WHERE vendor_id = '$linkpls';";
+$resultprod = mysqli_query($con, $sqlprod);
+
+      if (mysqli_num_rows($resultprod) > 0) {
+          while($row = mysqli_fetch_assoc($resultprod)) {
+              $_SESSION["shopid"] = $row["shop_id"];
+          }
+
+      } else {
+          echo "0 results";
+      }
+
+$shopname = $_SESSION["shop"];
+$shopid = $_SESSION["shopid"];
 ?>
 
 <!DOCTYPE html>
@@ -11,6 +30,7 @@ session_start();
     <title>Skincarely | Shop Profile</title>
     
     <?php include('merchant_links.php'); ?>
+    <?php include('merchant_myproducts_style.php'); ?>
 
 </head>
 <body style="background-color: #f7f3f2;">
@@ -190,9 +210,45 @@ session_start();
         ?>
       </p>
     </div>
+
     <div id="products" class="tab-pane fade">
       <h3>Products</h3>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      
+          <div class="row">
+
+          <?php
+                include("connection.php");
+                $sql = "SELECT * FROM items WHERE shop_id = '$shopid'";
+                $result = mysqli_query($con,$sql);
+                while($row = $result->fetch_assoc()) { 
+                  $_SESSION['itemid'] = $row['item_id'];
+          ?>
+    
+          <div class="col-md-3 col-sm-6">
+          <br>
+            <div class="product-grid">
+                <div class="product-image" style="height: 233px;">
+                    <a href="#"><?php echo '<img src = "data:image/jpeg;base64,'.base64_encode($row['item_image']).'"/>'; ?></a>  
+                  <ul class="social">
+                        <li><a href="merchant_myproducts.php" data-tip="View Product"><i class="fa fa-search"></i></a></li>
+                    </ul>
+                </div>
+                <div class="product-content">
+                    <h3 class="title"><a href="#">
+                      <?php echo $row['item_name']; ?>
+                    </a></h3>
+                    <h4 class="title">
+                      <?php echo $row['item_description']; ?>
+                    </h4>
+                    <br>
+                </div>
+            </div>
+            <br>
+        </div>
+
+          <?php } ?>
+  </div>
+  
     </div>
     <div id="photos" class="tab-pane fade">
       <h3>Featured Photos</h3>

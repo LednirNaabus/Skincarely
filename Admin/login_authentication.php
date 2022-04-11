@@ -31,7 +31,7 @@ session_start();
             // output data of each row
             while($row = mysqli_fetch_assoc($resultname)) {
                 $_SESSION["welcomename"] = $row["vendor_name"];
-                $_SESSION["id"] = $row["vendor_id"];
+                $_SESSION["vendorid"] = $row["vendor_id"];
             }
 
         } else {
