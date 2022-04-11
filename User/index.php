@@ -54,20 +54,21 @@
                     <div class="tab-pane fade show active" id="featured" role="tabpanel" aria-labelledby="featured-tab">
                         <!-- featured shop -->
                         <div class="card">
-                            <img src="dist/img/skincare-1.png" alt="..." class="card-img-top">
+                            <!-- <img src="dist/img/skincare-1.png" alt="..." class="card-img-top"> -->
+                            <?php
+                                if($row != null) {
+                                    echo '<img src="data:image/jpeg;base64,'.base64_encode($row[3]).'" class="card-img-top" />';
+                                }
+                            ?>
                             <div class="card-body">
                                 <p class="card-text"><?php 
-                                    if($row == null) {
-                                        echo 'nothing';
-                                    } else {
-                                        $row[3];
+                                    if($row != null) {
+                                        echo $row[2];
                                     }
                                 ?></p>
                                 <p class="card-text"><small class="text-muted"><?php 
-                                    if($row == null) {
-                                        echo 'nothing';
-                                    } else {
-                                        $row[6];
+                                    if($row != null) {
+                                        echo $row[5];
                                     }
                                 ?></small></p>
                             </div>
@@ -75,6 +76,11 @@
                     </div>
                     <div class="tab-pane fade" id="promoted" role="tabpanel" aria-labelledby="promoted-tab">
                         <!-- promoted -->
+                        <!--
+                        
+                        To do here:
+                        - create query to select shop with most reactions
+                        -->
                         <div class="card">
                             <img src="dist/img/login-img.jpg" alt="..." class="card-img-top">
                             <div class="card-body">
@@ -85,6 +91,11 @@
                     </div>
                     <div class="tab-pane fade" id="new" role="tabpanel" aria-labelledby="new-tab">
                         <!-- new shop -->
+                        <!--
+
+                            To do here:
+                            - create query to select the most recent added shop to the `shops` table
+                        -->
                         <div class="card">
                             <img src="dist/img/img1.webp" alt="..." class="card-img-top">
                             <div class="card-body">
@@ -99,23 +110,29 @@
         <div class="row">
             <div class="col">
                 <h2>Recommended</h2>
-                <div class="card-group">
-                    <div class="card">
-                        <img src="dist/img/c1.jpg" alt="C1" class="card-img-top">
-                        <div class="card-body">
-                            <p class="card-text"><small class="text-muted">Location</small></p>
+                <div class="row row-cols-1 row-cols-md-2 g-4">
+                    <div class="col">
+                        <div class="card">
+                            <img src="dist/img/c1.jpg" alt="C1" class="card-img-top">
+                            <div class="card-body">
+                                <p class="card-text"><small class="text-muted">Location:</small></p>
+                            </div>
                         </div>
                     </div>
+                    <div class="col">
                     <div class="card">
-                        <img src="dist/img/c2.jpg" alt="C2" class="card-img-top">
-                        <div class="card-body">
-                            <p class="card-text"><small class="text-muted">Location</small></p>
+                            <img src="dist/img/c2.jpg" alt="C2" class="card-img-top">
+                            <div class="card-body">
+                                <p class="card-text"><small class="text-muted">Location:</small></p>
+                            </div>
                         </div>
                     </div>
+                    <div class="col">
                     <div class="card">
-                        <img src="dist/img/c3.jpg" alt="C3" class="card-img-top">
-                        <div class="card-body">
-                            <p class="card-text"><small class="text-muted">Location</small></p>
+                            <img src="dist/img/c3.jpg" alt="C3" class="card-img-top">
+                            <div class="card-body">
+                                <p class="card-text"><small class="text-muted">Location:</small></p>
+                            </div>
                         </div>
                     </div>
                 </div>
