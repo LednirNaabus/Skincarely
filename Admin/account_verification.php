@@ -15,15 +15,16 @@ $_SESSION["username"] = $_POST['user'];
             $row = mysqli_fetch_array($result, MYSQLI_ASSOC);  
             $count = mysqli_num_rows($result);  
 
-        if($count == 1){  
-            ob_start();
-            header("Location: resetpassword.php");
-            ob_end_flush(); 
-        }  
-        else{  
-            ob_start();
-            header("Location: check.php");
-            ob_end_flush(); 
-        }     
+            if($count == 1) {  
+                ob_start();
+                header("Location: resetpassword.php");
+                ob_end_flush(); 
+            }  
+
+            else {  
+                ob_start();
+                header("Location: check.php");
+                ob_end_flush(); 
+            }     
           
 ?>  
