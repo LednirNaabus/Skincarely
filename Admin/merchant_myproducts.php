@@ -110,7 +110,7 @@ $shopid = $_SESSION["shopid"];
   <br>
 
   <div class="container" style="font-family: Poppins;">
-    <h3 class class="display-3" id="ratings">List of Products</h3>
+    <h3 class class="display-3" id="productlist">List of Products</h3>
       <br>
       <form method="POST" style="display: inline-block;">
             <button name = "all">All Products</button>
@@ -143,6 +143,7 @@ $shopid = $_SESSION["shopid"];
               $sql = "SELECT * FROM items WHERE shop_id = '$shopid'";
               $result = mysqli_query($con,$sql);
               while($row = $result->fetch_assoc()) { 
+                $_SESSION['itemid'] = $row['item_id'];
         ?>
     
         <div class="col-md-3 col-sm-6">
@@ -153,7 +154,7 @@ $shopid = $_SESSION["shopid"];
                   <ul class="social">
                         <li><a href="" data-tip="View Product"><i class="fa fa-search"></i></a></li>
                         <li><a href="" data-tip="Edit Product"><i class="glyphicon glyphicon-pencil"></i></a></li>
-                        <li><a href="" data-tip="Delete Product"><i class="glyphicon glyphicon-trash"></i></a></li>
+                        <li><a href="product_delete.php" data-tip="Delete Product"><i class="glyphicon glyphicon-trash"></i></a></li>
                     </ul>
                 </div>
                 <div class="product-content">
@@ -314,7 +315,7 @@ $shopid = $_SESSION["shopid"];
   <br><br>
 
   <div class="container" style="font-family: Poppins;">
-    <h3 class class="display-3" id="ratings">Reviews</h3>
+    <h3 class class="display-3" id="reviews">Reviews</h3>
     <br>
   </div>
 
