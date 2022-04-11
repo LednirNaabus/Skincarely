@@ -1,5 +1,24 @@
 <?php
 session_start();
+
+include('connection.php'); 
+
+$linkpls = $_SESSION["id"];
+
+$sqlprod = "SELECT * FROM shops WHERE vendor_id = '$linkpls';";
+      $resultprod = mysqli_query($con, $sqlprod);
+
+      if (mysqli_num_rows($resultprod) > 0) {
+          while($row = mysqli_fetch_assoc($resultprod)) {
+              $_SESSION["shopid"] = $row["shop_id"];
+          }
+
+      } else {
+          echo "0 results";
+      }
+
+      $shopname = $_SESSION["shop"];
+
 $shopid = $_SESSION["shopid"];
 ?>
 
@@ -105,7 +124,7 @@ $shopid = $_SESSION["shopid"];
     </div>
 
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="skincarely.php"><span class="glyphicon glyphicon-log-out" style="padding: 0 1rem 0;"></span> Logout </a></li>
+      <li><a href="index.php"><span class="glyphicon glyphicon-log-out" style="padding: 0 1rem 0;"></span> Logout </a></li>
     </ul>
 
   </div>
@@ -176,13 +195,14 @@ $shopid = $_SESSION["shopid"];
                 <input class="form-check-input" type="checkbox" id="skincare" name="productcategory">
                 <label class="form-check-label" for="skincare">Skincare</label>
               </div>
-              <button type="submit" class="btn btn-primary">Create</button>
-            </form>
+              
+            
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          
+          <button type="submit" class="btn btn-primary">Create</button>
         </div>
+        </form>
       </div>
       
     </div>
