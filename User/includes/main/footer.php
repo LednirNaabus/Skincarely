@@ -1,3 +1,4 @@
+</div>
 <!-- Changed class to "main-footer", just add text-center if you want footer position to be in the middle -->
 <footer class="main-footer">
 <strong>Skincarely.ph</strong> &copy; 2021. All rights reserved.

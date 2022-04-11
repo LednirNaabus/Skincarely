@@ -169,7 +169,7 @@ h6 {
   width: 25%;
   height: 25vh;  
   min-height: 200px;
-  padding: 15px; 
+  padding: 25px 15px 15px 15px; 
   position: -webkit-sticky;
   position: sticky;
   top: 5%;
@@ -550,7 +550,7 @@ h6 {
   border-radius: 0.25rem;
 }
 .navbar {
-  position: relative;
+  position: fixed;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -905,6 +905,10 @@ body,
 
 .layout-fixed .brand-link {
   width: 250px;
+}
+
+.main-content{
+  padding-top: 55px;
 }
 
 .main{
