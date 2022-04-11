@@ -42,8 +42,8 @@ include 'includes/connection/db_connection.php';
         </div> 
         <!-- /.sidebar --> 
         <!-- Content  -->
-        <div class="col-9">
-            <div class="card" style="margin-top:15px;">
+        <div class="col-9" style="margin-top:25px;">
+            <div class="card">
                 <div class="card-body w-100">
                     <b>About Us</b>
                     <br>

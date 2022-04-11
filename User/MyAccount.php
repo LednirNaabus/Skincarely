@@ -41,7 +41,7 @@ $userInfo = mysqli_fetch_row($result);
         <!-- /.sidebar -->
     </div> 
         <!-- Content Header (Page header) -->
-    <div class="col-9">
+    <div class="col-9"style="margin-top:25px;">
         <div class="row">
         <section class="content-header" >
             <div class="container-fluid">
