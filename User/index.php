@@ -9,7 +9,7 @@
     $new_shops = mysqli_query($link, "SELECT * FROM shops ORDER BY shop_id DESC");
 
     // -- `items` table --
-    $items_featured = mysqli_query($link, "SELECT * FROM items LIMIT 3");
+    $items = mysqli_query($link, "SELECT * FROM items LIMIT 3");
 ?> 
 <main role="main" style="background-color: #F7F3F2;">
     <div class="bg-img">
@@ -54,7 +54,7 @@
                 </ul>
             </div>
             <?php
-                $featured = mysqli_fetch_row($featured_shops);
+                $featured = mysqli_fetch_array($featured_shops);
                 $new = mysqli_fetch_row($new_shops);
             ?>
             <div class="card-body">
@@ -65,7 +65,7 @@
                         <div class="card">
                             <?php
                                 if($featured != null) {
-                                    echo '<a href="merchant_portal.php"><img src="data:image/jpeg;base64,'.base64_encode($featured[3]).'" class="card-img-top" /></a>';
+                                    echo '<a href="merchant_portal.php"><img src="data:image/jpeg;base64,'.base64_encode($featured["shop_logo"]).'" class="card-img-top" /></a>';
                                 } else {
                                     echo '<p class="card-text"> There is nothing yet. Why don\'t you create a <a href="../Admin/signup.php">vendor account</a> to host a shop?</p>';
                                 }
@@ -73,12 +73,12 @@
                             <div class="card-body">
                                 <p class="card-text"><?php 
                                     if($featured != null) {
-                                        echo $featured[2];
+                                        echo $featured["shop_name"];
                                     }
                                 ?></p>
                                 <p class="card-text"><small class="text-muted"><?php 
                                     if($featured != null) {
-                                        echo 'From '. $featured[5];
+                                        echo $featured["shop_description"].' | '.$featured["shop_location"];
                                     }
                                 ?></small></p>
                             </div>
@@ -135,18 +135,19 @@
         <div class="row">
             <div class="col">
                 <!-- show items by featured shop -->
-                <h2>New items from featured shop</h2>
+                <h2>New items from <?php echo $featured[2]; ?> shop</h2>
                 <div class="row row-cols-1 row-cols-md-2 g-4">
                     <?php
-
-                        $item = mysqli_fetch_array($items_featured);
-                        if($item != null) {
-                            while($item) {
-                                Print '<div class="col">
-                                            <div class="card">';
-                                echo '<a href="#"><img src="data:image/jpeg;base64,' .base64_encode($item[5]).'" class="card-img-top"></a>';
-                                Print '<div class="card-body">
-                                            <p class="card-text"><small class="text-muted">' .$item[2] . '</small></p></div></div></div>';
+                    
+                        if($items != null) {
+                            while($row = $items->fetch_assoc()) {
+                                if($row["shop_id"] == $featured["shop_id"]) {
+                                    Print '<div class="col">
+                                                    <div class="card">';
+                                        echo '<a href="#"><img src="data:image/jpeg;base64,' .base64_encode($row["item_image"]).'" class="card-img-top"></a>';
+                                        Print '<div class="card-body">
+                                                    <p class="card-text"><small class="text-muted">' .$row["item_name"] . '</small></p></div></div></div>';
+                                }
                             }
                         } else {
                             echo '<div class="col">
@@ -157,6 +158,7 @@
                                     </div>
                                   </div>';
                         }
+
                     ?>
                 </div>
             </div>
