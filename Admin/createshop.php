@@ -173,7 +173,7 @@ session_start();
           </div>
           <div class="form-group col-md-6">
           <label for="otherbranch">Other Branches</label>
-          <select class="form-select"  name="otherbranch" id="otherbranch" multiple>
+          <select class="form-select"  name="otherbranch[]" id="otherbranch" multiple>
                 <option value="" disabled> ---------------------------- Province ----------------------------</option>
                 <option value="Abra">Abra</option>
                 <option value="Agusan del Norte">Agusan del Norte</option>
@@ -281,7 +281,7 @@ session_start();
         <div class="form-row">
           <div class="form-group col-md-6">
           <label for="pickup">Pick Up Areas</label>
-          <select class="form-select" name="pickup" id="pickup" multiple required>
+          <select class="form-select" name="pickup[]" id="pickup" multiple required>
                 <option value="" disabled> ---------------------------- Province ----------------------------</option>
                 <option value="Abra">Abra</option>
                 <option value="Agusan del Norte">Agusan del Norte</option>
@@ -386,7 +386,7 @@ session_start();
           </div>
           <div class="form-group col-md-6">
           <label for="delivery">Delivery</label>
-          <select class="form-select" style="line-height: 61.5px;" name="delivery" id="delivery" multiple required>
+          <select class="form-select" style="line-height: 61.5px;" name="delivery[]" id="delivery" multiple required>
                 <option value="" disabled selected>Mode of Delivery</option>
                 <option value="Mode1">Mode 1</option>
                 <option value="Mode2">Mode 2</option>
@@ -398,17 +398,17 @@ session_start();
         <div class="form-row">
           <div class="form-group col-md-6">
             <label for="landline">Landline No.</label>
-            <input type="text" class="form-control" id="landline" name="landline">
+            <input type="text" class="form-control" id="landline" name="landline" style="font-size: 12px;">
           </div>
           <div class="form-group col-md-6">
             <label for="mobile">Mobile No.</label>
-            <input type="text" class="form-control" id="mobile" name="mobile">
+            <input type="text" class="form-control" id="mobile" name="mobile" style="font-size: 12px;">
           </div>
         </div>
 
         <div class="form-row">
         <label for="payment">Payment</label>
-          <select class="form-select" name="payment" id="payment" multiple required>
+          <select class="form-select" name="payment[]" id="payment" multiple required>
                 <option value="" disabled selected>Payment Options</option>
                 <option value="Mode1">Mode 1</option>
                 <option value="Mode2">Mode 2</option>
@@ -419,9 +419,25 @@ session_start();
         <br>
 
         <div class="form-group">
-          <label for="socials">Social Media Link</label>
-          <input type="text" class="form-control" id="socials" name="socials">
+          <label for="socials">Social Media Links</label>
+          <br>
+          <div class="input-group-prepend" style="width: 155px; display:inline-block;">
+          <div class="input-group-text" style="font-size: 12px;">https://facebook.com/</div>
+          </div>
+          <input type="text" class="form-control" id="socials1" name="socials1" style="display: inline-block; width: 800px; height: 27px; font-size: 12px;">
+          <br>
+          <div class="input-group-prepend" style="width: 155px; display:inline-block;">
+          <div class="input-group-text" style="font-size: 12px;">https://twitter.com/</div>
+          </div>
+          <input type="text" class="form-control" id="socials1" name="socials2" style="display: inline-block; width: 800px; height: 27px; font-size: 12px;">
+          <br>
+          <div class="input-group-prepend" style="width: 155px; display:inline-block;">
+          <div class="input-group-text" style="font-size: 12px;">https://instagram.com/</div>
+          </div>
+          <input type="text" class="form-control" id="socials1" name="socials3" style="display: inline-block; width: 800px; height: 27px; font-size: 12px;">
         </div>
+
+        <br>
 
         <button type="submit" class="btn btn-primary">Create</button>
 

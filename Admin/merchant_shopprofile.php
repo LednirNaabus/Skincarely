@@ -109,6 +109,29 @@ $shopid = $_SESSION["shopid"];
 
   <div class="tab-content m-5">
     <div id="about" class="tab-pane fade in active">
+      <h3>Shop Motto</h3>
+      <p>
+      <?php
+          include('connection.php');      
+          
+          $sql = "SELECT * FROM shops WHERE shop_name = '$shopname';";
+          $result = mysqli_query($con, $sql);
+
+          if (mysqli_num_rows($result) > 0) 
+          {
+
+              while($row = mysqli_fetch_assoc($result)) 
+              {
+                echo $row['shop_motto'];
+              }
+          } 
+          
+          else 
+          {
+              echo "No motto found.";
+          }
+      ?>
+      </p>
       <h3>Shop Description</h3>
       <p>
       <?php
@@ -132,7 +155,7 @@ $shopid = $_SESSION["shopid"];
           }
       ?>
       </p>
-      <h3>Shop Location</h3>
+      <h3>Shop Main Branch</h3>
       <p>
       <?php
           include('connection.php');      
@@ -145,7 +168,99 @@ $shopid = $_SESSION["shopid"];
 
               while($row = mysqli_fetch_assoc($result)) 
               {
-                echo $row['shop_location'];
+                echo $row['shop_mainbranch'];
+              }
+          } 
+          
+          else 
+          {
+              echo "No main branch found.";
+          }
+      ?>
+      </p>
+      <h3>Shop Other Branches</h3>
+      <p>
+      <?php
+          include('connection.php');      
+          
+          $sql = "SELECT * FROM shops WHERE shop_name = '$shopname';";
+          $result = mysqli_query($con, $sql);
+
+          if (mysqli_num_rows($result) > 0) 
+          {
+
+              while($row = mysqli_fetch_assoc($result)) 
+              {
+                echo $row['shop_otherbranch'];
+              }
+          } 
+          
+          else 
+          {
+              echo "No other branches found.";
+          }
+      ?>
+      </p>
+      <h3>Shop Pickup Areas</h3>
+      <p>
+      <?php
+          include('connection.php');      
+          
+          $sql = "SELECT * FROM shops WHERE shop_name = '$shopname';";
+          $result = mysqli_query($con, $sql);
+
+          if (mysqli_num_rows($result) > 0) 
+          {
+
+              while($row = mysqli_fetch_assoc($result)) 
+              {
+                echo $row['shop_pickupareas'];
+              }
+          } 
+          
+          else 
+          {
+              echo "No pickup areas found.";
+          }
+      ?>
+      </p>
+      <h3>Shop Delivery Modes</h3>
+      <p>
+      <?php
+          include('connection.php');      
+          
+          $sql = "SELECT * FROM shops WHERE shop_name = '$shopname';";
+          $result = mysqli_query($con, $sql);
+
+          if (mysqli_num_rows($result) > 0) 
+          {
+
+              while($row = mysqli_fetch_assoc($result)) 
+              {
+                echo $row['shop_delivery'];
+              }
+          } 
+          
+          else 
+          {
+              echo "No delivery modes found.";
+          }
+      ?>
+      </p>
+      <h3>Shop Payment Modes</h3>
+      <p>
+      <?php
+          include('connection.php');      
+          
+          $sql = "SELECT * FROM shops WHERE shop_name = '$shopname';";
+          $result = mysqli_query($con, $sql);
+
+          if (mysqli_num_rows($result) > 0) 
+          {
+
+              while($row = mysqli_fetch_assoc($result)) 
+              {
+                echo $row['shop_payment'];
               }
           } 
           
