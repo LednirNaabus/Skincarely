@@ -140,8 +140,8 @@ session_destroy();
 <body>
 
 <div class="navbar">
-    <a href="skincarely.php" style="text-align: left; font-family: Calistoga; padding-right: 20px; font-size:17px">SKINCARELY</a>
-    <a href="skincarely.php">Home</a>
+    <a href="index.php" style="text-align: left; font-family: Calistoga; padding-right: 20px; font-size:17px">SKINCARELY</a>
+    <a href="index.php">Home</a>
     <a href="#about">About</a>
     <a href="#team">Meet the Team</a>
     <a href="#contact">Contact</a>
