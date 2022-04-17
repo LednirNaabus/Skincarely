@@ -153,7 +153,7 @@ unset($_SESSION['shopdelivery']);
         </div>
         <div class="form-group">
           <label for="socials">Social Media Links</label>
-          <textarea class="form-control" id="socials" rows="3"><?php echo $_SESSION["shopsocials"]; ?></textarea>
+          <textarea class="form-control" id="socials" name="socials" rows="3"><?php echo $_SESSION["shopsocials"]; ?></textarea>
         </div>
       
 

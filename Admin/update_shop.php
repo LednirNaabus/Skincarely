@@ -23,7 +23,7 @@ session_start();
 
     $linkvs = $_SESSION["shopid"];
 
-              $sql = "UPDATE shops SET shop_name='$shopname', shop_logo='$shoplogo', shop_motto='$shopmotto', shop_description='$shopdescription', shop_mainbranch='$shopmainbranch', shop_otherbranch='$shopotherbranch', shop_pickupareas='$shoppickup', shop_delivery='$shopdelivery', shop_payment='$shoppayment', shop_contact='$contact', shop_socials='$socials' WHERE vendor_id='$linkvs'";
+              $sql = "UPDATE shops SET shop_name='$shopname', shop_logo='$shoplogo', shop_motto='$shopmotto', shop_description='$shopdescription', shop_mainbranch='$shopmainbranch', shop_otherbranch='$shopotherbranch', shop_pickupareas='$shoppickup', shop_delivery='$shopdelivery', shop_payment='$shoppayment', shop_contact='$contact', shop_socials='$socials' WHERE shop_id='$linkvs'";
 
               if (mysqli_query($con, $sql)) {
                   ob_start();
