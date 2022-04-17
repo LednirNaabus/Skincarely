@@ -17,7 +17,6 @@ $resultprod = mysqli_query($con, $sqlprod);
           echo "0 results";
       }
 
-$shopname = $_SESSION["shop"];
 $shopid = $_SESSION["shopid"];
 ?>
 
@@ -201,13 +200,6 @@ $shopid = $_SESSION["shopid"];
               echo "No contact found.";
           }
       ?>
-      </p>
-      <h3>Shop Hours</h3>
-      <p>
-        <?php
-          echo $_SESSION["shophours"];
-          //find a way to access this if its not in db?
-        ?>
       </p>
     </div>
 
