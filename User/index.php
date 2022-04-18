@@ -73,7 +73,7 @@
                                 ?></p>
                                 <p class="card-text"><small class="text-muted"><?php 
                                     if($shop != null) {
-                                        echo $shop["shop_description"].' | '.$shop["shop_location"];
+                                        echo $shop["shop_description"].' | '.$shop["shop_mainbranch"];
                                     }
                                 ?></small></p>
                             </div>
@@ -120,7 +120,7 @@
                                 <p class="card-text"><small class="text-muted">
                                     Uploaded: <?php 
                                         if($new_shops != null) {
-                                            echo $new_shops[9];
+                                            echo $new_shops[14];
                                         }
                                     ?>
                                 </small></p>

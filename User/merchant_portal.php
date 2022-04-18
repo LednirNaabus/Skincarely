@@ -26,7 +26,7 @@ $id_exists = false;
                             while($row = mysqli_fetch_array($query)) {
                                 $shop_name = $row['shop_name'];
                                 $shop_desc = $row['shop_description'];
-                                $shop_location = $row['shop_location'];
+                                $shop_location = $row['shop_mainbranch'];
                                 $shop_contact = $row['shop_contact'];
 
                                 $vendor_query = mysqli_query($link, "SELECT * FROM vendors WHERE shop_id='$shop_id'");
