@@ -43,7 +43,7 @@ session_start();
                       if (mysqli_num_rows($resultname) > 0) {
                           // output data of each row
                           while($row = mysqli_fetch_assoc($resultname)) {
-                              $_SESSION["id"] = $row["vendor_id"];
+                              $_SESSION["vendorid"] = $row["vendor_id"];
                           }
                       } 
                       
@@ -62,10 +62,7 @@ session_start();
                           echo "Error: " . $sql . "<br>" . mysqli_error($con);
                       }
               
-                      mysqli_close($con);
-                      ob_start();
-                      header("Location: merchant_dashboard.php");
-                      ob_end_flush(); 
+                      
                   }     
             }
 

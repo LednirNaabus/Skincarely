@@ -1,9 +1,7 @@
 <?php
 include "includes/main/header.php";
 include 'includes/connection/db_connection.php';
-
-$result = mysqli_query($link, "SELECT * FROM shops WHERE shop_id = 2");
-$shopInfo = mysqli_fetch_row($result);
+$id_exists = false;
 ?>
 <div class="wrapper">
     <div class="sidebar">
@@ -19,8 +17,55 @@ $shopInfo = mysqli_fetch_row($result);
                         ?>
                     </div>
                 </div>
-                <div class="row justify-content-center" style="padding-top:30px">
-                    <h4><b><?php echo $shopInfo[2] //Shop name ?></b>
+                <?php
+                    if(!empty($_GET['shop_id'])) {
+                        $shop_id = $_GET['shop_id'];
+                        $_SESSION['shopid'] = $shop_id;
+                        $id_exists = true;
+
+                        $query = mysqli_query($link, "SELECT * FROM shops WHERE shop_id='$shop_id'");
+
+                        $count = mysqli_num_rows($query);
+
+                        if($count > 0) {
+                            while($row = mysqli_fetch_array($query)) {
+                                $shop_name = $row['shop_name'];
+                                $shop_desc = $row['shop_description'];
+                                $shop_location = $row['shop_location'];
+                                $shop_contact = $row['shop_contact'];
+
+                                $vendor_query = mysqli_query($link, "SELECT * FROM vendors WHERE shop_id='$shop_id'");
+                                $count_vendor = mysqli_num_rows($vendor_query);
+
+                                if($count_vendor > 0) {
+                                    while($vendor_row = mysqli_fetch_array($vendor_query)) {
+                                        $vendor_id = $vendor_row['vendor_id'];
+                                        $vendor_name = $vendor_row['vendor_name'];
+                                        $vendor_email = $vendor_row['vendor_email'];
+                                    }
+                                }
+                            }
+                        }
+                    } else {
+                        $id_exists = false;
+
+                        echo "Error: Shop not found. Try again later.";
+                    }
+
+                    if($id_exists) {
+                        echo '<div class="row justify-content-center" style="padding-top: 30px;">';
+                        echo '<h4>'.$shop_name.'</h4></div>';
+                        echo '<div class="row justify-content-center">
+                                <p style="font-size: 15px;">'.$shop_desc.' </p>
+                              </div>';
+                        echo '<div class="row" style="padding: 30px 0 0 15px;">
+                                <p style="font-size: 15px";> <strong> Look for: </strong> ' . $vendor_name . '</p></div>';
+                        echo '<div class="row" style="padding-left: 15px;">
+                                <p style="font-size: 15px;"> <strong> Contact: </strong> ' . $vendor_email . '</p></div>';
+                    }
+                ?>
+                <!-- <div class="row justify-content-center" style="padding-top:30px">
+                    <h4><b>Skincarely Shop</b>
                         <h4>
                 </div>
                 <div class="row justify-content-center">
@@ -35,7 +80,17 @@ $shopInfo = mysqli_fetch_row($result);
                 <div class="row" style="padding-left:15px">
                     <p style="font-size: 15px">Shop contact number</p>
                 </div>
-                 
+                <div class="row" style="padding: 0 0 30px 15px">
+                    <a href="#" class="nav-icon facebook">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+                    <a href="#" class="nav-icon facebook">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+                    <a href="#" class="nav-icon facebook">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+                </div> -->
             </div>
         </div>
     </div>
