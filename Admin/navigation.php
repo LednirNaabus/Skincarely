@@ -23,18 +23,10 @@
 
       <ul class="nav navbar-nav">
       <li><a href="merchant_dashboard.php">Dashboard</a></li>
-      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="merchant_businessinsights.php"> Business Insights <span></span></a>
-        <ul class="dropdown-menu">
-        <li><a href="merchant_businessinsights.php#ratings">Ratings</a></li>
-          <li><a href="merchant_businessinsights.php#followers">Followers</a></li>
-          <li><a href="merchant_businessinsights.php#pageengagement">Page Engagement</a></li>
-          <li><a href="merchant_businessinsights.php#productengagement">Product Engagement</a></li>
-        </ul>
-      </li>
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="merchant_myproducts.php" class="active"> My Products <span></span></a>
         <ul class="dropdown-menu">
-          <li><a href="merchant_myproducts.php#productlist">Product List</a></li>
-          <li><a href="merchant_myproducts.php#reviews">Reviews</a></li>
+          <li><a href="myproducts_verification.php">Product List</a></li>
+          <li><a href="myproducts_verification.php">Reviews</a></li>
         </ul>
       </li>
       <li><a href="shop_verification.php">Shop Profile</a></li>

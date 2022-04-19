@@ -11,6 +11,7 @@ session_start();
     <title>Skincarely | Dashboard</title>
     
     <?php include('merchant_links.php'); ?>
+    <?php include('insights.php'); ?>
 
 </head>
 <body style="background-color: #f7f3f2;">
@@ -35,6 +36,56 @@ session_start();
             <hr class="my-4">
 
             <br>
+
+            <div class="container" style="font-family: Poppins;">
+            <h1 class="display-4">Business Insights</h1>
+            <br><br>
+            <section id="counter" class="sec-padding">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-3 ">
+                    <div class="count"> <span class="glyphicon glyphicon-user"></span>
+                    <br>
+                      <p class="number">126</p>
+                      <h4>Shop Followers</h4> </div>
+                  </div>
+                  <div class="col-md-3 ">
+                    <div class="count"> <span class="glyphicon glyphicon-heart"></span>
+                    <br>
+                      <p class="number">535</p>
+                      <h4>Shop Reactions</h4> </div>
+                  </div>
+                  <div class="col-md-3 ">
+                    <div class="count"> <span class="glyphicon glyphicon-tags"></span>
+                    <br>
+                      <p class="number">
+                        <?php
+                          include("connection.php");
+
+                          $productref = $_SESSION["shopid"];
+                          
+                          $sql = "select * from items where shop_id = '$productref'";
+                          $result = mysqli_query($con, $sql);  
+                          $row = mysqli_fetch_array($result, MYSQLI_ASSOC);  
+                          $count = mysqli_num_rows($result);
+                          
+                          echo $count;
+                        ?>
+                      </p>
+                      <h4>Total Products</h4> </div>
+                  </div>
+                  <div class="col-md-3 ">
+                    <div class="count"> <span class="glyphicon glyphicon-thumbs-up"></span>
+                    <br>
+                      <p class="number">777</p>
+                      <h4>Product Likes</h4> </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            </div>
+
+            <br><br>
 
             <div class="container" style="font-family: Poppins;">
             <h1 class="display-4">Your Top Liked Products</h1>
