@@ -62,7 +62,7 @@ session_start();
                         <?php
                           include("connection.php");
 
-                          $productref = $_SESSION["vendorid"];
+                          $productref = $_SESSION["shopid"];
                           
                           $sql = "select * from items where shop_id = '$productref'";
                           $result = mysqli_query($con, $sql);  
