@@ -237,18 +237,7 @@ session_start();
 
           
           <div class="container d-flex justify-content-center text-center" style="font-family: Poppins;">
-            <div class="row">
-                <div class="col-md-4">
-                  <div class="card" style="width: 90%">
-                    <img class="card-img-top" src="img/c1.jpg" alt="Card image cap">
-                    <div class="card-body">
-                      <br>
-                      <p class="card-text text-center">See how your shop is performing through collated insights, engagements, and analytics.</p>
-                      <br>
-                      <p class="text-center"><a href="merchant_businessinsights.php" class="btn btn-primary" style="width: 20rem;">See Business Insights</a></p>
-                    </div>
-                  </div>
-                </div>
+            <div class="row d-flex justify-content-center text-center">
                 <div class="col-md-4">
                   <div class="card" style="width: 90%">
                     <img class="card-img-top" src="img/c2.jpg" alt="Card image cap">
