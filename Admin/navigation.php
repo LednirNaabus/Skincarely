@@ -2,7 +2,13 @@
 
 ul.nav a:hover { color: white !important; background-color: #8C5652; }
 
-
+.bgImgCenter{
+    background-image: url('../Admin/img/dashboard.jpg');
+    background-repeat: no-repeat;
+    background-position: center; 
+    position: relative;
+    background-size: 100%;
+}
 
 </style>
 
