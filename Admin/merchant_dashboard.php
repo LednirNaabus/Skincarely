@@ -62,14 +62,35 @@ session_start();
                         <?php
                           include("connection.php");
 
-                          $productref = $_SESSION["shopid"];
-                          
-                          $sql = "select * from items where shop_id = '$productref'";
+                          $ref = $_SESSION["vendorid"];
+
+                          $sql = "select * from vendors where vendor_id = '$ref'";
                           $result = mysqli_query($con, $sql);  
                           $row = mysqli_fetch_array($result, MYSQLI_ASSOC);  
                           $count = mysqli_num_rows($result);
+
+                          if($row["shop_id"] == "0")
+                          {
+                            echo "0";
+                          }
+
+                          else
+                          {
+                              $productref = $row["shop_id"];
+
+                              $sqll = "select * from items where shop_id = '$productref'";
+                              $resultt = mysqli_query($con, $sqll);  
+                              $roww = mysqli_fetch_array($resultt, MYSQLI_ASSOC);  
+                              $count = mysqli_num_rows($resultt);
+                              
+                              echo $count;
+                            
+
+                          }
+
+                           
+
                           
-                          echo $count;
                         ?>
                       </p>
                       <h4>Total Products</h4> </div>
