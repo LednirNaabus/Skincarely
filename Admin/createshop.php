@@ -388,9 +388,9 @@ session_start();
           <label for="delivery">Delivery</label>
           <select class="form-select" style="line-height: 61.5px;" name="delivery[]" id="delivery" multiple required>
                 <option value="" disabled selected>Mode of Delivery</option>
-                <option value="Mode1">Mode 1</option>
-                <option value="Mode2">Mode 2</option>
-                <option value="Mode3">Mode 3</option>
+                <option>Standard Delivery</option>
+                <option>J&T Express</option>
+                <option>Grab Delivery</option>
           </select>
           </div>
         </div>
@@ -410,9 +410,9 @@ session_start();
         <label for="payment">Payment</label>
           <select class="form-select" name="payment[]" id="payment" multiple required>
                 <option value="" disabled selected>Payment Options</option>
-                <option value="Mode1">Mode 1</option>
-                <option value="Mode2">Mode 2</option>
-                <option value="Mode3">Mode 3</option>
+                <option>E-wallet</option>
+                <option>Credit Card</option>
+                <option>Cash on Delivery</option>
           </select>
         </div>
 
