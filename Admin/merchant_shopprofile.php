@@ -451,7 +451,10 @@ unset($_SESSION['shopdelivery']);
                 <div class="product-image" style="height: 233px;">
                     <a href="#"><?php echo '<img src = "data:image/jpeg;base64,'.base64_encode($row['item_image']).'"/>'; ?></a>  
                   <ul class="social">
-                        <li><a href="merchant_myproducts.php" data-tip="View Product"><i class="fa fa-search"></i></a></li>
+                        <form action="editproduct.php" method="POST">
+                        <input name="itemid" value="<?php echo $_SESSION['itemid']; ?>" style="width:0px; height:0px;" hidden>
+                        <li><a href="editproduct.php" data-tip="View Product"><button type="submit" style="background-color:transparent; border:none;"><i class="fa fa-search"></i></button></a></li>
+                        </form>
                     </ul>
                 </div>
                 <div class="product-content">
