@@ -37,8 +37,8 @@ ul.nav a:hover { color: white !important; background-color: #8C5652; }
 
       <ul class="nav navbar-nav" style="background-color: #8C5652; text-decoration: none;">
       <li><a style="color: white;" href="merchant_dashboard.php">Dashboard</a></li>
-      <li><a style="color: white;" href="myproducts_verification.php">My Products</a></li>
       <li><a style="color: white;" href="shop_verification.php">Shop Profile</a></li>
+      <li><a style="color: white;" href="myproducts_verification.php">My Products</a></li>
     </ul>
       
     </div>
