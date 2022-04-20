@@ -18,6 +18,14 @@ ul.nav a:hover { color: white !important; background-color: #8C5652; }
     background-size: 100%;
 }
 
+.bgImgCenter2{
+    background-image: url('../Admin/img/myproducts.jpg');
+    background-repeat: no-repeat;
+    background-position: center; 
+    position: relative;
+    background-size: 100%;
+}
+
 </style>
 
 <nav class="navbar navbar-expand-lg navbar-static-top" style="background-color: #8C5652; font-family:Poppins">
