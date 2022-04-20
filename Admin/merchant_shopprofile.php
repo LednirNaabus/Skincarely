@@ -49,17 +49,16 @@ unset($_SESSION['shopdelivery']);
 
 <!--------- CONTENT -------------------->
 
-<div class="container" style="font-family: Poppins;">
-  <h1 class class="display-1">Shop Profile</h1>
+<div class="container-fluid bgImgCenter1" style="font-family: Poppins; height: 350px; margin-top:-20px; font-family: Poppins;">
+  <h1 class="display-1" style="margin-left:200px; margin-top:60px;">Shop Profile</h1>
     <br>
-    <p> View and manage your shop profile.</p>          
+    <p style=" margin-left:200px; padding-right: 200px; font-size:1vw;"> View and manage your shop information.</p>          
     <br>  
-    <p><button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">Edit Shop</button></p>
+    <p style=" margin-left:200px; padding-right: 200px; font-size:18px;"><button style="background-color: #8C5652; color:white; border:none;" type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">Edit Shop Details</button></p>
 </div>
 
 <br>
 
-<hr class="my-4">
 
 <br>
 
@@ -170,7 +169,7 @@ unset($_SESSION['shopdelivery']);
 
 <!-- Merchant Shop Profile Proper -->
     
-<div class="container p-5 my-3 border rounded" style="font-family: Poppins;">
+<div class="container p-5 my-3 border" style="font-family: Poppins; background-color: white; padding: 50px;">
   <h1 class="text-center">
       <?php
           include('connection.php');  
@@ -199,7 +198,7 @@ unset($_SESSION['shopdelivery']);
 
               while($row = mysqli_fetch_assoc($result)) 
               {
-                echo '<img src = "data:image/jpeg;base64,'.base64_encode($row['shop_logo']).'" height = "100" width = "100" class = "rounded"/>';
+                echo '<img src = "data:image/jpeg;base64,'.base64_encode($row['shop_logo']).'" height = "350" width = "350" class = "rounded"/>';
               }
           } 
           
@@ -212,19 +211,24 @@ unset($_SESSION['shopdelivery']);
   <h1 class="text-center">
   <u><?php echo $shopname;?></u>
   </h1>
+  <br>
 </div>
 
-<div class="container p-5 my-3 border rounded" style="font-family: Poppins;">
-  <ul class="nav nav-tabs">
-    <li class="active"><a data-toggle="tab" href="#about">About Shop</a></li>
-    <li><a data-toggle="tab" href="#products">Products</a></li>
-    <li><a data-toggle="tab" href="#photos">Photos</a></li>
+<div class="container p-5 my-3" style="font-family: Poppins;">
+  <ul class="nav nav-tabs" style="text-align: center; color: black;">
+    <li class="active"><a style="color: black;" data-toggle="tab" href="#about">About Shop</a></li>
+    <li><a style="color: black;" data-toggle="tab" href="#products">Products</a></li>
+    <li><a style="color: black;" data-toggle="tab" href="#photos">Photos</a></li>
   </ul>
 
-  <div class="tab-content m-5">
+  <div class="tab-content m-5" style="background-color: white; padding: 50px; border-radius:20px;">
     <div id="about" class="tab-pane fade in active">
-      <h3>Shop Motto</h3>
-      <p>
+    <h3>About Shop</h3>
+    <br>
+
+    <dl class="row" style="padding: 15px;">
+      <dt class="col-sm-3">Shop Motto</dt>
+      <dd class="col-sm-9">
       <?php
           include('connection.php');      
           
@@ -245,10 +249,12 @@ unset($_SESSION['shopdelivery']);
               echo "No motto found.";
           }
       ?>
-      </p>
-      <h3>Shop Description</h3>
-      <p>
-      <?php
+      </dd>
+
+      <dt class="col-sm-3">Shop Description</dt>
+      <dd class="col-sm-9">
+        <p>
+        <?php
           include('connection.php');      
           
           $sql = "SELECT * FROM shops WHERE shop_name = '$shopname';";
@@ -268,9 +274,13 @@ unset($_SESSION['shopdelivery']);
               echo "No description found.";
           }
       ?>
-      </p>
-      <h3>Shop Main Branch</h3>
-      <p>
+        </p>
+      </dd>
+
+      <hr>
+
+      <dt class="col-sm-3">Shop Main Branch</dt>
+      <dd class="col-sm-9">
       <?php
           include('connection.php');      
           
@@ -291,9 +301,10 @@ unset($_SESSION['shopdelivery']);
               echo "No main branch found.";
           }
       ?>
-      </p>
-      <h3>Shop Other Branches</h3>
-      <p>
+      </dd>
+
+      <dt class="col-sm-3 text-truncate">Shop Other Branches</dt>
+      <dd class="col-sm-9">
       <?php
           include('connection.php');      
           
@@ -314,9 +325,10 @@ unset($_SESSION['shopdelivery']);
               echo "No other branches found.";
           }
       ?>
-      </p>
-      <h3>Shop Pickup Areas</h3>
-      <p>
+      </dd>
+
+      <dt class="col-sm-3 text-truncate">Shop Pickup Areas</dt>
+      <dd class="col-sm-9">
       <?php
           include('connection.php');      
           
@@ -337,9 +349,14 @@ unset($_SESSION['shopdelivery']);
               echo "No pickup areas found.";
           }
       ?>
-      </p>
-      <h3>Shop Delivery Modes</h3>
-      <p>
+      </dd>
+
+      <br><br>
+
+      <hr>
+
+      <dt class="col-sm-3">Shop Delivery Modes</dt>
+      <dd class="col-sm-9">
       <?php
           include('connection.php');      
           
@@ -360,9 +377,10 @@ unset($_SESSION['shopdelivery']);
               echo "No delivery modes found.";
           }
       ?>
-      </p>
-      <h3>Shop Payment Modes</h3>
-      <p>
+      </dd>
+
+      <dt class="col-sm-3">Shop Payment Modes</dt>
+      <dd class="col-sm-9">
       <?php
           include('connection.php');      
           
@@ -383,9 +401,14 @@ unset($_SESSION['shopdelivery']);
               echo "No location found.";
           }
       ?>
-      </p>
-      <h3>Shop Socials</h3>
-      <p>
+      </dd>
+
+      <br><br>
+
+      <hr>
+
+      <dt class="col-sm-3">Shop Socials</dt>
+      <dd class="col-sm-9">
       <?php
           include('connection.php');      
           
@@ -397,7 +420,13 @@ unset($_SESSION['shopdelivery']);
 
               while($row = mysqli_fetch_assoc($result)) 
               {
-                echo $row['shop_socials'];
+                $str = $row['shop_socials'];
+                $stuff = (explode(" | ",$str));
+
+                foreach ($stuff as $value) {
+                  echo $value . "<br>";
+                }
+
               }
           } 
           
@@ -406,9 +435,10 @@ unset($_SESSION['shopdelivery']);
               echo "No socials found.";
           }
       ?>
-      </p>
-      <h3>Shop Contact</h3>
-      <p>
+      </dd>
+
+      <dt class="col-sm-3">Shop Contact</dt>
+      <dd class="col-sm-9">
       <?php
           include('connection.php');      
           
@@ -429,7 +459,11 @@ unset($_SESSION['shopdelivery']);
               echo "No contact found.";
           }
       ?>
-      </p>
+      </dd>
+
+    </dl>
+
+
     </div>
 
     <div id="products" class="tab-pane fade">
@@ -453,14 +487,14 @@ unset($_SESSION['shopdelivery']);
                   <ul class="social">
                         <form action="editproduct.php" method="POST">
                         <input name="itemid" value="<?php echo $_SESSION['itemid']; ?>" style="width:0px; height:0px;" hidden>
-                        <li><a href="editproduct.php" data-tip="View Product"><button type="submit" style="background-color:transparent; border:none;"><i class="fa fa-search"></i></button></a></li>
+                        <li><a href="editproduct.php" data-tip="View Product"><button type="submit" style="background-color:transparent; border:none; color:white;"><i class="fa fa-search"></i></button></a></li>
                         </form>
                     </ul>
                 </div>
                 <div class="product-content">
-                    <h3 class="title"><a href="#">
+                    <h3 class="title">
                       <?php echo $row['item_name']; ?>
-                    </a></h3>
+                    </h3>
                     <h4 class="title">
                       <?php echo $row['item_description']; ?>
                     </h4>
