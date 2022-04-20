@@ -48,7 +48,10 @@ session_start();
     <p style="display: inline-block;"><?php echo "Price: " . $row['item_price']; ?></p> | <p style="display: inline-block;"><?php echo "Category: " . $row['item_category']; ?></p>
     <br>
     <br>
-    <p><button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">Edit Product</button></p>
+    <p>
+    <a href="merchant_myproducts.php" style="color: white;"><button type="submit" class="btn btn-info btn-sm" style="background-color: #8C5652; border:none;">Back to Product List</button></a>
+      <button style="background-color: #8C5652; color:white; border:none;" type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">Edit Product</button>
+    </p>
     <br>
 
     <div class="modal fade" id="myModal" role="dialog">
