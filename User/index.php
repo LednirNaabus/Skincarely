@@ -186,11 +186,6 @@
                     -->
             </div>
         </div>
-        <div class="row">
-            <div class="col">
-                <h2>Recommended</h2>
-            </div>
-        </div>
     </div>
 </main>
 <?php
