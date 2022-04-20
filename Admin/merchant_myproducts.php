@@ -135,6 +135,8 @@ $shopid = $_SESSION["shopid"];
 
   <br>
 
+  
+
   <div class="container">
     <div class="row">
         <?php
@@ -145,6 +147,9 @@ $shopid = $_SESSION["shopid"];
               while($row = $result->fetch_assoc()) { 
                 $_SESSION['itemid'] = $row['item_id'];
         ?>
+
+
+  
     
         <div class="col-md-3 col-sm-6">
         <br>
@@ -152,9 +157,12 @@ $shopid = $_SESSION["shopid"];
                 <div class="product-image" style="height: 250px;">
                     <a href="#"><?php echo '<img src = "data:image/jpeg;base64,'.base64_encode($row['item_image']).'"/>'; ?></a>  
                   <ul class="social">
-                        <li><a href="" data-tip="View Product"><i class="fa fa-search"></i></a></li>
-                        <li><a href="" data-tip="Edit Product"><i class="glyphicon glyphicon-pencil"></i></a></li>
+                        <form action="editproduct.php" method="POST">
+                        <input name="itemid" value="<?php echo $_SESSION['itemid']; ?>" style="width:0px; height:0px;" hidden>
+                        <li><a href="editproduct.php" data-tip="View Product"><button type="submit" style="background-color:transparent; border:none;"><i class="fa fa-search"></i></button></a></li>
+                        <li><a href="editproduct.php" data-tip="Edit Product"><button type="submit" style="background-color:transparent; border:none;"><i class="glyphicon glyphicon-pencil"></i></button></a></li>
                         <li><a href="product_delete.php" data-tip="Delete Product"><i class="glyphicon glyphicon-trash"></i></a></li>
+                        </form>
                     </ul>
                 </div>
                 <div class="product-content">
@@ -178,6 +186,7 @@ $shopid = $_SESSION["shopid"];
               $sql = "SELECT * FROM items WHERE shop_id = '$shopid' AND item_category = 'Eye Makeup'";
               $result = mysqli_query($con,$sql);
               while($row = $result->fetch_assoc()) { 
+                $_SESSION['itemid'] = $row['item_id'];
         ?>
     
         <div class="col-md-3 col-sm-6">
@@ -186,9 +195,12 @@ $shopid = $_SESSION["shopid"];
                 <div class="product-image" style="height: 250px;">
                     <a href="#"><?php echo '<img src = "data:image/jpeg;base64,'.base64_encode($row['item_image']).'"/>'; ?></a>  
                   <ul class="social">
-                        <li><a href="" data-tip="View Product"><i class="fa fa-search"></i></a></li>
-                        <li><a href="" data-tip="Edit Product"><i class="glyphicon glyphicon-pencil"></i></a></li>
-                        <li><a href="" data-tip="Delete Product"><i class="glyphicon glyphicon-trash"></i></a></li>
+                        <form action="editproduct.php" method="POST">
+                        <input name="itemid" value="<?php echo $_SESSION['itemid']; ?>" style="width:0px; height:0px;" hidden>
+                        <li><a href="editproduct.php" data-tip="View Product"><button type="submit" style="background-color:transparent; border:none;"><i class="fa fa-search"></i></button></a></li>
+                        <li><a href="editproduct.php" data-tip="Edit Product"><button type="submit" style="background-color:transparent; border:none;"><i class="glyphicon glyphicon-pencil"></i></button></a></li>
+                        <li><a href="product_delete.php" data-tip="Delete Product"><i class="glyphicon glyphicon-trash"></i></a></li>
+                        </form>
                     </ul>
                 </div>
                 <div class="product-content">
@@ -212,6 +224,7 @@ $shopid = $_SESSION["shopid"];
               $sql = "SELECT * FROM items WHERE shop_id = '$shopid' AND item_category = 'Lip Makeup'";
               $result = mysqli_query($con,$sql);
               while($row = $result->fetch_assoc()) { 
+                $_SESSION['itemid'] = $row['item_id'];
         ?>
     
         <div class="col-md-3 col-sm-6">
@@ -220,9 +233,12 @@ $shopid = $_SESSION["shopid"];
                 <div class="product-image" style="height: 250px;">
                     <a href="#"><?php echo '<img src = "data:image/jpeg;base64,'.base64_encode($row['item_image']).'"/>'; ?></a>  
                   <ul class="social">
-                        <li><a href="" data-tip="View Product"><i class="fa fa-search"></i></a></li>
-                        <li><a href="" data-tip="Edit Product"><i class="glyphicon glyphicon-pencil"></i></a></li>
-                        <li><a href="" data-tip="Delete Product"><i class="glyphicon glyphicon-trash"></i></a></li>
+                        <form action="editproduct.php" method="POST">
+                        <input name="itemid" value="<?php echo $_SESSION['itemid']; ?>" style="width:0px; height:0px;" hidden>
+                        <li><a href="editproduct.php" data-tip="View Product"><button type="submit" style="background-color:transparent; border:none;"><i class="fa fa-search"></i></button></a></li>
+                        <li><a href="editproduct.php" data-tip="Edit Product"><button type="submit" style="background-color:transparent; border:none;"><i class="glyphicon glyphicon-pencil"></i></button></a></li>
+                        <li><a href="product_delete.php" data-tip="Delete Product"><i class="glyphicon glyphicon-trash"></i></a></li>
+                        </form>
                     </ul>
                 </div>
                 <div class="product-content">
@@ -246,6 +262,7 @@ $shopid = $_SESSION["shopid"];
               $sql = "SELECT * FROM items WHERE shop_id = '$shopid' AND item_category = 'Face Makeup'";
               $result = mysqli_query($con,$sql);
               while($row = $result->fetch_assoc()) { 
+                $_SESSION['itemid'] = $row['item_id'];
         ?>
     
         <div class="col-md-3 col-sm-6">
@@ -254,9 +271,12 @@ $shopid = $_SESSION["shopid"];
                 <div class="product-image" style="height: 250px;">
                     <a href="#"><?php echo '<img src = "data:image/jpeg;base64,'.base64_encode($row['item_image']).'"/>'; ?></a>  
                   <ul class="social">
-                        <li><a href="" data-tip="View Product"><i class="fa fa-search"></i></a></li>
-                        <li><a href="" data-tip="Edit Product"><i class="glyphicon glyphicon-pencil"></i></a></li>
-                        <li><a href="" data-tip="Delete Product"><i class="glyphicon glyphicon-trash"></i></a></li>
+                        <form action="editproduct.php.php" method="POST">
+                        <input name="itemid" value="<?php echo $_SESSION['itemid']; ?>" style="width:0px; height:0px;" hidden>
+                        <li><a href="editproduct.php" data-tip="View Product"><button type="submit" style="background-color:transparent; border:none;"><i class="fa fa-search"></i></button></a></li>
+                        <li><a href="editproduct.php" data-tip="Edit Product"><button type="submit" style="background-color:transparent; border:none;"><i class="glyphicon glyphicon-pencil"></i></button></a></li>
+                        <li><a href="product_delete.php" data-tip="Delete Product"><i class="glyphicon glyphicon-trash"></i></a></li>
+                        </form>
                     </ul>
                 </div>
                 <div class="product-content">
@@ -280,6 +300,7 @@ $shopid = $_SESSION["shopid"];
               $sql = "SELECT * FROM items WHERE shop_id = '$shopid' AND item_category = 'Skincare'";
               $result = mysqli_query($con,$sql);
               while($row = $result->fetch_assoc()) { 
+                $_SESSION['itemid'] = $row['item_id'];
         ?>
     
         <div class="col-md-3 col-sm-6">
@@ -288,9 +309,12 @@ $shopid = $_SESSION["shopid"];
                 <div class="product-image" style="height: 250px;">
                     <a href="#"><?php echo '<img src = "data:image/jpeg;base64,'.base64_encode($row['item_image']).'"/>'; ?></a>  
                   <ul class="social">
-                        <li><a href="" data-tip="View Product"><i class="fa fa-search"></i></a></li>
-                        <li><a href="" data-tip="Edit Product"><i class="glyphicon glyphicon-pencil"></i></a></li>
-                        <li><a href="" data-tip="Delete Product"><i class="glyphicon glyphicon-trash"></i></a></li>
+                        <form action="editproduct.php" method="POST">
+                        <input name="itemid" value="<?php echo $_SESSION['itemid']; ?>" style="width:0px; height:0px;" hidden>
+                        <li><a href="editproduct.php" data-tip="View Product"><button type="submit" style="background-color:transparent; border:none;"><i class="fa fa-search"></i></button></a></li>
+                        <li><a href="editproduct.php" data-tip="Edit Product"><button type="submit" style="background-color:transparent; border:none;"><i class="glyphicon glyphicon-pencil"></i></button></a></li>
+                        <li><a href="product_delete.php" data-tip="Delete Product"><i class="glyphicon glyphicon-trash"></i></a></li>
+                        </form>
                     </ul>
                 </div>
                 <div class="product-content">

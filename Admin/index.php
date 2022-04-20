@@ -21,7 +21,8 @@ session_destroy();
         }
         .navbar {
         overflow: hidden;
-        background-color: #F3F2F0;
+        background-color: #8C5652;
+        color: white;
         position: fixed;
         top: 0;
         width: 100%;
@@ -33,7 +34,7 @@ session_destroy();
         .navbar a {
         float: left;
         display: block;
-        color: #6F645E;
+        color: white;
         text-align: center;
         padding: 18px 16px;
         text-decoration: none;
@@ -47,7 +48,6 @@ session_destroy();
 
         .main {
         padding-top: 50px;
-        height: 1500px;
         background-color: #F3F2F0;
         }
 
@@ -140,8 +140,7 @@ session_destroy();
 <body>
 
 <div class="navbar">
-    <a href="index.php" style="text-align: left; font-family: Calistoga; padding-right: 20px; font-size:17px">SKINCARELY</a>
-    <a href="index.php">Home</a>
+    <a style="margin-left:70px;" href="index.php">Home</a>
     <a href="#about">About</a>
     <a href="#team">Meet the Team</a>
     <a href="#contact">Contact</a>
@@ -159,8 +158,6 @@ session_destroy();
 
         
 </div>
-
-
 
 </body>
 </html>
