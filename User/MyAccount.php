@@ -14,7 +14,7 @@ $userInfo = mysqli_fetch_row($result);
                 <?php if($userInfo[8] == NULL){
                         echo '<img src="dist/img/user.png" class="img-circle" alt="User Image">' ;
                         }else{
-                        echo '<img src="data:image;base64,',base64_encode($userInfo[8]),'alt="" class="img-circle">';
+                        echo '<img src="data:image;base64,',base64_encode($userInfo[4]),'alt="" class="img-circle">';
                         }  
                     ?> 
                 </div>
@@ -69,15 +69,15 @@ $userInfo = mysqli_fetch_row($result);
                     </div>  
                     <div class="form-group">
                         <label for="Email">Email</label>
-                        <input type="email" class="form-control" name="CustomerEmail" id="Email" value="<?php echo $userInfo[4]; ?>"  placeholder="Email">
+                        <input type="email" class="form-control" name="CustomerEmail" id="Email" value="<?php echo $userInfo[5]; ?>"  placeholder="Email">
                     </div>  
                     <div class="form-group">
                         <label for="Contact">Phone Number</label>
-                        <input type="tel" class="form-control" name="CustomerPhoneNumber" id="Phone Number" value="<?php echo $userInfo[5]; ?>"  placeholder="Phone Number">
+                        <input type="tel" class="form-control" name="CustomerPhoneNumber" id="Phone Number" value="<?php echo $userInfo[6]; ?>"  placeholder="Phone Number">
                     </div>   
                     <div class="form-group">
                         <label for="Birthdate">Birthdate</label>
-                        <input type="date" class="form-control" name="CustomerBirthdate" id="Birthdate" value="<?php echo $userInfo[6]; ?>"  placeholder="Birthdate">
+                        <input type="date" class="form-control" name="CustomerBirthdate" id="Birthdate" value="<?php echo $userInfo[7]; ?>"  placeholder="Birthdate">
                     </div>   
                     <div class="row">
                         <div class="col-lg-12">  
@@ -92,7 +92,7 @@ $userInfo = mysqli_fetch_row($result);
                         <?php if($userInfo[8] == NULL){ 
                         echo '<img src="dist/img/user.png" class="img-circle" alt="User Image">' ;
                         }else{
-                        echo '<img src="data:image;base64,',base64_encode($userInfo[8]),'alt="" class="img-circle">';
+                        echo '<img src="data:image;base64,',base64_encode($userInfo[4]),'alt="" class="img-circle">';
                         } 
                         ?> 
                         </div>
