@@ -42,6 +42,7 @@
             </form>
         </div>
         <hr>
+        <h1>Explore Shops</h1>
         <div class="card ">
             <div class="card-header"> 
                 <ul class="nav nav-tabs card-header-tabs pull-right"  id="myTab" role="tablist">
