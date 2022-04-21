@@ -3,8 +3,6 @@ session_unset();
 include('shared/header.php');
 ?>
 
-<<<<<<< HEAD
-=======
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -140,7 +138,6 @@ include('shared/header.php');
 </head>
 <body>
 
->>>>>>> 6d4edb63184f03f42c9caa59a81e5198d1288ee1
 <div class="navbar">
     <a style="margin-left:70px;" href="index.php">Home</a>
     <a href="#about">About</a>
@@ -159,9 +156,5 @@ include('shared/header.php');
     </div>
 </div>
 
-<<<<<<< HEAD
-<?php include('shared/footer.php'); ?>
-=======
 </body>
 </html>
->>>>>>> 6d4edb63184f03f42c9caa59a81e5198d1288ee1
