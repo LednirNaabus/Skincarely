@@ -55,7 +55,7 @@ $userInfo = mysqli_fetch_array($result);
         </section>
         <!-- Main content -->
         <section class="content">
-            <form action="" method="POST" enctype="multipart/form-data">
+            <form action="MyAccount.php" method="POST" enctype="multipart/form-data">
                 <div class="row">
                     <div class="col-6">
                         <div class="form-group">
