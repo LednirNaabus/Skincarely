@@ -55,7 +55,7 @@ $userInfo = mysqli_fetch_array($result);
         </section>
         <!-- Main content -->
         <section class="content">
-            <form action="MyAccount.php" method="POST" enctype="multipart/form-data">
+            <form action="" method="POST" enctype="multipart/form-data">
                 <div class="row">
                     <div class="col-6">
                         <div class="form-group">
@@ -85,10 +85,10 @@ $userInfo = mysqli_fetch_array($result);
                         <div class=" h-100 d-flex justify-content-center align-items-center">
                             <div>
                                 <div class="image" style="text-align:center">
-                                    <?php if ($userInfo[8] == NULL) {
+                                    <?php if ($userInfo[4] == NULL) {
                                         echo '<img src="dist/img/user.png" class="img-circle" alt="User Image">';
                                     } else {
-                                        echo '<img src="data:image;base64,', base64_encode($userInfo[8]), 'alt="" class="img-circle">';
+                                        echo '<img src="data:image;base64,', base64_encode($userInfo[4]), 'alt="" class="img-circle">';
                                     }
                                     ?>
                                 </div>
