@@ -3,6 +3,7 @@ include "includes/main/header.php";
 include 'includes/connection/db_connection.php';
 
 $result = mysqli_query($link, "SELECT * FROM customers WHERE customer_id = " . $_SESSION['userID']);
+$id = $_SESSION['userID'];
 $userInfo = mysqli_fetch_array($result);
 ?>
 <div class="wrapper">
@@ -77,7 +78,7 @@ $userInfo = mysqli_fetch_array($result);
                             <label for="Birthdate">Birthdate</label>
                             <input type="date" class="form-control" name="CustomerBirthdate" id="Birthdate" value="<?php echo $userInfo['birth_date']; ?>" placeholder="Birthdate">
                         </div>
-
+                        
                         <button type="submit" class="btn btn-primary float-right" style="padding: 0.375rem 2rem;">Update</button>
                     </div>
                     <div class="col-lg-6">
@@ -121,8 +122,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $imageData = mysqli_real_escape_string($link, file_get_contents($_FILES['fileToUpload']['tmp_name']));
     $imageType = mysqli_real_escape_string($link, $_FILES['fileToUpload']['type']);
     if (substr($imageType, 0, 5) == "image") {
-        $query = "UPDATE customers SET customer_username ='$username', customer_name='$name', customer_email='$email', contact_num='$phonenum', 
-              birth_date='$birthdate', customer_img ='$imageData' WHERE customer_id = $id";
+        $query = $query = "UPDATE customers SET customer_username ='$username', customer_name='$name', customer_email='$email', contact_num='$phonenum', 
+        birth_date='$birthdate', customer_img ='$imageData' WHERE customer_id = $id";
 
         $sql = mysqli_query($link, $query);
         if ($sql) {
