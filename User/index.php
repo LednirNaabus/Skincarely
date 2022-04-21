@@ -10,7 +10,7 @@
                     echo '<h1 class="display-3"> Welcome, <strong>' . htmlspecialchars($_SESSION["user"]) .  '</strong></h1>';
                 ?>
                 <p>Skincarely is catered to beauty and skincare businesses in the Philippines. Want to enlist your business now?</p>
-                <p><a href="#" class="btn btn-primary btn-lg" role="button">Learn more &raquo;</a></p>
+                <p><a href="../Admin/index.php" class="btn btn-primary btn-lg" role="button">Learn more &raquo;</a></p>
             </div>
         </div>
     </div>
