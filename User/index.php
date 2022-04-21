@@ -29,7 +29,7 @@
     <!-- featured vendors/items/shops here -->
     <div class="container">
         <?php
-            echo '<h1 class="display-3"> Welcome, <strong>' . htmlspecialchars($_SESSION["user"]) .  '</strong></h1>';
+            echo '<h1 class="display-3"> Welcome, ' . htmlspecialchars($_SESSION["user"]) .  '</h1>';
         ?>
         <hr>
         <h1>Explore Shops</h1>
@@ -74,11 +74,20 @@
                                         echo $shop["shop_name"];
                                     }
                                 ?></p>
-                                <p class="card-text"><small class="text-muted"><?php 
-                                    if($shop != null) {
-                                        echo $shop["shop_description"].' | '.$shop["shop_mainbranch"];
-                                    }
-                                ?></small></p>
+                            </div>
+                            <div class="card-footer">
+                                <div class="float-left">
+                                    <p class="card-text"><small class="text-muted"><?php 
+                                        if($shop != null) {
+                                            echo $shop["shop_description"].' | '.$shop["shop_mainbranch"];
+                                        }
+                                    ?></small></p>
+                                </div>
+                                <div class="float-right">
+                                    <a href="#">
+                                        <i class="fa-regular fa-heart"></i>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -95,6 +104,16 @@
                             <div class="card-body">
                                 <p class="card-text">Promoted shop name</p>
                                 <p class="card-text"><small class="text-muted">Updated 3 mins ago.</small></p>
+                            </div>
+                            <div class="card-footer">
+                                <div class="float-left">
+
+                                </div>
+                                <div class="float-right">
+                                    <a href="#">
+                                        <i class="fa-regular fa-heart"></i>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -120,13 +139,22 @@
                                         }
                                     ?>
                                 </p>
-                                <p class="card-text"><small class="text-muted">
-                                    Founded: <?php 
-                                        if($new_shops != null) {
-                                            echo $new_shops[14];
-                                        }
-                                    ?>
-                                </small></p>
+                            </div>
+                            <div class="card-body">
+                                <div class="float-left">
+                                    <p class="card-text"><small class="text-muted">
+                                        Founded: <?php 
+                                            if($new_shops != null) {
+                                                echo $new_shops[14];
+                                            }
+                                        ?>
+                                    </small></p>
+                                </div>
+                                <div class="float-right">
+                                    <a href="#">
+                                        <i class="fa-regular fa-heart"></i>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
