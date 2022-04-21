@@ -6,41 +6,31 @@
     <div class="bg-img">
         <div class="jumbotron">
             <div class="container">
-                <?php
-                    echo '<h1 class="display-3"> Welcome, <strong>' . htmlspecialchars($_SESSION["user"]) .  '</strong></h1>';
-                ?>
-                <p>Skincarely is catered to beauty and skincare businesses in the Philippines. Want to enlist your business now?</p>
-                <p><a href="../Admin/index.php" class="btn btn-primary btn-lg" role="button">Learn more &raquo;</a></p>
+                <div class="row">
+                    <h1 class="display-4">Discover products you'll love</h1>
+                    <p>Browse and search for a specific make up or lipstick you like at exclusive prices.</p>
+                </div>
+                <div class="row">
+                    <form action="search.php" method="get">
+                        <div class="input-group mb-3">
+                            <input type="text" name="query" id="" placeholder="Search... " class="form-control" aria-label="Search">
+                            <span class="input-group-append">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </span>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
     <!-- /.main -->
     <!-- featured vendors/items/shops here -->
     <div class="container">
-        <div class="row">
-            <h1 class="display-4">Discover products you'll love</h1>
-            <p>Browse and search for a specific make up or lipstick you like at exclusive prices.</p>
-        </div>
-        <!-- <div class="row">
-            <div class="input-group mb-3">
-                <input type="text" placeholder="Search..." class="form-control" aria-label="Search">
-                <span class="input-group-append">
-                        <button class="btn btn-primary" type="button">Search</button>
-                </span>
-            </div>
-        </div> -->
-        <div class="row">
-            <form action="search.php" method="get">
-                <div class="input-group mb-3">
-                    <input type="text" name="query" id="" placeholder="Search... " class="form-control" aria-label="Search">
-                    <span class="input-group-append">
-                        <button type="submit" class="btn btn-primary">
-                            <i class="fas fa-search"></i>
-                        </button>
-                    </span>
-                </div>
-            </form>
-        </div>
+        <?php
+            echo '<h1 class="display-3"> Welcome, <strong>' . htmlspecialchars($_SESSION["user"]) .  '</strong></h1>';
+        ?>
         <hr>
         <h1>Explore Shops</h1>
         <div class="card ">
@@ -131,7 +121,7 @@
                                     ?>
                                 </p>
                                 <p class="card-text"><small class="text-muted">
-                                    Uploaded: <?php 
+                                    Founded: <?php 
                                         if($new_shops != null) {
                                             echo $new_shops[14];
                                         }
