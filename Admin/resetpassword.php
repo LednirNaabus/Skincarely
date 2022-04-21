@@ -22,7 +22,7 @@
         <div class="card" style="border-radius: 1rem;">
           <div class="row g-0">
             <div class="col-md-6 col-lg-5 d-none d-md-block">
-            <img src="img/placeholder.png" alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;"/>
+            <img src="img/reset.jpg" alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;"/>
             </div>
             <div class="col-md-6 col-lg-7 d-flex align-items-center">
               <div class="card-body p-4 p-lg-5 text-black">
@@ -66,6 +66,8 @@
   </div>
 </section>
 
+<br>
+<br>
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script>

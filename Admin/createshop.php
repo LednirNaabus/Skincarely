@@ -83,6 +83,7 @@ include('shared/header.php');
             <input type="text" class="form-control" id="landline" name="landline">
           </div>
           <div class="form-group col-md-6">
+<<<<<<< HEAD
             <label for="mobile">Mobile No.</label>
             <input type="text" class="form-control" id="mobile" name="mobile">
           </div>
@@ -165,9 +166,232 @@ include('shared/header.php');
         <div class="input-group mb-3">
           <div class="input-group-prepend">
             <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+=======
+          <label for="otherbranch">Other Branches</label>
+          <select class="form-select"  name="otherbranch[]" id="otherbranch" multiple>
+                <option value="" disabled> ---------------------------- Province ----------------------------</option>
+                <option value="Abra">Abra</option>
+                <option value="Agusan del Norte">Agusan del Norte</option>
+                <option value="Agusan del Sur">Agusan del Sur</option>
+                <option value="Aklan">Aklan</option>
+                <option value="Albay">Albay</option>
+                <option value="Antique">Antique</option>
+                <option value="Apayao">Apayao</option>
+                <option value="Aurora">Aurora</option>
+                <option value="Basilan">Basilan</option>
+                <option value="Bataan">Bataan</option>
+                <option value="Batanes">Batanes</option>
+                <option value="Batangas">Batangas</option>
+                <option value="Benguet">Benguet</option>
+                <option value="Biliran">Biliran</option>
+                <option value="Bohol">Bohol</option>
+                <option value="Bukidnon">Bukidnon</option>
+                <option value="Bulacan">Bulacan</option>
+                <option value="Cagayan">Cagayan</option>
+                <option value="Camarines Norte">Camarines Norte</option>
+                <option value="Camarines Sur">Camarines Sur</option>
+                <option value="Camiguin">Camiguin</option>
+                <option value="Capiz">Capiz</option>
+                <option value="Catanduanes">Catanduanes</option>
+                <option value="Cavite">Cavite</option>
+                <option value="Cebu">Cebu</option>
+                <option value="Cotabato">Cotabato</option>
+                <option value="Davao de Oro">Davao de Oro</option>
+                <option value="Davao del Norte">Davao del Norte</option>
+                <option value="Davao del Sur">Davao del Sur</option>
+                <option value="Davao Occidental">Davao Occidental</option>
+                <option value="Davao Oriental">Davao Oriental</option>
+                <option value="Dinagat Islands">Dinagat Islands</option>
+                <option value="Eastern Samar">Eastern Samar</option>
+                <option value="Guimaras">Guimaras</option>
+                <option value="Ifugao">Ifugao</option>
+                <option value="Ilocos Norte">Ilocos Norte</option>
+                <option value="Ilocos Sur">Ilocos Sur</option>
+                <option value="Iloilo">Iloilo</option>
+                <option value="Isabela">Isabela</option>
+                <option value="Kalinga">Kalinga</option>
+                <option value="La Union">La Union</option>
+                <option value="Laguna">Laguna</option>
+                <option value="Lanao del Norte">Lanao del Norte</option>
+                <option value="Lanao del Sur">Lanao del Sur</option>
+                <option value="Leyte">Leyte</option>
+                <option value="Maguindanao">Maguindanao</option>
+                <option value="Marinduque">Marinduque</option>
+                <option value="Masbate">Masbate</option>
+                <option value="Misamis Occidental">Misamis Occidental</option>
+                <option value="Misamis Oriental">Misamis Oriental</option>
+                <option value="Mountain Province">Mountain Province</option>
+                <option value="Negros Occidental">Negros Occidental</option>
+                <option value="Negros Oriental">Negros Oriental</option>
+                <option value="Northern Samar">Northern Samar</option>
+                <option value="Nueva Ecija">Nueva Ecija</option>
+                <option value="Nueva Vizcaya">Nueva Vizcaya</option>
+                <option value="Occidental Mindoro">Occidental Mindoro</option>
+                <option value="Oriental Mindoro">Oriental Mindoro</option>
+                <option value="Palawan">Palawan</option>
+                <option value="Pampanga">Pampanga</option>
+                <option value="Pangasinan">Pangasinan</option>
+                <option value="Quezon">Quezon</option>
+                <option value="Quirino">Quirino</option>
+                <option value="Rizal">Rizal</option>
+                <option value="Romblon">Romblon</option>
+                <option value="Samar">Samar</option>
+                <option value="Sarangani">Sarangani</option>
+                <option value="Siquijor">Siquijor</option>
+                <option value="Sorsogon">Sorsogon</option>
+                <option value="South Cotabato">South Cotabato</option>
+                <option value="Southern Leyte">Southern Leyte</option>
+                <option value="Sultan Kudarat">Sultan Kudarat</option>
+                <option value="Sulu">Sulu</option>
+                <option value="Surigao del Norte">Surigao del Norte</option>
+                <option value="Surigao del Sur">Surigao del Sur</option>
+                <option value="Tarlac">Tarlac</option>
+                <option value="Tawi-Tawi">Tawi-Tawi</option>
+                <option value="Zambales">Zambales</option>
+                <option value="Zamboanga del Norte">Zamboanga del Norte</option>
+                <option value="Zamboanga del Sur">Zamboanga del Sur</option>
+                <option value="Zamboanga Sibugay">Zamboanga Sibugay</option>
+                <option value="" disabled>---------------------------- Metro Manila ----------------------------</option>
+                <option value="Caloocan">Caloocan</option>
+                <option value="Las Pinas">Las Pinas</option>
+                <option value="Makati">Makati</option>
+                <option value="Malabon">Malabon</option>
+                <option value="Mandaluyong">Mandaluyong</option>
+                <option value="Manila">Manila</option>
+                <option value="Marikina">Marikina</option>
+                <option value="Muntinlupa">Muntinlupa</option>
+                <option value="Navotas">Navotas</option>
+                <option value="Paranaque">Paranaque</option>
+                <option value="Pasay">Pasay</option>
+                <option value="Pasig">Pasig</option>
+                <option value="Pateros">Pateros</option>
+                <option value="Quezon City">Quezon City</option>
+                <option value="San Juan">San Juan</option>
+                <option value="Taguig">Taguig</option>
+                <option value="Valenzuela">Valenzuela</option>
+          </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-md-6">
+          <label for="pickup">Pick Up Areas</label>
+          <select class="form-select" name="pickup[]" id="pickup" multiple required>
+                <option value="" disabled> ---------------------------- Province ----------------------------</option>
+                <option value="Abra">Abra</option>
+                <option value="Agusan del Norte">Agusan del Norte</option>
+                <option value="Agusan del Sur">Agusan del Sur</option>
+                <option value="Aklan">Aklan</option>
+                <option value="Albay">Albay</option>
+                <option value="Antique">Antique</option>
+                <option value="Apayao">Apayao</option>
+                <option value="Aurora">Aurora</option>
+                <option value="Basilan">Basilan</option>
+                <option value="Bataan">Bataan</option>
+                <option value="Batanes">Batanes</option>
+                <option value="Batangas">Batangas</option>
+                <option value="Benguet">Benguet</option>
+                <option value="Biliran">Biliran</option>
+                <option value="Bohol">Bohol</option>
+                <option value="Bukidnon">Bukidnon</option>
+                <option value="Bulacan">Bulacan</option>
+                <option value="Cagayan">Cagayan</option>
+                <option value="Camarines Norte">Camarines Norte</option>
+                <option value="Camarines Sur">Camarines Sur</option>
+                <option value="Camiguin">Camiguin</option>
+                <option value="Capiz">Capiz</option>
+                <option value="Catanduanes">Catanduanes</option>
+                <option value="Cavite">Cavite</option>
+                <option value="Cebu">Cebu</option>
+                <option value="Cotabato">Cotabato</option>
+                <option value="Davao de Oro">Davao de Oro</option>
+                <option value="Davao del Norte">Davao del Norte</option>
+                <option value="Davao del Sur">Davao del Sur</option>
+                <option value="Davao Occidental">Davao Occidental</option>
+                <option value="Davao Oriental">Davao Oriental</option>
+                <option value="Dinagat Islands">Dinagat Islands</option>
+                <option value="Eastern Samar">Eastern Samar</option>
+                <option value="Guimaras">Guimaras</option>
+                <option value="Ifugao">Ifugao</option>
+                <option value="Ilocos Norte">Ilocos Norte</option>
+                <option value="Ilocos Sur">Ilocos Sur</option>
+                <option value="Iloilo">Iloilo</option>
+                <option value="Isabela">Isabela</option>
+                <option value="Kalinga">Kalinga</option>
+                <option value="La Union">La Union</option>
+                <option value="Laguna">Laguna</option>
+                <option value="Lanao del Norte">Lanao del Norte</option>
+                <option value="Lanao del Sur">Lanao del Sur</option>
+                <option value="Leyte">Leyte</option>
+                <option value="Maguindanao">Maguindanao</option>
+                <option value="Marinduque">Marinduque</option>
+                <option value="Masbate">Masbate</option>
+                <option value="Misamis Occidental">Misamis Occidental</option>
+                <option value="Misamis Oriental">Misamis Oriental</option>
+                <option value="Mountain Province">Mountain Province</option>
+                <option value="Negros Occidental">Negros Occidental</option>
+                <option value="Negros Oriental">Negros Oriental</option>
+                <option value="Northern Samar">Northern Samar</option>
+                <option value="Nueva Ecija">Nueva Ecija</option>
+                <option value="Nueva Vizcaya">Nueva Vizcaya</option>
+                <option value="Occidental Mindoro">Occidental Mindoro</option>
+                <option value="Oriental Mindoro">Oriental Mindoro</option>
+                <option value="Palawan">Palawan</option>
+                <option value="Pampanga">Pampanga</option>
+                <option value="Pangasinan">Pangasinan</option>
+                <option value="Quezon">Quezon</option>
+                <option value="Quirino">Quirino</option>
+                <option value="Rizal">Rizal</option>
+                <option value="Romblon">Romblon</option>
+                <option value="Samar">Samar</option>
+                <option value="Sarangani">Sarangani</option>
+                <option value="Siquijor">Siquijor</option>
+                <option value="Sorsogon">Sorsogon</option>
+                <option value="South Cotabato">South Cotabato</option>
+                <option value="Southern Leyte">Southern Leyte</option>
+                <option value="Sultan Kudarat">Sultan Kudarat</option>
+                <option value="Sulu">Sulu</option>
+                <option value="Surigao del Norte">Surigao del Norte</option>
+                <option value="Surigao del Sur">Surigao del Sur</option>
+                <option value="Tarlac">Tarlac</option>
+                <option value="Tawi-Tawi">Tawi-Tawi</option>
+                <option value="Zambales">Zambales</option>
+                <option value="Zamboanga del Norte">Zamboanga del Norte</option>
+                <option value="Zamboanga del Sur">Zamboanga del Sur</option>
+                <option value="Zamboanga Sibugay">Zamboanga Sibugay</option>
+                <option value="" disabled>---------------------------- Metro Manila ----------------------------</option>
+                <option value="Caloocan">Caloocan</option>
+                <option value="Las Pinas">Las Pinas</option>
+                <option value="Makati">Makati</option>
+                <option value="Malabon">Malabon</option>
+                <option value="Mandaluyong">Mandaluyong</option>
+                <option value="Manila">Manila</option>
+                <option value="Marikina">Marikina</option>
+                <option value="Muntinlupa">Muntinlupa</option>
+                <option value="Navotas">Navotas</option>
+                <option value="Paranaque">Paranaque</option>
+                <option value="Pasay">Pasay</option>
+                <option value="Pasig">Pasig</option>
+                <option value="Pateros">Pateros</option>
+                <option value="Quezon City">Quezon City</option>
+                <option value="San Juan">San Juan</option>
+                <option value="Taguig">Taguig</option>
+                <option value="Valenzuela">Valenzuela</option>
+          </select>
+          </div>
+          <div class="form-group col-md-6">
+          <label for="delivery">Delivery</label>
+          <select class="form-select" style="line-height: 61.5px;" name="delivery[]" id="delivery" multiple required>
+                <option value="" disabled selected>Mode of Delivery</option>
+                <option>Standard Delivery</option>
+                <option>J&T Express</option>
+                <option>Grab Delivery</option>
+          </select>
+>>>>>>> 6d4edb63184f03f42c9caa59a81e5198d1288ee1
           </div>
           <input type="email" class="form-control" placeholder="Email" id="socials" name="socials">
         </div>
+<<<<<<< HEAD
         <div class="input-group mb-3">
           <div class="input-group-prepend">
             <span class="input-group-text"><i class="fas fa-envelope"></i></span>
@@ -177,9 +401,21 @@ include('shared/header.php');
         <div class="input-group mb-3">
           <div class="input-group-prepend">
             <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+=======
+
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="landline">Landline No.</label>
+            <input type="text" class="form-control" id="landline" name="landline" style="font-size: 12px;">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="mobile">Mobile No.</label>
+            <input type="text" class="form-control" id="mobile" name="mobile" style="font-size: 12px;">
+>>>>>>> 6d4edb63184f03f42c9caa59a81e5198d1288ee1
           </div>
           <input type="email" class="form-control" placeholder="Email" id="socials" name="socials">
         </div>
+<<<<<<< HEAD
       </div>
       <div class="col-6">
         <label for="socials">&nbsp;</label>
@@ -200,6 +436,17 @@ include('shared/header.php');
             <span class="input-group-text"><i class="fas fa-envelope"></i></span>
           </div>
           <input type="email" class="form-control" placeholder="Email" id="socials" name="socials">
+=======
+
+        <div class="form-row">
+        <label for="payment">Payment</label>
+          <select class="form-select" name="payment[]" id="payment" multiple required>
+                <option value="" disabled selected>Payment Options</option>
+                <option>E-wallet</option>
+                <option>Credit Card</option>
+                <option>Cash on Delivery</option>
+          </select>
+>>>>>>> 6d4edb63184f03f42c9caa59a81e5198d1288ee1
         </div>
       </div>
     </div> 
@@ -207,8 +454,33 @@ include('shared/header.php');
   </div>
 
 
+<<<<<<< HEAD
 </form>
 
+=======
+        <div class="form-group">
+          <label for="socials">Social Media Links</label>
+          <br>
+          <div class="input-group-prepend" style="width: 155px; display:inline-block;">
+          <div class="input-group-text" style="font-size: 12px;">https://facebook.com/</div>
+          </div>
+          <input type="text" class="form-control" id="socials1" name="socials1" style="display: inline-block; width: 800px; height: 27px; font-size: 12px;">
+          <br>
+          <div class="input-group-prepend" style="width: 155px; display:inline-block;">
+          <div class="input-group-text" style="font-size: 12px;">https://twitter.com/</div>
+          </div>
+          <input type="text" class="form-control" id="socials1" name="socials2" style="display: inline-block; width: 800px; height: 27px; font-size: 12px;">
+          <br>
+          <div class="input-group-prepend" style="width: 155px; display:inline-block;">
+          <div class="input-group-text" style="font-size: 12px;">https://instagram.com/</div>
+          </div>
+          <input type="text" class="form-control" id="socials1" name="socials3" style="display: inline-block; width: 800px; height: 27px; font-size: 12px;">
+        </div>
+
+        <br>
+
+        <button type="submit" class="btn btn-primary">Create</button>
+>>>>>>> 6d4edb63184f03f42c9caa59a81e5198d1288ee1
 
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.js"></script>

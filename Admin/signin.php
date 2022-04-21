@@ -22,7 +22,7 @@
         <div class="card" style="border-radius: 1rem;">
           <div class="row g-0">
             <div class="col-md-6 col-lg-5 d-none d-md-block">
-              <img src="img/placeholder.png" alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;"/>
+              <img src="img/signin.jpg" alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;"/>
             </div>
             <div class="col-md-6 col-lg-7 d-flex align-items-center">
               <div class="card-body p-4 p-lg-5 text-black">
@@ -49,7 +49,6 @@
                     <button class="btn btn-lg btn-block" type="submit" style="background-color: #AC7672; color: #fff;">Login</button>
                   </div>
 
-                  <a class="small text-muted" href="forgotpassword_authentication.php">Forgot password?</a>
                   <p class="mb-5 pb-lg-2" style="color: #393f81;">Don't have an account? <a href="signup.php" style="color: #393f81;">Register here</a></p>
                   <a href="#!" class="small text-muted">Terms of use.</a>
                   <a href="#!" class="small text-muted">Privacy policy</a>
@@ -62,7 +61,7 @@
       </div>
     </div>
   </div>
-</section>
+</section>  
 
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

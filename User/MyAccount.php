@@ -11,12 +11,21 @@ $userInfo = mysqli_fetch_row($result);
             <!-- Sidebar user panel (optional) -->
             <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                 <div class="image">
+<<<<<<< HEAD
                     <?php if ($userInfo[8] == NULL) {
                         echo '<img src="dist/img/user.png" class="img-circle" alt="User Image">';
                     } else {
                         echo '<img src="data:image;base64,', base64_encode($userInfo[8]), 'alt="" class="img-circle">';
                     }
                     ?>
+=======
+                <?php if($userInfo[8] == NULL){
+                        echo '<img src="dist/img/user.png" class="img-circle" alt="User Image">' ;
+                        }else{
+                        echo '<img src="data:image;base64,',base64_encode($userInfo[4]),'alt="" class="img-circle">';
+                        }  
+                    ?> 
+>>>>>>> 6d4edb63184f03f42c9caa59a81e5198d1288ee1
                 </div>
                 <div class="info">
                     <a href="#"><strong><?php echo $userInfo[3]; ?></strong></a>
@@ -52,6 +61,25 @@ $userInfo = mysqli_fetch_row($result);
                     <div class="row">
                         <h1>My Account</h1>
                     </div>
+<<<<<<< HEAD
+=======
+                    <div class="form-group">
+                        <label for="Name">Name</label>
+                        <input type="text" class="form-control" name="CustomerName" id="Name" value="<?php echo $userInfo[3]; ?>"  placeholder="Name">
+                    </div>  
+                    <div class="form-group">
+                        <label for="Email">Email</label>
+                        <input type="email" class="form-control" name="CustomerEmail" id="Email" value="<?php echo $userInfo[5]; ?>"  placeholder="Email">
+                    </div>  
+                    <div class="form-group">
+                        <label for="Contact">Phone Number</label>
+                        <input type="tel" class="form-control" name="CustomerPhoneNumber" id="Phone Number" value="<?php echo $userInfo[6]; ?>"  placeholder="Phone Number">
+                    </div>   
+                    <div class="form-group">
+                        <label for="Birthdate">Birthdate</label>
+                        <input type="date" class="form-control" name="CustomerBirthdate" id="Birthdate" value="<?php echo $userInfo[7]; ?>"  placeholder="Birthdate">
+                    </div>   
+>>>>>>> 6d4edb63184f03f42c9caa59a81e5198d1288ee1
                     <div class="row">
                         <p style="margin-top: 2px">Manage and protect your account here</p>
                     </div>
@@ -67,6 +95,7 @@ $userInfo = mysqli_fetch_row($result);
                             <label for="Username">Username</label>
                             <input type="text" class="form-control" name="CustomerUsername" id="Username" value="<?php echo $userInfo[1]; ?>" placeholder="Enter email">
                         </div>
+<<<<<<< HEAD
                         <div class="form-group">
                             <label for="Name">Name</label>
                             <input type="text" class="form-control" name="CustomerName" id="Name" value="<?php echo $userInfo[3]; ?>" placeholder="Name">
@@ -78,6 +107,20 @@ $userInfo = mysqli_fetch_row($result);
                         <div class="form-group">
                             <label for="Contact">Phone Number</label>
                             <input type="tel" class="form-control" name="CustomerPhoneNumber" id="Phone Number" value="<?php echo $userInfo[5]; ?>" placeholder="Phone Number">
+=======
+                    </div> 
+                </div>
+                <div class="col-lg-6">
+                <div class=" h-100 d-flex justify-content-center align-items-center">
+                    <div>
+                        <div class="image" style="text-align:center">
+                        <?php if($userInfo[8] == NULL){ 
+                        echo '<img src="dist/img/user.png" class="img-circle" alt="User Image">' ;
+                        }else{
+                        echo '<img src="data:image;base64,',base64_encode($userInfo[4]),'alt="" class="img-circle">';
+                        } 
+                        ?> 
+>>>>>>> 6d4edb63184f03f42c9caa59a81e5198d1288ee1
                         </div>
                         <div class="form-group">
                             <label for="Birthdate">Birthdate</label>

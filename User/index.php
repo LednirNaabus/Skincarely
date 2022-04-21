@@ -9,7 +9,7 @@
                 <?php
                     echo '<h1 class="display-3"> Welcome, <strong>' . htmlspecialchars($_SESSION["user"]) .  '</strong></h1>';
                 ?>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde tenetur sunt est odit fuga officia, voluptate consectetur, voluptas et hic odio laudantium maiores eum accusantium nesciunt ipsa aliquid animi repellat.</p>
+                <p>Skincarely is catered to beauty and skincare businesses in the Philippines. Want to enlist your business now?</p>
                 <p><a href="#" class="btn btn-primary btn-lg" role="button">Learn more &raquo;</a></p>
             </div>
         </div>
@@ -21,15 +21,28 @@
             <h1 class="display-4">Discover products you'll love</h1>
             <p>Browse and search for a specific make up or lipstick you like at exclusive prices.</p>
         </div>
-        <div class="row">
+        <!-- <div class="row">
             <div class="input-group mb-3">
                 <input type="text" placeholder="Search..." class="form-control" aria-label="Search">
                 <span class="input-group-append">
                         <button class="btn btn-primary" type="button">Search</button>
                 </span>
             </div>
+        </div> -->
+        <div class="row">
+            <form action="search.php" method="get">
+                <div class="input-group mb-3">
+                    <input type="text" name="query" id="" placeholder="Search... " class="form-control" aria-label="Search">
+                    <span class="input-group-append">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </span>
+                </div>
+            </form>
         </div>
         <hr>
+        <h1>Explore Shops</h1>
         <div class="card ">
             <div class="card-header"> 
                 <ul class="nav nav-tabs card-header-tabs pull-right"  id="myTab" role="tablist">
@@ -73,7 +86,7 @@
                                 ?></p>
                                 <p class="card-text"><small class="text-muted"><?php 
                                     if($shop != null) {
-                                        echo $shop["shop_description"].' | '.$shop["shop_location"];
+                                        echo $shop["shop_description"].' | '.$shop["shop_mainbranch"];
                                     }
                                 ?></small></p>
                             </div>
@@ -120,7 +133,7 @@
                                 <p class="card-text"><small class="text-muted">
                                     Uploaded: <?php 
                                         if($new_shops != null) {
-                                            echo $new_shops[9];
+                                            echo $new_shops[14];
                                         }
                                     ?>
                                 </small></p>
@@ -171,11 +184,6 @@
                 - still waiting for shop_reactions function
 
                     -->
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <h2>Recommended</h2>
             </div>
         </div>
     </div>
