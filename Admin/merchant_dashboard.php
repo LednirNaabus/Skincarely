@@ -37,7 +37,7 @@ session_start();
 
             <br>
 
-            <div class="container businessContainer" style="font-family: Poppins;">
+            <div class="container businessContainer" style="font-family: Poppins; padding: 0;">
             <h1 class="display-4">Business Insights</h1>
             <br><br>
             <section id="counter" class="sec-padding">
