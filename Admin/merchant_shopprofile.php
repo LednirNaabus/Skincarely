@@ -49,12 +49,12 @@ unset($_SESSION['shopdelivery']);
 
 <!--------- CONTENT -------------------->
 
-<div class="container-fluid bgImgCenter1" style="font-family: Poppins; height: 350px; margin-top:-20px; font-family: Poppins;">
-  <h1 class="display-1" style="margin-left:200px; margin-top:60px;">Shop Profile</h1>
+<div class="container-fluid bgImgCenter1 bgCenter">
+  <h1 class="display-1 container">Shop Profile</h1>
     <br>
-    <p style=" margin-left:200px; padding-right: 200px; font-size:1vw;"> View and manage your shop information.</p>          
+    <p class="container" style="font-size:1vw;"> View and manage your shop information.</p>          
     <br>  
-    <p style=" margin-left:200px; padding-right: 200px; font-size:18px;"><button style="background-color: #8C5652; color:white; border:none;" type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">Edit Shop Details</button></p>
+    <p class="container" style="font-size:18px;"><button type="button" class="btn customBtn" data-toggle="modal" data-target="#myModal">Edit Shop Details</button></p>
 </div>
 
 <br>
@@ -159,7 +159,7 @@ unset($_SESSION['shopdelivery']);
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-        <button type="submit" class="btn btn-primary">Edit</button>
+        <button type="submit" class="btn customBtn">Edit</button>
       </div>
       </form>
     </div>
@@ -209,7 +209,7 @@ unset($_SESSION['shopdelivery']);
       ?>
   </h1>
   <h1 class="text-center">
-  <u><?php echo $shopname;?></u>
+  <?php echo $shopname;?>
   </h1>
   <br>
 </div>
@@ -276,7 +276,7 @@ unset($_SESSION['shopdelivery']);
       ?>
         </p>
       </dd>
-
+      
       <hr>
 
       <dt class="col-sm-3">Shop Main Branch</dt>
@@ -329,6 +329,7 @@ unset($_SESSION['shopdelivery']);
 
       <dt class="col-sm-3 text-truncate">Shop Pickup Areas</dt>
       <dd class="col-sm-9">
+        
       <?php
           include('connection.php');      
           
@@ -491,8 +492,8 @@ unset($_SESSION['shopdelivery']);
                         </form>
                     </ul>
                 </div>
-                <div class="product-content">
-                    <h3 class="title">
+                <div class="product-content" style="padding-left: 10px; padding-right: 10px;">
+                    <h3 class="title" style="font-weight: 700">
                       <?php echo $row['item_name']; ?>
                     </h3>
                     <h4 class="title">
