@@ -19,10 +19,4 @@ include('shared/header.php');
         </div>
     </div>
 </div>
-<<<<<<< HEAD
-
-</body>
-</html>
-=======
 <?php include('shared/footer.php'); ?>
->>>>>>> 8f19c3b5fe0616173c1ee2a82f1d7371d3a23d98
