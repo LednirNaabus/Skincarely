@@ -85,7 +85,7 @@ $userInfo = mysqli_fetch_array($result);
                         <div class=" h-100 d-flex justify-content-center align-items-center">
                             <div>
                                 <div class="image" style="text-align:center">
-                                    <?php if ($userInfo[8] == NULL) {
+                                    <?php if ($userInfo['customer_img'] == NULL) {
                                         echo '<img src="dist/img/user.png" class="img-circle" alt="User Image">';
                                     } else {
                                         echo '<img src="data:image;base64,' . base64_encode($userInfo['customer_img']) . '" style="max-width:300px;"alt="" class="img-circle">';

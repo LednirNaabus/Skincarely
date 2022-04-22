@@ -20,16 +20,16 @@ session_start();
 
 <!--------- CONTENT -------------------->
 
-            <div class="container-fluid bgImgCenter" style="font-family: Poppins; height: 350px; margin-top:-20px;" >
-            <h1 class="display-1" style="margin-left:200px; margin-top:60px;">
+            <div class="container-fluid bgCenter bgImgCenter">
+                <h1 class="container">
                 <?php
-                echo 'Hey there, <strong>' . $_SESSION["welcomename"] . '</strong>.</h1>';
-                ?>
+                echo ' Hey there, <strong>' . $_SESSION["welcomename"] . '</strong>.
+                </h1>';?>
                 <br>
-                <p style=" margin-left:200px; padding-right: 200px; font-size:1vw;">Welcome to your dashboard. You can access your business insights here and view your shop's ratings, followers, and engagements, or
+                <p class="container" style="font-size:1vw;">Welcome to your dashboard. You can access your business insights here and view your shop's ratings, followers, and engagements, or
                    view your list of products and corresponding reviews. You could also manage your shop profile. </p>
                 <br>
-                <p style=" margin-left:200px; padding-right: 200px; font-size:18px;"><a href="shop_verification.php" class="btn btn-sm" style="background-color: #8C5652; color:white;" role="button">View Shop Profile</a></p>
+                <p class="container" style="font-size:18px;"><a href="shop_verification.php" class="btn customBtn" role="button">View Shop Profile</a></p>
             </div>
 
             <br>
@@ -37,26 +37,26 @@ session_start();
 
             <br>
 
-            <div class="container" style="font-family: Poppins;">
+            <div class="container businessContainer" style="font-family: Poppins; padding: 0;">
             <h1 class="display-4">Business Insights</h1>
             <br><br>
             <section id="counter" class="sec-padding">
               <div class="container">
                 <div class="row">
                   <div class="col-md-3 ">
-                    <div class="count"> <span class="glyphicon glyphicon-user"></span>
+                    <div class="count border"> <span class="glyphicon glyphicon-user"></span>
                     <br>
                       <p class="number">126</p>
                       <h4>Shop Followers</h4> </div>
                   </div>
                   <div class="col-md-3 ">
-                    <div class="count"> <span class="glyphicon glyphicon-heart"></span>
+                    <div class="count border"> <span class="glyphicon glyphicon-heart"></span>
                     <br>
                       <p class="number">535</p>
                       <h4>Shop Reactions</h4> </div>
                   </div>
                   <div class="col-md-3 ">
-                    <div class="count"> <span class="glyphicon glyphicon-tags"></span>
+                    <div class="count border"> <span class="glyphicon glyphicon-tags"></span>
                     <br>
                       <p class="number">
                         <?php
@@ -84,19 +84,14 @@ session_start();
                               $count = mysqli_num_rows($resultt);
                               
                               echo $count;
-                            
 
-                          }
-
-                           
-
-                          
+                          }     
                         ?>
                       </p>
                       <h4>Total Products</h4> </div>
                   </div>
                   <div class="col-md-3 ">
-                    <div class="count"> <span class="glyphicon glyphicon-thumbs-up"></span>
+                    <div class="count border"> <span class="glyphicon glyphicon-thumbs-up"></span>
                     <br>
                       <p class="number">777</p>
                       <h4>Product Likes</h4> </div>
@@ -144,80 +139,55 @@ session_start();
             <div class="container" style="font-family: Poppins;">
               <h1 class="display-4">Recent Reviews</h1>
               <br>
-
-                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-
+                <div id="carousel-example-generic" class="carousel carousel-dark slide" data-ride="carousel">
                 <div class="carousel-inner">
-                    <div class="item active">
+                    <div class="item active" data-bs-interval="1000">
                               <div class="header-text hidden-xs">
                                   <div class="col-md-12 text-center">
                                     <figure class="text-center">
-                                      <blockquote class="blockquote">
-                                        <p>Review Text</p>
-                                      </blockquote>
-                                      <figcaption class="blockquote-footer">
-                                        Product
-                                      </figcaption>
+                                      <img src="img/c2.jpg" class="d-block w-100" alt="...">
+                                      <div class="carousel-caption d-none d-md-block">
+                                        <h4>Review Text</h4>
+                                      </div>
                                     </figure>
                                   </div>
                               </div>
                     </div>
                     
-                    <div class="item">
+                    <div class="item" data-bs-interval="1000">
                               <div class="header-text hidden-xs">
                                   <div class="col-md-12 text-center">
                                     <figure class="text-center">
-                                      <blockquote class="blockquote">
-                                        <p>Review Text</p>
-                                      </blockquote>
-                                      <figcaption class="blockquote-footer">
-                                        Product
-                                      </figcaption>
+                                      <img src="img/c3.jpg" class="d-block w-100" alt="...">
+                                      <div class="carousel-caption d-none d-md-block">
+                                        <h4>Review Text</h4>
+                                      </div>
                                     </figure>
                                   </div>
                               </div>
                     </div>
 
-                    <div class="item">
+                    <div class="item" data-bs-interval="1000">
                               <div class="header-text hidden-xs">
                                   <div class="col-md-12 text-center">
                                     <figure class="text-center">
-                                      <blockquote class="blockquote">
-                                        <p>Review Text</p>
-                                      </blockquote>
-                                      <figcaption class="blockquote-footer">
-                                        Product
-                                      </figcaption>
+                                      <img src="img/c2.jpg" class="d-block w-100" alt="...">
+                                      <div class="carousel-caption d-none d-md-block">
+                                        <h4>Review Text</h4>
+                                      </div>
                                     </figure>
                                   </div>
                               </div>
                     </div>
 
-                    <div class="item">
+                    <div class="item" data-bs-interval="1000">
                               <div class="header-text hidden-xs">
                                   <div class="col-md-12 text-center">
                                     <figure class="text-center">
-                                      <blockquote class="blockquote">
-                                        <p>Review Text</p>
-                                      </blockquote>
-                                      <figcaption class="blockquote-footer">
-                                        Product
-                                      </figcaption>
-                                    </figure>
-                                  </div>
-                              </div>
-                    </div>
-
-                    <div class="item">
-                              <div class="header-text hidden-xs">
-                                  <div class="col-md-12 text-center">
-                                    <figure class="text-center">
-                                      <blockquote class="blockquote">
-                                        <p>Review Text</p>
-                                      </blockquote>
-                                      <figcaption class="blockquote-footer">
-                                        Product
-                                      </figcaption>
+                                      <img src="img/c3.jpg" class="d-block w-100" alt="...">
+                                      <div class="carousel-caption d-none d-md-block">
+                                        <h4>Review Text</h4>
+                                      </div>
                                     </figure>
                                   </div>
                               </div>
@@ -234,29 +204,28 @@ session_start();
 
             <br><br>
             <br><br>
-            <br><br>
           
           <div class="container d-flex justify-content-center text-center" style="font-family: Poppins;">
-            <div class="row d-flex justify-content-center text-center">
-                <div class="col-md-4">
-                  <div class="card" style="width: 90%">
+            <div class="row d-flex justify-content-between text-center">
+                <div class="col-md-4" style="min-width: 260px;">
+                  <div class="card" style="width: 90%; min-width: 260px;">
                     <img class="card-img-top" src="img/c2.jpg" alt="Card image cap">
                     <div class="card-body">
                       <br>
                       <p class="card-text text-center">Manage your shop's products and keep your customers updated of what you're offering. </p>
                       <br>
-                      <p class="text-center"><a href="merchant_myproducts.php#productlist" class="btn btn-sm" style="width: 20rem; background-color: #8C5652; color:white;">Check List of Products</a></p>
+                      <p class="text-center"><a href="merchant_myproducts.php#productlist" class="btn customBtn">Check List of Products</a></p>
                     </div>
                   </div>
                 </div>
-                <div class="col-md-4">
-                  <div class="card" style="width: 90%">
+                <div class="col-md-4" style="min-width: 260px;">
+                  <div class="card" style="width: 90%; min-width: 260px;">
                     <img class="card-img-top" src="img/c3.jpg" alt="Card image cap">
                     <div class="card-body">
                       <br>
                       <p class="card-text text-center">Find out what your customers think of your goods and services through their product feedback.</p>
                       <br>
-                      <p class="text-center"><a href="merchant_myproducts.php#reviews" class="btn btn-sm" style="width: 20rem; background-color: #8C5652; color:white;">Check Reviews</a></p>
+                      <p class="text-center"><a href="merchant_myproducts.php#reviews" class="btn customBtn">Check Reviews</a></p>
                     </div>
                   </div>
                 </div>

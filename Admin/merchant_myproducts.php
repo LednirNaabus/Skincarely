@@ -38,12 +38,12 @@ $shopid = $_SESSION["shopid"];
 
   <?php include('navigation.php'); ?>
 
-  <div class="container-fluid bgImgCenter2" style="font-family: Poppins; height: 350px; margin-top:-20px; font-family: Poppins;">
-    <h1 class="display-1" style="margin-left:200px; margin-top:60px;">My Products</h1>
+  <div class="container-fluid bgCenter bgImgCenter2 ">
+    <h1 class="display-1 container">My Products</h1>
       <br>
-      <p style=" margin-left:200px; padding-right: 200px; font-size:1vw;"> Manage your shop's products and keep your customers updated of what you're offering. </p>          
+      <p class="container" style="font-size:1vw;"> Manage your shop's products and keep your customers updated of what you're offering. </p>          
       <br>  
-      <p style=" margin-left:200px; padding-right: 200px; font-size:18px;"><button style="background-color: #8C5652; color:white; border:none;" type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">Add Product to List</button></p>
+      <p class="container" style="font-size:18px;"><button type="button" class="btn customBtn" data-toggle="modal" data-target="#myModal">Add Product to List</button></p>
   </div>
 
   <br>
@@ -112,29 +112,27 @@ $shopid = $_SESSION["shopid"];
     <h3 class class="display-3" id="productlist">List of Products</h3>
       <br>
       <form method="POST" style="display: inline-block;">
-            <button style="background-color: #8C5652; color:white;" name = "all">All Products</button>
+            <button class="btn customBtn" name = "all">All Products</button>
       </form>
 
       <form method="POST" style="display: inline-block;">
-            <button style="background-color: #8C5652; color:white;" name = "lip"><i></i>Lip Makeup</button>
+            <button class="btn customBtn" name = "lip"><i></i>Lip Makeup</button>
       </form>
 
       <form method="POST" style="display: inline-block;">
-            <button style="background-color: #8C5652; color:white;" name = "eye"><i></i>Eye Makeup</button>
+            <button class="btn customBtn" name = "eye"><i></i>Eye Makeup</button>
       </form>
 
       <form method="POST" style="display: inline-block;">
-            <button style="background-color: #8C5652; color:white;" name = "face"><i></i>Face Makeup</button>
+            <button class="btn customBtn" name = "face"><i></i>Face Makeup</button>
       </form>
 
       <form method="POST" style="display: inline-block;">
-            <button style="background-color: #8C5652; color:white;" name = "skincare"><i ></i>Skincare</button>
+            <button class="btn customBtn" name = "skincare"><i ></i>Skincare</button>
       </form>
   </div>
 
   <br>
-
-  
 
   <div class="container">
     <div class="row">
@@ -146,9 +144,6 @@ $shopid = $_SESSION["shopid"];
               while($row = $result->fetch_assoc()) { 
                 $_SESSION['itemid'] = $row['item_id'];
         ?>
-
-
-  
     
         <div class="col-md-3 col-sm-6">
         <br>
@@ -164,8 +159,8 @@ $shopid = $_SESSION["shopid"];
                         </form>
                     </ul>
                 </div>
-                <div class="product-content">
-                    <h3 class="title">
+                <div class="product-content" style="padding-left: 15px; padding-right: 15px;">
+                    <h3 class="title" style="font-weight: 700">
                       <?php echo $row['item_name']; ?>
                     </h3>
                     <h4 class="title">
@@ -202,8 +197,8 @@ $shopid = $_SESSION["shopid"];
                         </form>
                     </ul>
                 </div>
-                <div class="product-content">
-                    <h3 class="title">
+                <div class="product-content" style="padding-left: 15px; padding-right: 15px;">
+                    <h3 class="title" style="font-weight: 700">
                       <?php echo $row['item_name']; ?>
                     </h3>
                     <h4 class="title">
@@ -240,8 +235,8 @@ $shopid = $_SESSION["shopid"];
                         </form>
                     </ul>
                 </div>
-                <div class="product-content">
-                    <h3 class="title">
+                <div class="product-content" style="padding-left: 15px; padding-right: 15px;">
+                    <h3 class="title" style="font-weight: 700">
                       <?php echo $row['item_name']; ?>
                     </h3>
                     <h4 class="title">
@@ -278,8 +273,8 @@ $shopid = $_SESSION["shopid"];
                         </form>
                     </ul>
                 </div>
-                <div class="product-content">
-                    <h3 class="title">
+                <div class="product-content" style="padding-left: 15px; padding-right: 15px;">
+                    <h3 class="title" style="font-weight: 700">
                       <?php echo $row['item_name']; ?>
                     </h3>
                     <h4 class="title">
@@ -316,8 +311,8 @@ $shopid = $_SESSION["shopid"];
                         </form>
                     </ul>
                 </div>
-                <div class="product-content">
-                    <h3 class="title">
+                <div class="product-content" style="padding-left: 15px; padding-right: 15px;">
+                    <h3 class="title" style="font-weight: 700">
                       <?php echo $row['item_name']; ?>
                     </h3>
                     <h4 class="title">

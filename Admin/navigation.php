@@ -1,6 +1,15 @@
 <style>
+ul.nav a:hover {
+  color: white !important; 
+  background-color: #8C5652; 
+}
 
-ul.nav a:hover { color: white !important; background-color: #8C5652; }
+.bgCenter{
+  height: 350px; 
+  margin-top:-20px;
+  font-family: 'Poppins';
+  padding-top: 60px;
+}
 
 .bgImgCenter{
     background-image: url('../Admin/img/dashboard.jpg');
@@ -26,6 +35,53 @@ ul.nav a:hover { color: white !important; background-color: #8C5652; }
     background-size: 100%;
 }
 
+.customBtn{
+  background-color: #8C5652; 
+  color:white;
+  border:none;
+}
+
+table{
+    padding: 13px 15px;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    margin-bottom: 50px;
+}
+
+table thead tr{
+    background-color: #8C5652;
+    color: #ffffff;
+    text-align: left;
+}
+
+table th,
+table td {
+    text-align: center;
+}
+
+table tbody tr {
+    border-bottom: thin solid #dddddd;
+}
+
+table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+table tbody tr:last-of-type {
+    border-bottom: 2px solid #8C5652;
+}
+
+table tbody tr:hover {
+    font-weight: bold;
+    color: #8C5652;
+}
+
+.count{
+  border-radius: 7px;
+}
 </style>
 
 <nav class="navbar navbar-expand-lg navbar-static-top" style="background-color: #8C5652; font-family:Poppins">
