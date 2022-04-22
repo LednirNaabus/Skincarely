@@ -8,7 +8,7 @@ $shopInfo = mysqli_fetch_array($result);
 $result = mysqli_query($link, "SELECT * FROM vendors WHERE shop_id = " . $_GET['shop_id']);
 $vendorInfo = mysqli_fetch_array($result);
 
-$followers = explode('|', $shopInfo['shop_reactions']);
+$followers = explode('|', $shopInfo['shop_reactions']);  
 foreach ($followers as $follower) {
     if ($follower == $_SESSION['userID']) {
         $following = true;
@@ -40,7 +40,7 @@ foreach ($followers as $follower) {
                 </div>
                 <div class="row" style="padding:15px 0 0 15px">
                     <p style="font-size: 15px">Followers: <?php
-                                                            echo count($followers) //Shop followers 
+                                                            echo count($followers)-1 //Shop followers 
                                                             ?></p>
                 </div>
                 <div class="row" style="padding-left: 15px">
