@@ -78,7 +78,7 @@ $userInfo = mysqli_fetch_array($result);
                             <label for="Birthdate">Birthdate</label>
                             <input type="date" class="form-control" name="CustomerBirthdate" id="Birthdate" value="<?php echo $userInfo['birth_date']; ?>" placeholder="Birthdate">
                         </div>
-                        
+
                         <button type="submit" class="btn btn-primary float-right" style="padding: 0.375rem 2rem;">Update</button>
                     </div>
                     <div class="col-lg-6">
@@ -88,7 +88,7 @@ $userInfo = mysqli_fetch_array($result);
                                     <?php if ($userInfo['customer_img'] == NULL) {
                                         echo '<img src="dist/img/user.png" class="img-circle" alt="User Image">';
                                     } else {
-                                        echo '<img src="data:image;base64,' . base64_encode($userInfo['customer_img']) . '" alt="" class="img-circle">';
+                                        echo '<img src="data:image;base64,' . base64_encode($userInfo['customer_img']) . '" style="max-width:300px;"alt="" class="img-circle">';
                                     }
                                     ?>
                                 </div>
@@ -104,7 +104,6 @@ $userInfo = mysqli_fetch_array($result);
                         </div>
                     </div>
                 </div>
-
     </div>
     </form>
     </section>
@@ -112,37 +111,45 @@ $userInfo = mysqli_fetch_array($result);
 </div>
 </div>
 </div>
-<?php include "includes/main/footer.php"; ?>
 <?php
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $query = "";
+    $id = $_SESSION['userID'];
     $username = $_POST['CustomerUsername'];
     $name = $_POST['CustomerName'];
     $email = $_POST['CustomerEmail'];
     $phonenum = $_POST['CustomerPhoneNumber'];
     $birthdate = $_POST['CustomerBirthdate'];
-    $imageData = mysqli_real_escape_string($link, file_get_contents($_FILES['fileToUpload']['tmp_name']));
-    $imageType = mysqli_real_escape_string($link, $_FILES['fileToUpload']['type']);
-    if (substr($imageType, 0, 5) == "image") {
-        $query = $query = "UPDATE customers SET customer_username ='$username', customer_name='$name', customer_email='$email', contact_num='$phonenum', 
-        birth_date='$birthdate', customer_img ='$imageData' WHERE customer_id = $id";
-
-        $sql = mysqli_query($link, $query);
-        if ($sql) {
-            echo "<script type ='text/JavaScript'>";
-            echo "alert('Profile updated')";
-            echo "</script>";
-            unset($_POST);
-            echo "<script>window.location.href='MyAccount.php';</script>";
+    $img = $_FILES['fileToUpload']['tmp_name']; 
+    if ($img != null) { 
+        $imageData = mysqli_real_escape_string($link, file_get_contents($img));
+        $imageType = mysqli_real_escape_string($link, $_FILES['fileToUpload']['type']);
+        if (substr($imageType, 0, 5) == "image") {
+            $query = "UPDATE customers SET customer_username ='$username', customer_name='$name', customer_email='$email', contact_num='$phonenum', 
+            birth_date='$birthdate', customer_img ='$imageData' WHERE customer_id = $id";
         } else {
             echo "<script type ='text/JavaScript'>";
-            echo "alert('Profile failed to update')";
+            echo "alert('Upload must be an image')";
             echo "</script>";
-            unset($_POST);
         }
+    } else { 
+        $query = "UPDATE customers SET customer_username ='$username', customer_name='$name', customer_email='$email', contact_num='$phonenum', 
+            birth_date='$birthdate' WHERE customer_id = $id";
+    }
+    echo $query;
+    $sql = mysqli_query($link, $query);
+    if ($sql) {
+        echo "<script type ='text/JavaScript'>";
+        echo "alert('Profile updated')";
+        echo "</script>";
+        unset($_POST);
+        echo "<script>window.location.href='MyAccount.php';</script>";
     } else {
         echo "<script type ='text/JavaScript'>";
-        echo "alert('Upload must be an image')";
+        echo "alert('Profile failed to update')";
         echo "</script>";
+        unset($_POST);
     }
 }
 ?>
+<?php include "includes/main/footer.php"; ?>
