@@ -2,21 +2,29 @@
 include "includes/main/header.php";
 include 'includes/connection/db_connection.php';
 $id_exists = true;
+$following = false;
 $result = mysqli_query($link, "SELECT * FROM shops WHERE shop_id = " . $_GET['shop_id']);
 $shopInfo = mysqli_fetch_array($result);
 $result = mysqli_query($link, "SELECT * FROM vendors WHERE shop_id = " . $_GET['shop_id']);
 $vendorInfo = mysqli_fetch_array($result);
+
+$followers = explode('|', $shopInfo['shop_reactions']);
+foreach ($followers as $follower) {
+    if ($follower == $_SESSION['userID']) {
+        $following = true;
+    }
+}
 ?>
 <div class="wrapper">
     <div class="sidebar">
-        <div class="card w-100">
-            <div class="card-body">
+        <div class="card w-100 mb-2">
+            <div class="card-body" style="text-align: center;">
                 <div class="row justify-content-center">
                     <div class="image" style="text-align:center">
                         <?php if ($shopInfo['shop_logo'] == NULL) {
                             echo '<img src="dist/img/user.png" class="img-circle" alt="User Image">';
                         } else {
-                            echo '<img src="data:image;base64,' . base64_encode($shopInfo['shop_logo']) . '" alt="" style="height:250px"class="img-circle">';
+                            echo '<img src="data:image;base64,' . base64_encode($shopInfo['shop_logo']) . '" alt="" style="height:175px"class="img-circle">';
                         }
                         ?>
                     </div>
@@ -30,7 +38,12 @@ $vendorInfo = mysqli_fetch_array($result);
                     <p style="font-size: 15px"><?php echo $shopInfo['shop_motto'] //Shop motto 
                                                 ?></p>
                 </div>
-                <div class="row" style="padding:30px 0 0 15px">
+                <div class="row" style="padding:15px 0 0 15px">
+                    <p style="font-size: 15px">Followers: <?php
+                                                            echo count($followers) //Shop followers 
+                                                            ?></p>
+                </div>
+                <div class="row" style="padding-left: 15px">
                     <p style="font-size: 15px"><?php echo $shopInfo['shop_mainbranch'] //Shop location 
                                                 ?></p>
                 </div>
@@ -46,6 +59,13 @@ $vendorInfo = mysqli_fetch_array($result);
                     <p style="font-size: 15px">Skincarely Member since: <?php echo date("Y-m-d", strtotime($shopInfo['date_added'])) //Shop added 
                                                                         ?></p>
                 </div>
+                <form action="" method="POST">
+                    <?php if ($following) {
+                        echo '<button type="submit" class="btn btn-primary">Unfollow</button>';
+                    } else {
+                        echo '<button type="submit" class="btn btn-primary">Follow</button>';
+                    } ?>
+                </form>
             </div>
         </div>
     </div>
@@ -129,7 +149,6 @@ $vendorInfo = mysqli_fetch_array($result);
                     if ($result != null) {
                         while ($itemInfo = mysqli_fetch_array($result)) {
                     ?>
-
                             <div class="card w-25 mr-40 ml-40">
                                 <div class="card-body" style="text-align:center">
                                     <div class="row justify-content-center">
@@ -159,3 +178,25 @@ $vendorInfo = mysqli_fetch_array($result);
     </div>
 </div>
 <?php include "includes/main/footer.php"; ?>
+
+<?php
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $follower_id = $_SESSION['userID'];
+    $follow = $shopInfo['shop_reactions'];
+    if (!$following) {
+        $follow .= "|" . $follower_id;
+        $followed = mysqli_query($link, "UPDATE shops SET shop_reactions = '$follow' WHERE shop_id = " . $_GET['shop_id']);
+        if ($followed) {
+            unset($_POST);
+            echo "<script>window.location.href='';</script>";
+        }
+    } else {
+        $unfollow = trim($follow, "|" . $follower_id);
+        $unfollowed = mysqli_query($link, "UPDATE shops SET shop_reactions = '$unfollow' WHERE shop_id = " . $_GET['shop_id']);
+        if ($unfollowed) {
+            unset($_POST);
+            echo "<script>window.location.href='';</script>";
+        }
+    }
+} 
+?>
