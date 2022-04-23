@@ -184,9 +184,12 @@ foreach ($followers as $follower) {
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $follower_id = $_SESSION['userID'];
     $follow = $shopInfo['shop_reactions'];
+    $shop_id = $shopInfo['shop_id'];
+    $shop_name = $shopInfo['shop_name'];
     if (!$following) {
         $follow .= "|" . $follower_id;
         $followed = mysqli_query($link, "UPDATE shops SET shop_reactions = '$follow' WHERE shop_id = " . $_GET['shop_id']);
+        $customer_shops_following = mysqli_query($link, "UPDATE customers SET following_shops=CONCAT(following_shops, ', $shop_name') WHERE customer_id = ".$_SESSION['userID']);
         if ($followed) {
             unset($_POST);
             echo "<script>window.location.href='';</script>";
