@@ -46,7 +46,38 @@ session_start();
                   <div class="col-md-3 ">
                     <div class="count border"> <span class="glyphicon glyphicon-user"></span>
                     <br>
-                      <p class="number">126</p>
+                      <p class="number">
+                      <?php
+                          include("connection.php");
+
+                          $ref = $_SESSION["vendorid"];
+
+                          $sql = "select * from vendors where vendor_id = '$ref'";
+                          $result = mysqli_query($con, $sql);  
+                          $row = mysqli_fetch_array($result, MYSQLI_ASSOC);  
+                          $count = mysqli_num_rows($result);
+
+                          if($row["shop_id"] == "0")
+                          {
+                            echo "0";
+                          }
+
+                          else
+                          {
+                              $productref = $row["shop_id"];
+
+                              $followersql = "select * from shops where shop_id = '$productref'";
+                              $followerresult = mysqli_query($con, $followersql);  
+                              $followerrow = mysqli_fetch_array($followerresult, MYSQLI_ASSOC);  
+                              $followercount = mysqli_num_rows($followerresult);
+
+                              $followers = explode('|', $followerrow['shop_reactions']);
+                              echo count($followers);
+                              
+
+                          }     
+                        ?>
+                      </p>
                       <h4>Shop Followers</h4> </div>
                   </div>
                   <div class="col-md-3 ">
@@ -214,7 +245,7 @@ session_start();
                       <br>
                       <p class="card-text text-center">Manage your shop's products and keep your customers updated of what you're offering. </p>
                       <br>
-                      <p class="text-center"><a href="merchant_myproducts.php#productlist" class="btn customBtn">Check List of Products</a></p>
+                      <p class="text-center"><a href="shop_verification.php" class="btn customBtn">Check List of Products</a></p>
                     </div>
                   </div>
                 </div>
@@ -225,7 +256,7 @@ session_start();
                       <br>
                       <p class="card-text text-center">Find out what your customers think of your goods and services through their product feedback.</p>
                       <br>
-                      <p class="text-center"><a href="merchant_myproducts.php#reviews" class="btn customBtn">Check Reviews</a></p>
+                      <p class="text-center"><a href="shop_verification.php" class="btn customBtn">Check Reviews</a></p>
                     </div>
                   </div>
                 </div>
