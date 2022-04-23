@@ -1,4 +1,9 @@
 <style>
+body,
+html {
+  height: 100%;
+}
+
 ul.nav a:hover {
   color: white !important; 
   background-color: #8C5652; 
@@ -81,6 +86,63 @@ table tbody tr:hover {
 
 .count{
   border-radius: 7px;
+  height: 192px;
+}
+
+.active,
+.dot:hover {
+  background-color: white;
+}
+
+.navbar a{
+  color: white;
+}
+
+.navbar a:hover {
+  background: none;
+  color: black;
+}
+
+li a:hover{
+  color: black;
+}
+
+.product-image{
+  min-height: 250px;
+  max-height: 250px;
+}
+
+.businessTitle{
+  padding-left:15px;
+}
+
+.individual-review{
+  width: 100%;
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.user-panel{
+  padding-top: 10px;
+  width: 56px;
+  height: 100%;
+}
+
+.reviews{
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+}
+
+.avatar{
+  height: 56px;
+  width: 56px;
+  background-color: #f5f5f5;
+  border-radius: 50%;
+  background: url(./img/avatar-placeholder.png);
+  background-position: center; 
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 </style>
 
@@ -102,16 +164,16 @@ table tbody tr:hover {
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent" style="background-color: #8C5652;">
 
-      <a style="color: white;" class="navbar-brand mt-2 mt-lg-0" href="#">
-      <i style="color: white;" class="fas fa-crow fa-1x me-3" style="padding: 0 1rem 0;"></i>
+      <a class="navbar-brand mt-2 mt-lg-0" href="#">
+      <i class="fas fa-crow fa-1x me-3" style="padding: 0 1rem 0;"></i>
       Skincarely
       </a>
 
       <ul class="nav navbar-nav" style="background-color: #8C5652; text-decoration: none;">
-      <li><a style="color: white;" href="merchant_dashboard.php">Dashboard</a></li>
-      <li><a style="color: white;" href="shop_verification.php">Shop Profile</a></li>
-      <li><a style="color: white;" href="myproducts_verification.php">My Products</a></li>
-    </ul>
+        <li><a href="merchant_dashboard.php">Dashboard</a></li>
+        <li><a href="shop_verification.php">Shop Profile</a></li>
+        <li><a href="myproducts_verification.php">My Products</a></li>
+      </ul>
       
     </div>
 

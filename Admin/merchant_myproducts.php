@@ -148,7 +148,7 @@ $shopid = $_SESSION["shopid"];
         <div class="col-md-3 col-sm-6">
         <br>
             <div class="product-grid">
-                <div class="product-image" style="height: 250px;">
+                <div class="product-image">
                     <a href="#"><?php echo '<img src = "data:image/jpeg;base64,'.base64_encode($row['item_image']).'"/>'; ?></a>  
                   <ul class="social">
                         <form action="editproduct.php" method="POST">
@@ -160,6 +160,9 @@ $shopid = $_SESSION["shopid"];
                     </ul>
                 </div>
                 <div class="product-content" style="padding-left: 15px; padding-right: 15px;">
+                    <h3 class="title" style="font-weight: 700">
+                      <?php echo '₱',$row['item_price']; ?>
+                    </h3>
                     <h3 class="title" style="font-weight: 700">
                       <?php echo $row['item_name']; ?>
                     </h3>
@@ -186,7 +189,7 @@ $shopid = $_SESSION["shopid"];
         <div class="col-md-3 col-sm-6">
         <br>
             <div class="product-grid">
-                <div class="product-image" style="height: 250px;">
+                <div class="product-image">
                     <a href="#"><?php echo '<img src = "data:image/jpeg;base64,'.base64_encode($row['item_image']).'"/>'; ?></a>  
                   <ul class="social">
                         <form action="editproduct.php" method="POST">
@@ -198,6 +201,9 @@ $shopid = $_SESSION["shopid"];
                     </ul>
                 </div>
                 <div class="product-content" style="padding-left: 15px; padding-right: 15px;">
+                    <h3 class="title" style="font-weight: 700">
+                      <?php echo '₱',$row['item_price']; ?>
+                    </h3>
                     <h3 class="title" style="font-weight: 700">
                       <?php echo $row['item_name']; ?>
                     </h3>
@@ -224,7 +230,7 @@ $shopid = $_SESSION["shopid"];
         <div class="col-md-3 col-sm-6">
         <br>
             <div class="product-grid">
-                <div class="product-image" style="height: 250px;">
+                <div class="product-image">
                     <a href="#"><?php echo '<img src = "data:image/jpeg;base64,'.base64_encode($row['item_image']).'"/>'; ?></a>  
                   <ul class="social">
                         <form action="editproduct.php" method="POST">
@@ -236,6 +242,9 @@ $shopid = $_SESSION["shopid"];
                     </ul>
                 </div>
                 <div class="product-content" style="padding-left: 15px; padding-right: 15px;">
+                    <h3 class="title" style="font-weight: 700">
+                      <?php echo '₱',$row['item_price']; ?>
+                    </h3>
                     <h3 class="title" style="font-weight: 700">
                       <?php echo $row['item_name']; ?>
                     </h3>
@@ -262,7 +271,7 @@ $shopid = $_SESSION["shopid"];
         <div class="col-md-3 col-sm-6">
         <br>
             <div class="product-grid">
-                <div class="product-image" style="height: 250px;">
+                <div class="product-image">
                     <a href="#"><?php echo '<img src = "data:image/jpeg;base64,'.base64_encode($row['item_image']).'"/>'; ?></a>  
                   <ul class="social">
                         <form action="editproduct.php" method="POST">
@@ -274,6 +283,9 @@ $shopid = $_SESSION["shopid"];
                     </ul>
                 </div>
                 <div class="product-content" style="padding-left: 15px; padding-right: 15px;">
+                    <h3 class="title" style="font-weight: 700">
+                      <?php echo '₱',$row['item_price']; ?>
+                    </h3>
                     <h3 class="title" style="font-weight: 700">
                       <?php echo $row['item_name']; ?>
                     </h3>
@@ -300,7 +312,7 @@ $shopid = $_SESSION["shopid"];
         <div class="col-md-3 col-sm-6">
         <br>
             <div class="product-grid">
-                <div class="product-image" style="height: 250px;">
+                <div class="product-image">
                     <a href="#"><?php echo '<img src = "data:image/jpeg;base64,'.base64_encode($row['item_image']).'"/>'; ?></a>  
                   <ul class="social">
                         <form action="editproduct.php" method="POST">
@@ -312,6 +324,9 @@ $shopid = $_SESSION["shopid"];
                     </ul>
                 </div>
                 <div class="product-content" style="padding-left: 15px; padding-right: 15px;">
+                    <h3 class="title" style="font-weight: 700">
+                      <?php echo '₱',$row['item_price']; ?>
+                    </h3>
                     <h3 class="title" style="font-weight: 700">
                       <?php echo $row['item_name']; ?>
                     </h3>
@@ -335,6 +350,81 @@ $shopid = $_SESSION["shopid"];
   <div class="container" style="font-family: Poppins;">
     <h3 class class="display-3" id="reviews">Reviews</h3>
     <br>
+  </div>
+  <!-- <div class="container mb-5 h-100 d-flex flex-column">
+    <div class="row h-25 bg-danger">
+      <div class="col border">
+        1 of 3
+      </div>
+      <div class="col-11">
+        2 of 3 (wider)
+      </div>
+    </div>
+    <div class="row flex-grow-1 bg-primary">
+      <div class="col">
+        1 of 3
+      </div>
+      <div class="col-11">
+        2 of 3 (wider)
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        1 of 3
+      </div>
+      <div class="col-11">
+        2 of 3 (wider)
+      </div>
+    </div>
+  </div> -->
+
+  <div class="container" style="font-family: Poppins;">
+
+    <div class="individual-review"> 
+      <div class="user-panel">
+        <div class="avatar"></div> <!-- container for customer's picture -->
+      </div>
+      <div class="reviews">
+        <div class="customer_username fw-bold">
+          Person 1 <!-- customer name here -->
+        </div>
+        <div class="comments">
+          This is the 2nd time around I order this product. For 2 weeks applying it on my face, it really ligthens the dark spots.
+        </div>
+      </div>
+    </div>
+
+    <div class="individual-review"> 
+      <div class="user-panel">
+        <div class="avatar"></div> <!-- container for customer's picture -->
+      </div>
+      <div class="reviews">
+        <div class="customer_username fw-bold">
+          Person 2 <!-- customer name here -->
+        </div>
+        <div class="comments">
+          This is my third purchase from this store. Good job as always. 
+          It is simple to use and gives fast data. As usual, 
+          the package was secure and the delivery was quick. There were no problems with the product at all. 
+          All is well.
+        </div>
+      </div>
+    </div>
+
+    <div class="individual-review"> 
+      <div class="user-panel">
+        <div class="avatar"></div> <!-- container for customer's picture -->
+      </div>
+      <div class="reviews">
+        <div class="customer_username fw-bold">
+          Person 3
+        </div>
+        <div class="comments">
+          Delivery took one week but items were intact. Excited to use this product!
+        </div>
+      </div>
+    </div>
+
   </div>
 
   <?php include("merchant_script.php"); ?>
