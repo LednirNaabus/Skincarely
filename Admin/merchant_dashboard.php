@@ -38,7 +38,7 @@ session_start();
             <br>
 
             <div class="container businessContainer" style="font-family: Poppins; padding: 0;">
-            <h1 class="display-4">Business Insights</h1>
+            <h1 class="display-4 businessTitle">Business Insights</h1>
             <br><br>
             <section id="counter" class="sec-padding">
               <div class="container">
@@ -142,11 +142,11 @@ session_start();
                 <div id="carousel-example-generic" class="carousel carousel-dark slide" data-ride="carousel">
                 <div class="carousel-inner">
                     <div class="item active" data-bs-interval="1000">
-                              <div class="header-text hidden-xs">
+                              <div class="header-text">
                                   <div class="col-md-12 text-center">
                                     <figure class="text-center">
                                       <img src="img/c2.jpg" class="d-block w-100" alt="...">
-                                      <div class="carousel-caption d-none d-md-block">
+                                      <div class="carousel-caption ">
                                         <h4>Review Text</h4>
                                       </div>
                                     </figure>
@@ -155,11 +155,11 @@ session_start();
                     </div>
                     
                     <div class="item" data-bs-interval="1000">
-                              <div class="header-text hidden-xs">
+                              <div class="header-text">
                                   <div class="col-md-12 text-center">
                                     <figure class="text-center">
                                       <img src="img/c3.jpg" class="d-block w-100" alt="...">
-                                      <div class="carousel-caption d-none d-md-block">
+                                      <div class="carousel-caption ">
                                         <h4>Review Text</h4>
                                       </div>
                                     </figure>
@@ -168,11 +168,11 @@ session_start();
                     </div>
 
                     <div class="item" data-bs-interval="1000">
-                              <div class="header-text hidden-xs">
+                              <div class="header-text">
                                   <div class="col-md-12 text-center">
                                     <figure class="text-center">
                                       <img src="img/c2.jpg" class="d-block w-100" alt="...">
-                                      <div class="carousel-caption d-none d-md-block">
+                                      <div class="carousel-caption ">
                                         <h4>Review Text</h4>
                                       </div>
                                     </figure>
@@ -181,11 +181,11 @@ session_start();
                     </div>
 
                     <div class="item" data-bs-interval="1000">
-                              <div class="header-text hidden-xs">
+                              <div class="header-text">
                                   <div class="col-md-12 text-center">
                                     <figure class="text-center">
                                       <img src="img/c3.jpg" class="d-block w-100" alt="...">
-                                      <div class="carousel-caption d-none d-md-block">
+                                      <div class="carousel-caption ">
                                         <h4>Review Text</h4>
                                       </div>
                                     </figure>
@@ -207,7 +207,7 @@ session_start();
           
           <div class="container d-flex justify-content-center text-center" style="font-family: Poppins;">
             <div class="row d-flex justify-content-between text-center">
-                <div class="col-md-4" style="min-width: 260px;">
+                <div class="col-md-4" style="min-width: 260px; display: flex; justify-content: center">
                   <div class="card" style="width: 90%; min-width: 260px;">
                     <img class="card-img-top" src="img/c2.jpg" alt="Card image cap">
                     <div class="card-body">
@@ -218,7 +218,7 @@ session_start();
                     </div>
                   </div>
                 </div>
-                <div class="col-md-4" style="min-width: 260px;">
+                <div class="col-md-4" style="min-width: 260px; display: flex; justify-content: center">
                   <div class="card" style="width: 90%; min-width: 260px;">
                     <img class="card-img-top" src="img/c3.jpg" alt="Card image cap">
                     <div class="card-body">
