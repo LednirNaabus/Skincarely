@@ -8,7 +8,7 @@ $shopInfo = mysqli_fetch_array($result);
 $result = mysqli_query($link, "SELECT * FROM vendors WHERE shop_id = " . $_GET['shop_id']);
 $vendorInfo = mysqli_fetch_array($result);
 
-$followers = explode('|', $shopInfo['shop_reactions']);  
+$followers = explode('|', $shopInfo['shop_reactions']);
 foreach ($followers as $follower) {
     if ($follower == $_SESSION['userID']) {
         $following = true;
@@ -40,7 +40,7 @@ foreach ($followers as $follower) {
                 </div>
                 <div class="row" style="padding:15px 0 0 15px">
                     <p style="font-size: 15px">Followers: <?php
-                                                            echo count($followers)-1 //Shop followers 
+                                                            echo count($followers) - 1 //Shop followers 
                                                             ?></p>
                 </div>
                 <div class="row" style="padding-left: 15px">
@@ -150,22 +150,23 @@ foreach ($followers as $follower) {
                         while ($itemInfo = mysqli_fetch_array($result)) {
                     ?>
                             <div class="card w-25 mr-40 ml-40">
-                                <div class="card-body" style="text-align:center">
-                                    <div class="row justify-content-center">
-                                        <div class="image" style="text-align:center">
-                                            <?php if ($itemInfo['item_image'] == NULL) {
-                                                echo '<img src="dist/img/user.png" class="img-circle" alt="User Image">';
-                                            } else {
-                                                echo '<img src="data:image;base64,' . base64_encode($itemInfo["item_image"]) . '" class="img-circle" style="max-width: 200px;"alt="User Image">';
-                                            } ?></div>
+                                <a style="color:black" href="item_portal.php?item_id=<?php echo $itemInfo['item_id'] ?>">
+                                    <div class="card-body" style="text-align:center">
+                                        <div class="row justify-content-center">
+                                            <div class="image" style="text-align:center">
+                                                <?php if ($itemInfo['item_image'] == NULL) {
+                                                    echo '<img src="dist/img/user.png" class="img-circle" alt="User Image">';
+                                                } else {
+                                                    echo '<img src="data:image;base64,' . base64_encode($itemInfo["item_image"]) . '" class="img-circle" style="max-width: 200px;"alt="User Image">';
+                                                } ?></div>
+                                        </div>
+                                        <br>
+                                        <br>
+                                        <p><b><?php echo $itemInfo['item_name']; ?></b></p>
+                                        <p><?php echo $itemInfo['item_category']; ?></p>
+                                        <p><?php echo $itemInfo['item_description']; ?></p>
                                     </div>
-                                    <br>
-                                    <br>
-                                    <p><b><?php echo $itemInfo['item_name']; ?></b></p>
-                                    <p><?php echo $itemInfo['item_category']; ?></p>
-                                    <p><?php echo $itemInfo['item_description']; ?></p>
-                                    <button class="btn btn-primary" type="button">View Product</button>
-                                </div>
+                                </a>
                             </div>
 
                     <?php }
@@ -198,5 +199,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             echo "<script>window.location.href='';</script>";
         }
     }
-} 
+}
 ?>

@@ -160,7 +160,7 @@ h6 {
 }
 
 .bg-img {
-  background-image: url('../img/landing-cover.jpg');
+  background-image: url("../img/landing-cover.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -168,24 +168,24 @@ h6 {
 }
 
 .bg-img .jumbotron {
-  background: linear-gradient(0deg, #00000088 30%, #FFFFFF44 100%);
+  background: linear-gradient(0deg, #00000088 30%, #ffffff44 100%);
   color: #fff;
   z-index: 0;
 }
 
-.mr-20{
+.mr-20 {
   margin-right: 20px;
 }
 
-.mr-40{
+.mr-40 {
   margin-right: 40px;
 }
 
-.ml-20{
+.ml-20 {
   margin-left: 20px;
 }
 
-.ml-40{
+.ml-40 {
   margin-left: 40px;
 }
 
@@ -196,11 +196,11 @@ h6 {
   margin-right: auto;
   margin-left: auto;
 }
-.sidebar {  
+.sidebar {
   width: 25%;
-  height: 25vh;  
+  height: 25vh;
   min-height: 200px;
-  padding: 25px 15px 15px 15px; 
+  padding: 25px 15px 15px 15px;
   position: -webkit-sticky;
   position: sticky;
   top: 5%;
@@ -920,7 +920,7 @@ body,
 .wrapper {
   min-height: 100%;
 }
-.wrapper { 
+.wrapper {
   display: flex;
   justify-content: space-between;
 }
@@ -938,11 +938,11 @@ body,
   width: 250px;
 }
 
-.main-content{
+.main-content {
   padding-top: 55px;
 }
 
-.main{
+.main {
   width: 60%;
   height: 200vh;
   min-height: 1000px;
@@ -998,11 +998,11 @@ body,
   width: auto;
 }
 .user-panel {
-  position: relative; 
+  position: relative;
 }
 
 .user-panel,
-.user-panel .info { 
+.user-panel .info {
   white-space: nowrap;
 }
 .user-panel .image {
@@ -1171,7 +1171,8 @@ button.close {
 }
 .content-wrapper {
   height: 100%;
-}
+} 
+
 .img-circle {
   border-radius: 50%;
 }
@@ -1235,4 +1236,40 @@ button.close {
   to {
     opacity: 1;
   }
+}
+
+.product-image {
+  max-width: 100%;
+  height: auto;
+  width: 100%;
+}
+
+.product-image-thumbs {
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 2rem;
+}
+
+.product-image-thumb {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.075);
+  border-radius: 0.25rem;
+  background-color: #fff;
+  border: 1px solid #dee2e6;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: 1rem;
+  max-width: 7rem;
+  padding: 0.5rem;
+}
+.product-image-thumb img {
+  max-width: 100%;
+  height: auto;
+  -ms-flex-item-align: center;
+  align-self: center;
+}
+
+.product-image-thumb:hover {
+  opacity: 0.5;
 }
