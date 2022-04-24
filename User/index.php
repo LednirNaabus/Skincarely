@@ -243,7 +243,7 @@
                 <h2>Following</h2>
                 <?php
                     array_splice($following, 0, 1);
-                    //for followers count
+                    // //for followers count
                     $shop_tmp = mysqli_query($link, "SELECT shop_id, shop_name, shop_reactions FROM shops");
 
                     $following_tmp = explode(',', $cf['following_shops']);
@@ -253,22 +253,31 @@
                     for($i = 0; $i < count($following_tmp); $i++) {
                         while($result = mysqli_fetch_array($shop_tmp)) {
                             $total_followers = explode('|', $result[2]);
-                            $total_num_followers = count($total_followers) - 1;
-                            $x = $result;
-                            // echo $x['shop_name'];
-                            echo '<div class="card">
+                            if(count($following_tmp) == 1) {
+                                $total_num_followers = count($total_followers) - 1;
+                                echo '<div class="card">
                                     <div class="card-body">';
-                            echo        '<p class="card-text">'. $following_tmp[$i++] . '</p>
+                                echo        '<p class="card-text">'. $following_tmp[$i] . '</p>
+                                            </div>';
+                                echo    '<div class="card-footer">
+                                            <span class="badge bg-info float-left" style="color: #FFF;">' . $total_num_followers . ' followers </span>
+                                            <span class="badge bg-success float-right" style="color: #FFF;"> Following </span>
+                                        </div>
                                         </div>';
-
-                            echo    '<div class="card-footer">
-                                        <span class="badge bg-warning float-left" style="color: #FFF;">' . $total_num_followers . ' followers </span>
-                                        <span class="badge bg-success float-right" style="color: #FFF;"> Following </span>
-                                    </div>
-                                    </div>';
+                                break;
+                            } elseif(count($following_tmp) > 1) {
+                                $total_num_followers = count($total_followers) - 1;
+                                echo '<div class="card">
+                                    <div class="card-body">';
+                                echo        '<p class="card-text">'. $following_tmp[$i++] . '</p>
+                                            </div>';
+                                echo    '<div class="card-footer">
+                                            <span class="badge bg-info float-left" style="color: #FFF;">' . $total_num_followers . ' followers </span>
+                                            <span class="badge bg-success float-right" style="color: #FFF;"> Following </span>
+                                        </div>
+                                        </div>';
+                            }
                         }
-
-                        
                     }
                 ?>
             </div>
