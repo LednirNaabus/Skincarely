@@ -104,8 +104,8 @@ foreach ($followers as $follower) {
                 <?php
                 $socials = explode(" | ",  $shopInfo['shop_socials']);
                 ?>
-                <a href="https://www.<?php echo $socials[0] ?>" style="margin-left:40px"><i class="nav-icon fa-brands fa-twitter"></i> <?php echo $socials[0] ?></a>
-                <a href="https://www.<?php echo $socials[1] ?>" style="margin-left:40px"><i class="nav-icon fa-brands fa-facebook"></i> <?php echo $socials[1] ?></a>
+                <a href="https://www.<?php echo $socials[0] ?>" style="margin-left:40px"><i class="nav-icon fa-brands fa-facebook"></i> <?php echo $socials[0] ?></a>
+                <a href="https://www.<?php echo $socials[1] ?>" style="margin-left:40px"><i class="nav-icon fa-brands fa-twitter"></i> <?php echo $socials[1] ?></a>
                 <a href="https://www.<?php echo $socials[2] ?>" style="margin-left:40px"><i class="nav-icon fa-brands fa-instagram"></i> <?php echo $socials[2] ?></a>
             </div>
         </div>
