@@ -243,20 +243,19 @@
                 <h2>Following</h2>
                 <?php
                     // ISSUE: naiinclude yung ',' sa pag echo, idk how to fix
+                    array_splice($following, 0, 1);
                     for($i = 0; $i < count($following); $i++) {
-                        if($i <= 3) {
-                            echo '<div class="col">
-                                        <div class="card">
-                                            <div class="card-body">';
-                            echo            '<p class="card-text">'.$following[$i].'</p>';
-                            echo        '</div>
-                                        <div class="card-footer">';
+                        if($i <= 2) {
+                            echo '<div class="card">
+                                    <div class="card-body">';
+                            echo        '<p class="card-text">'.$following[$i].'</p>';
+                            echo    '</div>
+                                     <div class="card-footer">';
                             // echo            '<p class="float-right"> ';
                             echo            count($shop_followers);
-                            echo            ' <span class="badge bg-success float-right" style="color: #FFF;">Following</span>
-                                        </div>
-                                    </div>
-                                </div>';
+                            echo        '<span class="badge bg-success float-right" style="color: #FFF;">Following</span>
+                                     </div>
+                                    </div>';
                         }
                     }
                 ?>
