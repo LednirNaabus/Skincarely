@@ -125,25 +125,38 @@
                         <!--
                         
                         To do here:
-                        - create query to select shop with most reactions
+                        - select shop with most reactions
                         -->
                         <div class="card">
                             <?php
                                 if($shop != null) {
-                                    $shop_promoted = mysqli_query($link, "SELECT * FROM shops ORDER BY shop_reactions");
-                                    $promoted_shops = mysqli_fetch_array($shop_promoted);
+                                    $promoted_query = mysqli_query($link, "SELECT * FROM shops");
+
+                                    // count shop with most shop_reactions
+                                    // display shop with most shop_reaction
+                                    while($row = $promoted_query->fetch_assoc()) {
+                                        foreach(explode('|', $row['shop_reactions']) as $x) {
+                                            echo $x . "<br>";
+                                            //idk what to do next
+                                        }
+                                    }
+                                    
                                 } else {
                                     echo '<p class="card-text"> There is nothing yet. Why don\'t you create a <a href="../Admin/signup.php">vendor account</a> to host a shop?</p>';
                                 }
                             ?>
                             <div class="card-body">
                                 <p class="card-text">
-                                    <?php
-                                        if($promoted_shops != null) {
-                                            echo $promoted_shops[2];
-                                        }
-                                    ?>
+                                    
                                 </p>
+                            </div>
+                            <div class="card-footer">
+                                <div class="float-left">
+                                    <?php //shop info ?>
+                                </div>
+                                <div class="float-right">
+                                    <?php //following or not ?>
+                                </div>
                             </div>
                         </div>
                     </div>
