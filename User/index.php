@@ -242,22 +242,61 @@
             <div class="col">
                 <h2>Following</h2>
                 <?php
-                    // ISSUE: naiinclude yung ',' sa pag echo, idk how to fix
                     array_splice($following, 0, 1);
-                    for($i = 0; $i < count($following); $i++) {
-                        if($i <= 2) {
-                            echo '<div class="card">
-                                    <div class="card-body">';
-                            echo        '<p class="card-text">'.$following[$i].'</p>';
-                            echo    '</div>
-                                     <div class="card-footer">';
-                            // echo            '<p class="float-right"> ';
-                            echo            count($shop_followers);
-                            echo        '<span class="badge bg-success float-right" style="color: #FFF;">Following</span>
-                                     </div>
-                                    </div>';
+                    // for($i = 0; $i < count($following); $i++) {
+                    //     if($i <= 2) {
+                    //         echo '<div class="card">
+                    //                 <div class="card-body">';
+                    //         echo        '<p class="card-text">'.$following[$i].'</p>';
+                    //         echo    '</div>
+                    //                  <div class="card-footer">';
+                    //         // echo            '<p class="float-right"> ';
+                    //         // echo            count($shop_followers);
+                    //         echo        '<span class="badge bg-success float-right" style="color: #FFF;">Following</span>
+                    //                  </div>
+                    //                 </div>';
+                    //     }
+                    // }
+
+                    //for followers count
+                    $shop_tmp = mysqli_query($link, "SELECT shop_id, shop_name, shop_reactions FROM shops");
+                    // $res = mysqli_fetch_array($shop_tmp);
+
+                    while($result = mysqli_fetch_row($shop_tmp)) {
+                        $total_followers = explode('|', $result[2]);
+                        if($result[0] == 1) {
+                            echo $result[1] . " has ";
+                            echo count($total_followers)-1 . " followers. <br>";
+                        } elseif($result[0] == 2) {
+                            echo $result[1] . " has ";
+                            echo count($total_followers)-1 . " followers. <br>";
+                        } elseif($result[0] == 3) {
+                            echo $result[1] . " has ";
+                            echo count($total_followers)-1 . " followers. <br>";
                         }
                     }
+                    
+                    // while($res = mysqli_fetch_row($shop_tmp)) {
+                    //     // print $res[2];
+                    //     // print '<br>';
+                    //     // $follower_count = explode("|", $res[2]);
+                    //     // print_r($follower_count);
+                    //     $poop = array($res[2]);
+
+                    //     foreach($poop as $follower) {
+                    //         $SHIT = explode('|', $follower);
+                    //         // print_r($SHIT);
+                    //     }
+                    //     print_r($SHIT);
+                    //     // var_dump($SHIT);
+
+                    //     // var_dump($poop);
+                    //     // print_r($poop);
+                    // }
+
+                    // foreach($poop as $follower) {
+                    //     echo $follower;
+                    // }
                 ?>
             </div>
         </div>
