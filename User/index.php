@@ -70,14 +70,6 @@
                         $is_following = true;
                     }
                 }
-                // foreach($shop_followers as $shop_follow_count) {
-                //     for($i = $shop_follow_count; $i < count($shop_followers); $i++) {
-                //         if($shop_follow_count == $_SESSION['userID']) {
-                //             $is_following = true;
-                //         }
-                //     }
-                //     // unset($shop_follow_count);
-                // }
 
             ?>
             <div class="card-body">
@@ -135,23 +127,6 @@
                         To do here:
                         - create query to select shop with most reactions
                         -->
-                        <!-- <div class="card">
-                            <img src="dist/img/login-img.jpg" alt="..." class="card-img-top">
-                            <div class="card-body">
-                                <p class="card-text">Promoted shop name</p>
-                                <p class="card-text"><small class="text-muted">Updated 3 mins ago.</small></p>
-                            </div>
-                            <div class="card-footer">
-                                <div class="float-left">
-
-                                </div>
-                                <div class="float-right">
-                                    <a href="#">
-                                        <i class="fa-regular fa-heart"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div> -->
                         <div class="card">
                             <?php
                                 if($shop != null) {
@@ -207,15 +182,6 @@
                                 </div>
                                 <div class="float-right">
                                     <?php
-
-                                        // $shop_followers = explode("|", $shop['shop_reactions']);
-
-                                        // foreach($shop_followers as $shop_follow_count) {
-                                        //     if($shop_follow_count == $_SESSION['userID']) {
-                                        //         $is_following = true;
-                                        //         echo $shop_follow_count;
-                                        //     }
-                                        // }
 
                                         if($is_following) {
                                             echo '<span class="badge bg-success" style="color: #FFF;">Following</span>';
@@ -276,44 +242,6 @@
             <div class="col">
                 <h2>Following</h2>
                 <?php
-                    // if($following != null) {
-                    //     foreach($following as $shops_following) {
-                    //         if($shops_following <= 3) {
-                                // echo '<div class="col">
-                                //         <div class="card">
-                                //             <div class="card-body">';
-                                // echo            '<p class="card-text">'.$shops_following.'</p>';
-                                // echo        '</div>
-                                //             <div class="card-footer">';
-                                // echo            '<p class="float-right"> ';
-                                // echo            count($shop_followers);
-                                // echo            ' Followers </p>
-                                //             </div>
-                                //         </div>
-                                //     </div>';
-                    //         }
-                    //     }
-                    // } else {
-                    //     echo "Null";
-                    // }
-
-                    // foreach($following as $shops_following) {
-                    //     if($shops_following <= 3) {
-                            // echo '<div class="col">
-                            //             <div class="card">
-                            //                 <div class="card-body">';
-                            // echo            '<p class="card-text">'.$shops_following.'</p>';
-                            // echo        '</div>
-                            //             <div class="card-footer">';
-                            // echo            '<p class="float-right"> ';
-                            // echo            count($shop_followers);
-                            // echo            ' Followers </p>
-                            //             </div>
-                            //         </div>
-                            //     </div>';
-                    //     }
-                    // }
-
                     // ISSUE: naiinclude yung ',' sa pag echo, idk how to fix
                     for($i = 0; $i < count($following); $i++) {
                         if($i <= 3) {
