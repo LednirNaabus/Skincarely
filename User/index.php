@@ -1,7 +1,7 @@
 <?php
-    include 'includes/main/header.php';
-    include 'includes/connection/db_connection.php';
-?> 
+include 'includes/main/header.php';
+include 'includes/connection/db_connection.php';
+?>
 <main role="main" style="background-color: #F7F3F2;">
     <div class="bg-img">
         <div class="jumbotron">
@@ -29,13 +29,13 @@
     <!-- featured vendors/items/shops here -->
     <div class="container">
         <?php
-            echo '<h1 class="display-3"> Welcome, ' . htmlspecialchars($_SESSION["user"]) .  '</h1>';
+        echo '<h1 class="display-3"> Welcome, ' . htmlspecialchars($_SESSION["user"]) .  '</h1>';
         ?>
         <hr>
         <h1>Explore Shops</h1>
         <div class="card ">
-            <div class="card-header"> 
-                <ul class="nav nav-tabs card-header-tabs pull-right"  id="myTab" role="tablist">
+            <div class="card-header">
+                <ul class="nav nav-tabs card-header-tabs pull-right" id="myTab" role="tablist">
                     <li class="nav-item">
                         <a class="nav-link active" id="featured-tab" data-toggle="tab" href="#featured" role="tab" aria-controls="featured" aria-selected="true">Featured</a>
                     </li>
@@ -51,69 +51,69 @@
                 </ul>
             </div>
             <?php
-                //featured shop query
-                $shop_query = mysqli_query($link, "SELECT * FROM shops");
-                $item_query = mysqli_query($link, "SELECT * FROM items ORDER BY item_id DESC LIMIT 5");
+            //featured shop query
+            $shop_query = mysqli_query($link, "SELECT * FROM shops");
+            $item_query = mysqli_query($link, "SELECT * FROM items ORDER BY item_id DESC LIMIT 5");
 
-                $shop = mysqli_fetch_array($shop_query);
+            $shop = mysqli_fetch_array($shop_query);
 
-                $get_shops_following = mysqli_query($link, "SELECT following_shops FROM customers WHERE customer_id=".$_SESSION['userID']);
+            $get_shops_following = mysqli_query($link, "SELECT following_shops FROM customers WHERE customer_id=" . $_SESSION['userID']);
 
-                $cf = mysqli_fetch_array($get_shops_following);
+            $cf = mysqli_fetch_array($get_shops_following);
 
-                $following = explode(',', $cf['following_shops']);
-                $is_following = false;
-                $shop_followers = explode("|", $shop['shop_reactions']);
+            $following = explode(',', $cf['following_shops']);
+            $is_following = false;
+            $shop_followers = explode("|", $shop['shop_reactions']);
 
-                foreach($shop_followers as $shop_follow_count) {
-                    if($shop_follow_count == $_SESSION['userID']) {
-                        $is_following = true;
-                    }
+            foreach ($shop_followers as $shop_follow_count) {
+                if ($shop_follow_count == $_SESSION['userID']) {
+                    $is_following = true;
                 }
+            }
 
             ?>
             <div class="card-body">
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="featured" role="tabpanel" aria-labelledby="featured-tab">
                         <!-- featured shop -->
-                        <!-- aka oldest sa `shops` table -->
+                        <!-- aka oldest sa shops table -->
                         <div class="card">
                             <?php
-                                if($shop != null) {
-                                    echo '<a href="merchant_portal.php?shop_id='.$shop["shop_id"].'"><img src="data:image/jpeg;base64,'.base64_encode($shop["shop_logo"]).'" class="card-img-top" /></a>';
-                                    // $_SESSION['shopid'] = $shop["shop_id"];
-                                } else {
-                                    echo '<p class="card-text"> There is nothing yet. Why don\'t you create a <a href="../Admin/signup.php">vendor account</a> to host a shop?</p>';
-                                }
+                            if ($shop != null) {
+                                echo '<a href="merchant_portal.php?shop_id=' . $shop["shop_id"] . '"><img src="data:image/jpeg;base64,' . base64_encode($shop["shop_logo"]) . '" class="card-img-top" /></a>';
+                                // $_SESSION['shopid'] = $shop["shop_id"];
+                            } else {
+                                echo '<p class="card-text"> There is nothing yet. Why don\'t you create a <a href="../Admin/signup.php">vendor account</a> to host a shop?</p>';
+                            }
                             ?>
                             <div class="card-body">
-                                <p class="card-text"><?php 
-                                    if($shop != null) {
-                                        echo $shop["shop_name"];
-                                    }
-                                ?></p>
+                                <p class="card-text"><?php
+                                                        if ($shop != null) {
+                                                            echo $shop["shop_name"];
+                                                        }
+                                                        ?></p>
                             </div>
                             <div class="card-footer">
                                 <div class="float-left">
-                                    <p class="card-text"><small class="text-muted"><?php 
-                                        if($shop != null) {
-                                            echo $shop["shop_description"].' | '.$shop["shop_mainbranch"];
-                                        }
-                                    ?></small></p>
+                                    <p class="card-text"><small class="text-muted"><?php
+                                                                                    if ($shop != null) {
+                                                                                        echo $shop["shop_description"] . ' | ' . $shop["shop_mainbranch"];
+                                                                                    }
+                                                                                    ?></small></p>
                                 </div>
                                 <div class="float-right">
                                     <?php
 
-                                        $tmp = array($cf[0]);
-                                        // print_r($tmp);
-                                        // echo $tmp[0];
-                                        $test = explode(",", $tmp[0]);
-                                        // echo $test[1]; // Will print out the first shop_name in the array `following_shops` (in this case "Pink Eme")
-                                        if($is_following) {
-                                            echo '<span class="badge bg-success" style="color: #FFF;">Following</span>';
-                                        } else {
-                                            echo '<span class="badge bg-secondary" style="color: #FFF;">Not Following</span>';
-                                        }
+                                    $tmp = array($cf[0]);
+                                    // print_r($tmp);
+                                    // echo $tmp[0];
+                                    $test = explode(",", $tmp[0]);
+                                    // echo $test[1]; // Will print out the first shop_name in the array following_shops (in this case "Pink Eme")
+                                    if ($is_following) {
+                                        echo '<span class="badge bg-success" style="color: #FFF;">Following</span>';
+                                    } else {
+                                        echo '<span class="badge bg-secondary" style="color: #FFF;">Not Following</span>';
+                                    }
                                     ?>
                                 </div>
                             </div>
@@ -129,78 +129,79 @@
                         -->
                         <div class="card">
                             <?php
-                                if($shop != null) {
-                                    $promoted_query = mysqli_query($link, "SELECT * FROM shops");
+                            if ($shop != null) {
+                                $promoted_query = mysqli_query($link, "SELECT * FROM shops");
 
-                                    // count shop with most shop_reactions
-                                    // display shop with most shop_reaction
-                                    while($row = $promoted_query->fetch_assoc()) {
-                                        foreach(explode('|', $row['shop_reactions']) as $x) {
-                                            echo $x . "<br>";
-                                            //idk what to do next
-                                        }
+                                // count shop with most shop_reactions
+                                // display shop with most shop_reaction
+                                while ($row = $promoted_query->fetch_assoc()) {
+                                    foreach (explode('|', $row['shop_reactions']) as $x) {
+                                        echo $x . "<br>";
+                                        //idk what to do next
                                     }
-                                    
-                                } else {
-                                    echo '<p class="card-text"> There is nothing yet. Why don\'t you create a <a href="../Admin/signup.php">vendor account</a> to host a shop?</p>';
                                 }
+                            } else {
+                                echo '<p class="card-text"> There is nothing yet. Why don\'t you create a <a href="../Admin/signup.php">vendor account</a> to host a shop?</p>';
+                            }
                             ?>
                             <div class="card-body">
                                 <p class="card-text">
-                                    
+
                                 </p>
                             </div>
                             <div class="card-footer">
                                 <div class="float-left">
-                                    <?php //shop info ?>
+                                    <?php //shop info 
+                                    ?>
                                 </div>
                                 <div class="float-right">
-                                    <?php //following or not ?>
+                                    <?php //following or not 
+                                    ?>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="tab-pane fade" id="new" role="tabpanel" aria-labelledby="new-tab">
                         <!-- new shop -->
-                        <!-- display newest from `shops` -->
+                        <!-- display newest from shops -->
                         <div class="card">
                             <?php
-                                if($shop != null) {
-                                    $shop_query = mysqli_query($link, "SELECT * FROM shops ORDER BY shop_id DESC");
-                                    $new_shops = mysqli_fetch_array($shop_query);
-                                    echo '<a href="merchant_portal.php?shop_id='.$new_shops[0].'"><img src="data:image/jpeg;base64,'.base64_encode($new_shops[3]).'" class="card-img-top" /></a>';
-                                    //[0] = shop_id
-                                } else {
-                                    echo '<p class="card-text"> There is nothing yet. Why don\'t you create a <a href="../Admin/signup.php">vendor account</a> to host a shop?</p>';
-                                }
+                            if ($shop != null) {
+                                $shop_query = mysqli_query($link, "SELECT * FROM shops ORDER BY shop_id DESC");
+                                $new_shops = mysqli_fetch_array($shop_query);
+                                echo '<a href="merchant_portal.php?shop_id=' . $new_shops[0] . '"><img src="data:image/jpeg;base64,' . base64_encode($new_shops[3]) . '" class="card-img-top" /></a>';
+                                //[0] = shop_id
+                            } else {
+                                echo '<p class="card-text"> There is nothing yet. Why don\'t you create a <a href="../Admin/signup.php">vendor account</a> to host a shop?</p>';
+                            }
                             ?>
                             <div class="card-body">
                                 <p class="card-text">
                                     <?php
-                                        if($new_shops != null) {
-                                            echo $new_shops[2];
-                                        }
+                                    if ($new_shops != null) {
+                                        echo $new_shops[2];
+                                    }
                                     ?>
                                 </p>
                             </div>
                             <div class="card-body">
                                 <div class="float-left">
                                     <p class="card-text"><small class="text-muted">
-                                        Founded: <?php 
-                                            if($new_shops != null) {
-                                                echo $new_shops[14];
-                                            }
-                                        ?>
-                                    </small></p>
+                                            Founded: <?php
+                                                        if ($new_shops != null) {
+                                                            echo $new_shops[14];
+                                                        }
+                                                        ?>
+                                        </small></p>
                                 </div>
                                 <div class="float-right">
                                     <?php
 
-                                        if($is_following) {
-                                            echo '<span class="badge bg-success" style="color: #FFF;">Following</span>';
-                                        } else {
-                                            echo '<span class="badge bg-secondary" style="color: #FFF;">Not Following</span>';
-                                        }
+                                    if ($is_following) {
+                                        echo '<span class="badge bg-success" style="color: #FFF;">Following</span>';
+                                    } else {
+                                        echo '<span class="badge bg-secondary" style="color: #FFF;">Not Following</span>';
+                                    }
                                     ?>
                                 </div>
                             </div>
@@ -227,25 +228,25 @@
                 <h2>New items from <?php echo $shop[2]; ?> shop</h2>
                 <div class="row row-cols-1 row-cols-md-2 g-4">
                     <?php
-                        if($item_query != null) {
-                            while($row = mysqli_fetch_array($item_query)) {
-                                if($row["shop_id"] == $shop["shop_id"]) {
-                                    Print '<div class="col">
+                    if ($item_query != null) {
+                        while ($row = mysqli_fetch_array($item_query)) {
+                            if ($row["shop_id"] == $shop["shop_id"]) {
+                                print '<div class="col">
                                                     <div class="card">';
-                                        echo '<a href="item_portal.php?item_id='.$row["item_id"].'"><img src="data:image/jpeg;base64,' .base64_encode($row["item_image"]).'" class="card-img-top"></a>';
-                                        Print '<div class="card-body">
-                                                    <p class="card-text"><small class="text-muted">' .$row["item_name"] . '</small></p></div></div></div>';
-                                }
+                                echo '<a href="item_portal.php?item_id=' . $row["item_id"] . '"><img src="data:image/jpeg;base64,' . base64_encode($row["item_image"]) . '" class="card-img-top"></a>';
+                                print '<div class="card-body">
+                                                    <p class="card-text"><small class="text-muted">' . $row["item_name"] . '</small></p></div></div></div>';
                             }
-                        } else {
-                            echo '<div class="col">
+                        }
+                    } else {
+                        echo '<div class="col">
                                     <div class="card">
                                         <div class="card-body">
                                             <p class="card-text"> Nothing here yet. </p>
                                         </div>
                                     </div>
                                   </div>';
-                        }
+                    }
 
                     ?>
                 </div>
@@ -254,49 +255,34 @@
         <div class="row">
             <div class="col">
                 <h2>Following</h2>
-                <?php
-                    array_splice($following, 0, 1);
-                    // //for followers count
-                    $shop_tmp = mysqli_query($link, "SELECT shop_id, shop_name, shop_reactions FROM shops");
+                <?php 
+                
+                // //for followers count
+                $following_tmp = explode(', ', $cf['following_shops']); //
+                $shopidString = "";
+                foreach ($following_tmp as $f) {
+                    $shopidString .= $f . ",";
+                }
+                
+                $shopidString = substr($shopidString, 0, -1);
+                $shop_tmp = mysqli_query($link, "SELECT * FROM shops WHERE shop_id in ($shopidString)"); 
 
-                    $following_tmp = explode(',', $cf['following_shops']);
-
-                    array_splice($following_tmp, 0, 1);
-                    
-                    for($i = 0; $i < count($following_tmp); $i++) {
-                        while($result = mysqli_fetch_array($shop_tmp)) {
-                            $total_followers = explode('|', $result[2]);
-                            if(count($following_tmp) == 1) {
-                                $total_num_followers = count($total_followers) - 1;
-                                echo '<div class="card">
-                                    <div class="card-body">';
-                                echo        '<p class="card-text">'. $following_tmp[$i] . '</p>
-                                            </div>';
-                                echo    '<div class="card-footer">
-                                            <span class="badge bg-info float-left" style="color: #FFF;">' . $total_num_followers . ' followers </span>
-                                            <span class="badge bg-success float-right" style="color: #FFF;"> Following </span>
-                                        </div>
-                                        </div>';
-                                break;
-                            } elseif(count($following_tmp) > 1) {
-                                $total_num_followers = count($total_followers) - 1;
-                                echo '<div class="card">
-                                    <div class="card-body">';
-                                echo        '<p class="card-text">'. $following_tmp[$i++] . '</p>
-                                            </div>';
-                                echo    '<div class="card-footer">
-                                            <span class="badge bg-info float-left" style="color: #FFF;">' . $total_num_followers . ' followers </span>
-                                            <span class="badge bg-success float-right" style="color: #FFF;"> Following </span>
-                                        </div>
-                                        </div>';
-                            }
-                        }
-                    }
+                while($following_shops = mysqli_fetch_array($shop_tmp)) {
+                    echo '<div class="card">
+                            <div class="card-body">';
+                    echo        '<p class="card-text">'.$following_shops['shop_name'] . '</p>
+                            </div>';
+                    echo '<div class="card-footer">
+                            <span class="badge bg-info float-left" style="color: #FFF;">'. count($following_tmp) . ' followers </span>
+                            <span class="badge bg-success float-right" style="color: #FFF;"> Following </span>
+                          </div>
+                          </div>';
+                }
                 ?>
             </div>
         </div>
     </div>
 </main>
 <?php
-    include 'includes/main/footer.php';
+include 'includes/main/footer.php';
 ?>
