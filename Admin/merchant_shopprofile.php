@@ -218,7 +218,6 @@ unset($_SESSION['shopdelivery']);
   <ul class="nav nav-tabs" style="text-align: center; color: black;">
     <li class="active"><a style="color: black;" data-toggle="tab" href="#about">About Shop</a></li>
     <li><a style="color: black;" data-toggle="tab" href="#products">Products</a></li>
-    <li><a style="color: black;" data-toggle="tab" href="#photos">Photos</a></li>
   </ul>
 
   <div class="tab-content m-5" style="background-color: white; padding: 50px; border-radius:20px;">
@@ -509,15 +508,8 @@ unset($_SESSION['shopdelivery']);
   </div>
   
     </div>
-    <div id="photos" class="tab-pane fade">
-      <h3>Featured Photos</h3>
-      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-    </div>
   </div>
 </div>
-
-
-<!-- also, verif if there is a shop created for the vendor already or wala pa - change create shop button accordingly -->
 
   
 
