@@ -189,7 +189,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (!$following) {
         $follow .= "|" . $follower_id;
         $followed = mysqli_query($link, "UPDATE shops SET shop_reactions = '$follow' WHERE shop_id = " . $_GET['shop_id']);
-        $customer_shops_following = mysqli_query($link, "UPDATE customers SET following_shops=CONCAT(following_shops, ', $shop_name') WHERE customer_id = ".$_SESSION['userID']);
+        $customer_shops_following = mysqli_query($link, "UPDATE customers SET following_shops=CONCAT(following_shops, ',$shop_id') WHERE customer_id = ".$_SESSION['userID']);
         if ($followed) {
             unset($_POST);
             echo "<script>window.location.href='';</script>";
@@ -197,7 +197,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } else {
         $unfollow = trim($follow, "|" . $follower_id);
         $unfollowed = mysqli_query($link, "UPDATE shops SET shop_reactions = '$unfollow' WHERE shop_id = " . $_GET['shop_id']);
-        $customer_shops_unfollow = mysqli_query($link, "UPDATE customers SET following_shops=REPLACE(following_shops, ', $shop_name', '') WHERE customer_id = ".$_SESSION['userID']);
+        $customer_shops_unfollow = mysqli_query($link, "UPDATE customers SET following_shops=REPLACE(following_shops, ',$shop_id,',') WHERE customer_id = ".$_SESSION['userID']);
         if ($unfollowed) {
             unset($_POST);
             echo "<script>window.location.href='';</script>";
