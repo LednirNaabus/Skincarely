@@ -50,9 +50,9 @@ unset($_SESSION['shopdelivery']);
 <!--------- CONTENT -------------------->
 
 <div class="container-fluid bgImgCenter1 bgCenter">
-  <h1 class="display-1 container">Shop Profile</h1>
+  <h1 class="display-1 container welcomeTitle">Shop Profile</h1>
     <br>
-    <p class="container" style="font-size:1vw;"> View and manage your shop information.</p>          
+    <p class="container welcomeStatement"> View and manage your shop information.</p>          
     <br>  
     <p class="container" style="font-size:18px;"><button type="button" class="btn customBtn" data-toggle="modal" data-target="#myModal">Edit Shop Details</button></p>
 </div>
@@ -198,7 +198,7 @@ unset($_SESSION['shopdelivery']);
 
               while($row = mysqli_fetch_assoc($result)) 
               {
-                echo '<img src = "data:image/jpeg;base64,'.base64_encode($row['shop_logo']).'" height = "350" width = "350" class = "rounded"/>';
+                echo '<img src = "data:image/jpeg;base64,'.base64_encode($row['shop_logo']).'" class = "rounded productImage"/>';
               }
           } 
           
@@ -492,6 +492,9 @@ unset($_SESSION['shopdelivery']);
                     </ul>
                 </div>
                 <div class="product-content" style="padding-left: 10px; padding-right: 10px;">
+                    <h3 class="title" style="font-weight: 700">
+                      <?php echo '₱',$row['item_price']; ?>
+                    </h3>
                     <h3 class="title" style="font-weight: 700">
                       <?php echo $row['item_name']; ?>
                     </h3>
