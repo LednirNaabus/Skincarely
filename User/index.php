@@ -87,19 +87,25 @@ include 'includes/connection/db_connection.php';
                             }
                             ?>
                             <div class="card-body">
-                                <p class="card-text"><?php
-                                                        if ($shop != null) {
-                                                            echo $shop["shop_name"];
-                                                        }
-                                                        ?></p>
+                                <p class="card-text">
+                                    <?php
+                                        if ($shop != null) {
+                                            echo $shop["shop_name"];
+                                        }
+                                    ?>
+                                </p>
                             </div>
                             <div class="card-footer">
                                 <div class="float-left">
-                                    <p class="card-text"><small class="text-muted"><?php
-                                                                                    if ($shop != null) {
-                                                                                        echo $shop["shop_description"] . ' | ' . $shop["shop_mainbranch"];
-                                                                                    }
-                                                                                    ?></small></p>
+                                    <p class="card-text">
+                                        <small class="text-muted">
+                                            <?php
+                                                if ($shop != null) {
+                                                    echo $shop["shop_description"] . ' | ' . $shop["shop_mainbranch"];
+                                                }
+                                            ?>
+                                        </small>
+                                    </p>
                                 </div>
                                 <div class="float-right">
                                     <?php
@@ -130,15 +136,16 @@ include 'includes/connection/db_connection.php';
                         <div class="card">
                             <?php
                             if ($shop != null) {
-                                $promoted_query = mysqli_query($link, "SELECT * FROM shops");
+                                $promoted_query = mysqli_query($link, "SELECT * FROM shops ORDER BY LENGTH(shop_reactions) DESC LIMIT 1");
 
                                 // count shop with most shop_reactions
                                 // display shop with most shop_reaction
                                 while ($row = $promoted_query->fetch_assoc()) {
-                                    foreach (explode('|', $row['shop_reactions']) as $x) {
-                                        echo $x . "<br>";
-                                        //idk what to do next
-                                    }
+                                    $exploded = explode('|', $row['shop_reactions']);
+                                    $featured_num_followers = count($exploded) - 1;
+                                    $featured_shopname = $row['shop_name'];
+                                    $featured_shopbranch = $row['shop_mainbranch'];
+                                    echo '<a href="merchant_portal.php?shop_id=' . $row["shop_id"] . '"><img src="data:image/jpeg;base64,' . base64_encode($row["shop_logo"]) . '" class="card-img-top" /></a>';
                                 }
                             } else {
                                 echo '<p class="card-text"> There is nothing yet. Why don\'t you create a <a href="../Admin/signup.php">vendor account</a> to host a shop?</p>';
@@ -146,16 +153,22 @@ include 'includes/connection/db_connection.php';
                             ?>
                             <div class="card-body">
                                 <p class="card-text">
-
+                                    <?php
+                                        
+                                    ?>
                                 </p>
                             </div>
                             <div class="card-footer">
                                 <div class="float-left">
-                                    <?php //shop info 
-                                    ?>
+                                    <small class="text-muted">
+                                        <?php //shop info
+                                            echo $featured_shopname . ' | ' . $featured_shopbranch;
+                                        ?>
+                                    </small>
                                 </div>
                                 <div class="float-right">
-                                    <?php //following or not 
+                                    <?php
+                                        echo '<span class="badge bg-info float-right" style="color: #FFF;">' . $featured_num_followers . ' followers</span>';
                                     ?>
                                 </div>
                             </div>
@@ -186,13 +199,16 @@ include 'includes/connection/db_connection.php';
                             </div>
                             <div class="card-body">
                                 <div class="float-left">
-                                    <p class="card-text"><small class="text-muted">
-                                            Founded: <?php
-                                                        if ($new_shops != null) {
-                                                            echo $new_shops[14];
-                                                        }
-                                                        ?>
-                                        </small></p>
+                                    <p class="card-text">
+                                        <small class="text-muted">
+                                            Founded:
+                                            <?php
+                                                if ($new_shops != null) {
+                                                    echo $new_shops[14];
+                                                }
+                                            ?>
+                                        </small>
+                                    </p>
                                 </div>
                                 <div class="float-right">
                                     <?php
