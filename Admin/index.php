@@ -3,12 +3,9 @@ session_unset();
 include('shared/header.php');
 ?>
 <div class="navbar">
-    <a style="margin-left:70px;" href="index.php">Home</a>
-    <a href="#about">About</a>
-    <a href="#team">Meet the Team</a>
-    <a href="#contact">Contact</a>
+    <a style="margin-left:70px;" href="index.php">Skincarely.ph © 2021. All rights reserved. Version 1.0</a>
 </div>
-<div class="main">
+<div class="main" style="margin-bottom: 0px;">
     <div class="grid-container">
         <div class="grid-item" style="text-align:left;">
             <h1 style="font-family: Poppins; text-align:left; font-size:100px; margin-bottom:0%; margin-left:50px;">SKINCARELY</h1>
