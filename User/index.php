@@ -264,20 +264,31 @@ include 'includes/connection/db_connection.php';
                     $shopidString .= $f . ",";
                 }
                 
-                $shopidString = substr($shopidString, 0, -1);
-                $shop_tmp = mysqli_query($link, "SELECT * FROM shops WHERE shop_id in ($shopidString)"); 
-
-                while($following_shops = mysqli_fetch_array($shop_tmp)) {
+                $shopidString = substr($shopidString, 1, -1);
+                $shop_tmp = mysqli_query($link, "SELECT * FROM shops WHERE shop_id in ($shopidString)");
+                
+                if($shop_tmp) {
+                    while($following_shops = mysqli_fetch_array($shop_tmp)) {
+                        $explode = explode('|', $following_shops['shop_reactions']);
+                        $total_followers = count($explode) - 1;
+                        echo '<div class="card">
+                                <div class="card-body">';
+                        echo        '<p class="card-text">'.$following_shops['shop_name'] . '</p>
+                                </div>';
+                        echo '<div class="card-footer">
+                                <span class="badge bg-info float-right" style="color: #FFF;">'. $total_followers . ' followers </span>
+                                </div>
+                                </div>';
+                    }
+                } else {
                     echo '<div class="card">
-                            <div class="card-body">';
-                    echo        '<p class="card-text">'.$following_shops['shop_name'] . '</p>
-                            </div>';
-                    echo '<div class="card-footer">
-                            <span class="badge bg-info float-left" style="color: #FFF;">'. count($following_tmp) . ' followers </span>
-                            <span class="badge bg-success float-right" style="color: #FFF;"> Following </span>
-                          </div>
+                            <div class="card-body">
+                                <p class="card-text"> Nothing here yet. </p>
+                            </div>
                           </div>';
                 }
+
+
                 ?>
             </div>
         </div>
