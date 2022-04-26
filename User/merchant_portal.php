@@ -197,7 +197,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } else {
         $unfollow = trim($follow, "|" . $follower_id);
         $unfollowed = mysqli_query($link, "UPDATE shops SET shop_reactions = '$unfollow' WHERE shop_id = " . $_GET['shop_id']);
-        $customer_shops_unfollow = mysqli_query($link, "UPDATE customers SET following_shops=REPLACE(following_shops, ',$shop_id,',') WHERE customer_id = ".$_SESSION['userID']);
+        $unfollow_shop_id = $_GET['shop_id'];
+        $sql = "UPDATE customers SET following_shops=REPLACE(following_shops, '," . $unfollow_shop_id . "', '') WHERE customer_id = " . $_SESSION['userID'];
+        $customer_shops_infollow = mysqli_query($link,$sql);
         if ($unfollowed) {
             unset($_POST);
             echo "<script>window.location.href='';</script>";
