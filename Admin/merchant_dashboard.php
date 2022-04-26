@@ -21,12 +21,12 @@ session_start();
 <!--------- CONTENT -------------------->
 
             <div class="container-fluid bgCenter bgImgCenter">
-                <h1 class="container">
+                <h1 class="container welcomeTitle">
                 <?php
                 echo ' Hey there, <strong>' . $_SESSION["welcomename"] . '</strong>.
                 </h1>';?>
                 <br>
-                <p class="container" style="font-size:1vw;">Welcome to your dashboard. You can access your business insights here and view your shop's ratings, followers, and engagements, or
+                <p class="container welcomeStatement">Welcome to your dashboard. You can access your business insights here and view your shop's ratings, followers, and engagements, or
                    view your list of products and corresponding reviews. You could also manage your shop profile. </p>
                 <br>
                 <p class="container" style="font-size:18px;"><a href="shop_verification.php" class="btn customBtn" role="button">View Shop Profile</a></p>
@@ -167,6 +167,7 @@ session_start();
 
 
           <?php include("merchant_script.php"); ?>
+
 
 </body>
 </html>

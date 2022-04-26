@@ -39,9 +39,9 @@ $shopid = $_SESSION["shopid"];
   <?php include('navigation.php'); ?>
 
   <div class="container-fluid bgCenter bgImgCenter2 ">
-    <h1 class="display-1 container">My Products</h1>
+    <h1 class="display-1 container welcomeTitle">My Products</h1>
       <br>
-      <p class="container" style="font-size:1vw;"> Manage your shop's products and keep your customers updated of what you're offering. </p>          
+      <p class="container welcomeStatement"> Manage your shop's products and keep your customers updated of what you're offering. </p>          
       <br>  
       <p class="container" style="font-size:18px;"><button type="button" class="btn customBtn" data-toggle="modal" data-target="#myModal">Add Product to List</button></p>
   </div>
