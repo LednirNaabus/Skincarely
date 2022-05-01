@@ -86,7 +86,6 @@ session_start();
 
                 <label for="category">Product Category</label><br>
                 <div class="form-group input-group">
-                  <span class="input-group-addon">PhP</span> 
                   <input type="text" class="form-control" id="productcategory" name = "productcategory" value="<?php echo $row['item_category']; ?>">
                 </div>
           </div>
