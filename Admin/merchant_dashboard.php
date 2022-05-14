@@ -72,7 +72,8 @@ session_start();
                               $followercount = mysqli_num_rows($followerresult);
 
                               $followers = explode('|', $followerrow['shop_reactions']);
-                              echo count($followers);
+                              $followers_total = count($followers) - 1;
+                              echo $followers_total;
                               
 
                           }     
