@@ -75,7 +75,7 @@ session_start();
                               $followers_total = count($followers) - 1;
                               echo $followers_total;
                               
-
+                              echo 'test';
                           }     
                         ?>
                       </p>
